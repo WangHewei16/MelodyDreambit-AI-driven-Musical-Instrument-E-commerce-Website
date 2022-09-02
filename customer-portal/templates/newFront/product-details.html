@@ -1,0 +1,1081 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - Product") }} </title> {% endblock %}
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/buttonjs.js') }}"></script>
+    <script src="{{ url_for('static', filename='tinymce4.7.5/tinymce.min.js') }}"></script>
+    <script src="/static/assets/js/star.js"></script>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+<!-- back to top end -->
+
+{% include "newFront/header_area.html" %}
+
+<main>
+    <!-- page__title-start -->
+    <section class="page__title p-relative d-flex align-items-center"
+             data-background="{{ url_for('static',filename='assets/img/bg/page-title-3.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1 style="color:white">{{ _("Product Details")}}</h1>
+                        <div class="page__title-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="\index" style=" color:white">{{ _("Home") }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page" style="color:white">{{ _("Product
+                                            Details")}}
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- product-details-start -->
+    <section class="product-details pt-90 pb-50">
+        {% include "newFront/commodity_comment_tanchuang.html" %}
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="product__modal-box d-flex">
+                        <div class="product__modal-nav ml-160">
+                            <nav>
+                                <div class="nav nav-tabs" id="product-details" role="tablist"
+                                     style="text-align: center">
+                                    <a class="nav-item nav-link active" id="pro-one-tab" data-bs-toggle="tab"
+                                       href="#pro-one" role="tab" aria-controls="pro-one" aria-selected="true">
+
+                                        <div class="w-img2" style="height: 350px">
+                                            <img src="{{ product_detail.image_oss }}" alt="">
+                                        </div>
+                                    </a>
+
+                                    <a class="write_blog_btn golden_hover_btn"
+                                       style="display: inline-block;width: 80%;margin-top:22px;text-align: center;"
+                                       product_id="{{ product_detail.id }}"> {{ _("Write a Blog")}}
+                                    </a>
+
+                                    <a style="display: inline-block; text-align: center ;width:80%;margin-top:10px"
+                                       class="golden_hover_btn" href="javascript:void(0)"
+                                       onclick="document.getElementById('light').style.display='block';
+                                       document.getElementById('fade').style.display='block';
+                                        document.getElementById('fade').style.height = window.innerHeight*4 + 'px';
+                                        ">
+                                        {{ _("Write a Comment")}}</a>
+
+                                    {#                                        <a class="nav-item nav-link" id="pro-two-tab" data-bs-toggle="tab"#}
+                                    {#                                            href="#pro-two" role="tab" aria-controls="pro-two" aria-selected="false">#}
+                                    {#                                            <div class="product__nav-img w-img">#}
+                                    {#                                                <img src ="{{product_detail.image_oss}}" alt="">#}
+                                    {#                                            </div>#}
+                                    {#                                        </a>#}
+                                    {#                                        <a class="nav-item nav-link" id="pro-three-tab" data-bs-toggle="tab"#}
+                                    {#                                            href="#pro-three" role="tab" aria-controls="pro-three"#}
+                                    {#                                            aria-selected="false">#}
+                                    {#                                            <div class="product__nav-img w-img">#}
+                                    {#                                                <img src ="{{url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-02-3.jpg")}}" alt="">#}
+                                    {#                                            </div>#}
+                                    {#                                        </a>#}
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="tab-content mb-20" id="product-detailsContent">
+                            <div class="tab-pane fade active show" id="pro-one" role="tabpanel"
+                                 aria-labelledby="pro-one-tab">
+                                {#                                    <div class="product__modal-img product__thumb w-img">#}
+                                {#                                        <img src ="{{product_detail.image_oss}}" alt="">#}
+                                {#                                        <div class="product__sale ">#}
+                                {#                                            <span class="new">new</span>#}
+                                {#                                            <span class="percent">-20%</span>#}
+                                {#                                        </div>#}
+                                {#                                    </div>#}
+                            </div>
+                            <div class="tab-pane fade" id="pro-two" role="tabpanel" aria-labelledby="pro-two-tab">
+                                <div class="product__modal-img product__thumb w-img">
+                                    <img src="{{ product_detail.image_oss }}" alt="">
+                                    <div class="product__sale ">
+                                        <span class="new">{{ _("new") }}</span>
+                                        <span class="percent">-13%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro-three" role="tabpanel"
+                                 aria-labelledby="pro-three-tab">
+                                <div class="product__modal-img product__thumb w-img">
+                                    <img src="{{ product_detail.image_oss }}" alt="">
+                                    <div class="product__sale ">
+                                        <span class="new">{{ _("new") }}</span>
+                                        <span class="percent">-15%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5">
+                    <div class="product__modal-content-1">
+                        <h4><a href="javascript:;">{{ product_detail.name }}</a></h4>
+                        <div>&nbsp;</div>
+                        {#      星星            #}
+                        <p style="display: none" id="product_detail_id">{{ product_detail.id }}</p>
+                        <p style="display: none" id="product_detail_star">{{ star }}</p>
+                        <div>
+                            <div class="starRatingContainer">
+                                <div class="ratingSystem">
+                                </div>
+                            </div>
+                            <div class="ratingHolder">
+                            </div>
+                        </div>
+
+                        <script>
+                            let current_star = $("#product_detail_star").html();
+                            var properties1 = [
+                                {
+                                    "rating": current_star,
+                                    "maxRating": "5",
+                                    "minRating": "0.5",
+                                    "readOnly": "no",
+                                    "starImage": "/static/assets/img/star/star.png",
+                                    "emptyStarImage": "/static/assets/img/star/starbackground.png",
+                                    "starSize": "30",
+                                    "step": "0.5"
+                                },
+                            ];
+                            var className = "ratingSystem";
+                            rateSystem(className, properties1, function (rating, ratingTargetElement) {
+                            });
+
+                            rateSystem("className", properties2, function (rating, ratingTargetElement) {
+                            });
+
+                            rateSystem("update1.2", [properties2[2]], function (rating, ratingTargetElement, isTouchScreen) {
+                            }, function (rating, ratingTargetElement, isTouchScreen) {
+                                document.getElementById("customTooltip").innerHTML = rating;
+                                if (rating > 4.5) {
+                                }
+                                document.getElementById("customTooltip").style.top = (ratingTargetElement.getBoundingClientRect().bottom + 2) + "px";
+                                document.getElementById("customTooltip").style.display = "inline-block";
+                                if (isTouchScreen) {
+                                    document.getElementById("customTooltip").style.backgroundColor = "purple";
+                                }
+                            }, function (rating, ratingTargetElement, isTouchScreen) {
+                                document.getElementById("customTooltip").style.display = "none";
+                            });
+                        </script>
+                        <script>
+                            $(".ratingSystem").click(function () {
+                                let id = $("#product_detail_id").html();
+                                let wid = $(".ratingSystem").width();
+                                let score = 0.0;
+                                if (wid >= 0.1 && wid <= 19.0) {
+                                    score = 0.5;
+                                } else if (wid >= 19.1 && wid <= 35.0) {
+                                    score = 1.0;
+                                } else if (wid >= 35.1 && wid <= 50.0) {
+                                    score = 1.5;
+                                } else if (wid >= 50.1 && wid <= 68.0) {
+                                    score = 2.0;
+                                } else if (wid >= 68.1 && wid <= 80.0) {
+                                    score = 2.5;
+                                } else if (wid >= 80.1 && wid <= 95.0) {
+                                    score = 3.0;
+                                } else if (wid >= 95.1 && wid <= 110.0) {
+                                    score = 3.5;
+                                } else if (wid >= 110.1 && wid <= 125.0) {
+                                    score = 4.0;
+                                } else if (wid >= 125.1 && wid <= 140.0) {
+                                    score = 4.5;
+                                } else {
+                                    score = 5.0;
+                                }
+                                $.post('/star_record', {
+                                    'score': score,
+                                    'id': id,
+                                }).done(function (response) {
+                                    let server_code = response['server_code'];
+                                    if (server_code === 0) {
+                                        success();
+                                    } else {
+                                        warning();
+                                        window.location = "/login";
+                                    }
+                                }).fail(function () {
+                                    error();
+                                });
+                            })
+                        </script>
+
+                        {#                        星星#}
+                        <div>&nbsp;</div>
+                        <div class="product__modal-content-2">
+                        <span class="rating-no ml-10 rating-left" style="margin:0;">
+                            <a>{{ _("Buy amount")}} : {{ product_detail.buy_amount }}</a></span>
+                            <span class="rating-no ml-10 rating-left">
+                            <a>{{ _("Visit amount")}} : {{ product_detail.visit_amount }}</a></span>
+                            <span class="rating-no ml-10 rating-left">
+                                <a> {{ _("Inventory") }}: {{ product_detail.amount }}</a>
+                            </span>
+
+                            <span class="rating-no ml-10 rating-left"></span>
+                        </div>
+                        <span class="rating-no ml-10 rating-left"></span>
+                        <div class="product__price">
+                            <span class="price">{{ _("Price") }} : ${{ product_detail.price }}</span>
+                        </div>
+                        <span class="rating-no ml-10 rating-left"></span>
+                        <div class="product__modal-content-2">
+                            <div class="product__modal-des mb-30">
+                                <div id="desc_pre" hidden="hidden" style="justify-content: space-between">
+                                    {{ product_intro.intro }}
+                                </div>
+                                <div id="desc" name="desc"></div>
+                            </div>
+                        </div>
+                        <script>
+                            $(function () {
+                                $("#desc").html($("#desc_pre").text());
+                            });
+                        </script>
+                        <div class="pro-quan-area d-sm-flex align-items-center">
+                            <div class="product-quantity-title mb-20">
+                                <label>{{ _("Quantity") }}</label>
+                            </div>
+                            <div class="product-quantity mr-20 mb-20">
+                                <div class="cart-plus-minus"><input readonly="readonly" type="text" id="num_of_item" value="1"
+                                                                    product_id="{{ product_detail.id }}">
+                                    <p class="commodity_amount" style="display: none">{{ product_detail.amount }}</p>
+                                    <div class="dec qtybutton">-</div>
+                                    <div class="inc qtybutton">+</div>
+                                </div>
+                            </div>
+                            {% if not session.get("user_id") %}
+                                <div class="pro-cart-btn">
+                                    <a href="/login" class="add-cart-btn mb-20">+ {{ _("Add to Cart")}}</a>
+                                </div>
+                            {% else %}
+                                <div class="pro-cart-btn">
+                                    <a class="add-cart-btn mb-20">+ {{ _("Add to Cart")}}</a>
+                                </div>
+                            {% endif %}
+                            <script>
+                                $(document).ready(function () {
+                                    $(".add-cart-btn").on("click", function () {
+                                        let element = document.getElementById('num_of_item')
+                                        let commodity_id = element.getAttribute("product_id")
+                                        let num_of_item = $("#num_of_item").val()
+                                        zlajax.post({
+                                            url: "/add_cart",
+                                            data: {
+                                                "commodity_id": commodity_id,
+                                                "num_of_item": num_of_item,
+                                            },
+                                            success: function (response) {
+                                                let server_code = response['returnvalue'];
+                                                let server_cart_query = response['cart_query'];
+                                                let server_sum_modify = response['sum_modify'];
+                                                let server_cart_count = response['cart_count'];
+                                                if (server_code === 0) {
+                                                    $(".cart-price").text(server_sum_modify)
+                                                    $(".cart-count").text(server_cart_count)
+
+                                                    $(".cartmini__list").empty()
+                                                    let div = $(".cartmini__list");
+                                                    let ul = $("<ul>");
+                                                    div.append(ul);
+                                                    for (let i = 0; i < server_cart_query["data"].length; i++) {
+                                                        let root = ul;
+                                                        let li = $("<li>");
+                                                        li.attr('class', 'cartmini__item p-relative d-flex align-items-start');
+                                                        root.append(li);
+                                                        let a = $("<a>");
+                                                        a.attr("href", "\\cart")
+                                                        li.append(a)
+                                                        let div1 = $("<div>");
+                                                        div1.attr('class', 'cartmini__thumb mr-15');
+                                                        a.append(div1);
+                                                        let img = $("<img>");
+                                                        img.attr('src', server_cart_query["data"][i]["commodity_image_oss"]);
+                                                        img.attr('alt', '');
+                                                        div1.append(img);
+                                                        let div2 = $("<div>");
+                                                        div2.attr('class', 'cartmini__content');
+                                                        li.append(div2);
+                                                        let h3 = $("<h3>");
+                                                        h3.attr('class', 'cartmini__title');
+                                                        h3.text(server_cart_query["data"][i]["commodity_name"]);
+                                                        div2.append(h3);
+                                                        let span1 = $("<span>");
+                                                        span1.attr('class', 'cartmini__price');
+                                                        div2.append(span1);
+                                                        let span2 = $("<span>");
+                                                        span2.attr('class', 'price');
+                                                        span2.text(server_cart_query["data"][i]["amount"] + " × $" + server_cart_query["data"][i]["commodity_price"]);
+                                                        span1.append(span2);
+                                                    }
+                                                    successAddCart();
+                                                } else{
+                                                    if (response["returnvalue"] === 2) {
+                                                        warning();
+                                                        window.location = "/login";
+                                                    }
+                                                    else if (server_code === 3){
+                                                        warningAmount();
+                                                    }
+                                                    else if (server_code === 4){
+                                                        warningAmount2();
+                                                    }
+                                                    else{
+                                                        error();
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    });
+                                })
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div>&nbsp;</div>
+                <div class="latest-comments" style="width: 50%;margin-left: 20%">
+                    <ul>
+                        {% for comment in commodity_comments %}
+                            <li>
+                                <div class="comments-avatar">
+                                    <img src="{{ comment.author.avatar }}"
+                                         alt="" width="50" height="50">
+                                </div>
+                                <div class="comments-text">
+                                    <div class="avatar-name">
+                                        <h5>{{ comment.author.username }}</h5>
+                                        <span class="post-meta">{{ comment.create_time }}</span>
+                                    </div>
+                                    {% if user %}
+                                        {% if like_or_dislike[comment.id] %}
+                                            <button id="add_comment_like_span{{ comment.id }}"
+                                                    style="background-color: red;float: right"
+                                                    class="commodity_comment_like badge badge-info"
+                                                    data-user-id="{{ user.id if user else 'not_login' }}"
+                                                    data-comment-id="{{ comment.id }}">
+                                                Cancel {{ comment.like_amount }} </button>
+                                        {% else %}
+                                            <button style="background-color: blue;float: right"
+                                                    id="add_comment_like_span{{ comment.id }}"
+                                                    class="commodity_comment_like badge badge-info"
+                                                    data-user-id="{{ user.id if user else 'not_login' }}"
+                                                    data-comment-id="{{ comment.id }}">
+                                                Like {{ comment.like_amount }} </button>
+                                        {% endif %}
+                                    {% else %}
+                                        <button style="background-color: blue;float: right"
+                                                id="add_comment_like_span"
+                                                class="commodity_comment_like badge badge-info"
+                                                data-user-id="{{ user.id if user else 'not_login' }}"
+                                                data-comment-id="{{ comment.id }}">
+                                            Like {{ comment.like_amount }} </button>
+                                    {% endif %}
+                                    <div>{{ comment.content | safe }}</div>
+                                </div>
+                            <br>
+
+                            </li>
+                        {% endfor %}
+                        <br>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!--   Alert   -->
+        <script src="/static/assets/js/toast.js"></script>
+        <script>
+            function success() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Success',
+                    description: 'You give star successfully!',
+                    type: 'success',
+                    timeout: 5000
+                })
+            }
+
+            function successAddCart() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Success',
+                    description: 'Add to cart successfully!',
+                    type: 'success',
+                    timeout: 5000
+                })
+            }
+
+            function error() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Error',
+                    description: 'Internet Connect Error',
+                    type: 'error',
+                    timeout: 5000
+                })
+            }
+
+            function warning() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Warning',
+                    description: 'Please Login',
+                    type: 'warning',
+                    timeout: 5000
+                })
+            }
+
+            function warningAmount() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Warning',
+                    description: 'Shortage of product stock',
+                    type: 'warning',
+                    timeout: 5000
+                })
+            }
+
+            function warningAmount2() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Warning',
+                    description: 'After you add these items, the total number of items in your cart will exceed the inventory.',
+                    type: 'warning',
+                    timeout: 5000
+                })
+            }
+
+            function custom() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Hi',
+                    description: 'Custom message',
+                    type: 'custom',
+                    close_color: '#3498db',
+                    border_color: '#3498db',
+                    timeout: 5000
+                })
+            }
+        </script>
+
+    </section>
+    {% include "newFront/footer.html" %}
+    {% include "newFront/button_base.html" %}
+    <div class="chatContainer">
+    <div class="chatBtn">
+        <i class="iconfont icon-xiaoxi1"></i>
+    </div>
+{#    <div class="chat-message-num">0</div>#}
+    <div class="chatBox" ref="chatBox">
+        <div class="chatBox-head">
+{#            <div class="chatBox-head-one">#}
+{#                Conversations#}
+{#                <div class="chat-close" style="margin: 10px 10px 0 0;font-size: 14px">CLOSE</div>#}
+{#            </div>#}
+            <div class="chatBox-head-two">
+                {#                <div class="chat-return">BACK</div>#}
+                <div class="chat-people">
+                    <div class="ChatInfoHead">
+                        <img src="" alt="头像"/>
+                    </div>
+                    <div class="ChatInfoName">这是用户的名字，看看名字到底能有多长</div>
+                </div>
+                <div class="chat-close">{{ _("CLOSE") }}</div>
+            </div>
+        </div>
+        <div class="chatBox-info">
+            {#            <div class="chatBox-list" ref="chatBoxlist" style="display: none">#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"#}
+            {#                              alt="头像"></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 哈哈</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">5</div>#}
+            {#                </div>#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon02.png") }}" alt="头像"/></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 呵呵</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">8</div>#}
+            {#                </div>#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon03.png") }}" alt="头像"/></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 凯文</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">2</div>#}
+            {#                </div>#}
+            {#            </div>#}
+            <div class="chatBox-kuang" ref="chatBoxkuang">
+                <div class="chatBox-content">
+                    <div class="chatBox-content-demo" id="chatBox-content-demo">
+
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="left">
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"
+                                        alt="头像"/></div>
+                                <div class="chat-message">
+                                    给你看张图
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="left">
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"
+                                        alt="头像"/></div>
+                                <div class="chat-message">
+                                    <img src="{{ url_for('static',filename="assets/img/chatfigure/1.png") }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="right">
+                                <div class="chat-message">嗯，适合做壁纸</div>
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon02.png") }}"
+                                        alt="头像"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatBox-send">
+                    <div class="div-textarea" contenteditable="true"></div>
+                    <div>
+                        <label id="chat-tuxiang" title="发送图片" for="inputImage" class="btn-default-styles">
+                            <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png"
+                                   name="file" id="inputImage" class="hidden">
+                            <i class="iconfont icon-tuxiang"></i>
+                        </label>
+                        <button id="chat-fasong" class="btn-default-styles"><i class="iconfont icon-fasong"></i>
+                        </button>
+                    </div>
+                    <div class="biaoqing-photo">
+                        <ul>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script>
+    screenFuc();
+
+    function screenFuc() {
+        var topHeight = $(".chatBox-head").innerHeight();//聊天头部高度
+        //屏幕小于768px时候,布局change
+        var winWidth = $(window).innerWidth();
+        if (winWidth <= 768) {
+            var totalHeight = $(window).height(); //页面整体高度
+            $(".chatBox-info").css("height", totalHeight - topHeight);
+            var infoHeight = $(".chatBox-info").innerHeight();//聊天头部以下高度
+            //中间内容高度
+            $(".chatBox-content").css("height", infoHeight - 46);
+            $(".chatBox-content-demo").css("height", infoHeight - 46);
+
+            $(".chatBox-list").css("height", totalHeight - topHeight);
+            $(".chatBox-kuang").css("height", totalHeight - topHeight);
+            $(".div-textarea").css("width", winWidth - 106);
+        } else {
+            $(".chatBox-info").css("height", 495);
+            $(".chatBox-content").css("height", 448);
+            $(".chatBox-content-demo").css("height", 448);
+            $(".chatBox-list").css("height", 495);
+            $(".chatBox-kuang").css("height", 495);
+            $(".div-textarea").css("width", 300);
+        }
+    }
+
+    (window.onresize = function () {
+        screenFuc();
+        $(".chatBox").toggle(10);
+    })();
+    //未读信息数量为空时
+    var totalNum = $(".chat-message-num").html();
+    if (totalNum == "") {
+        $(".chat-message-num").css("padding", 0);
+    }
+    $(".message-num").each(function () {
+        var wdNum = $(this).html();
+        if (wdNum == "") {
+            $(this).css("padding", 0);
+        }
+    });
+
+
+    // 打开/关闭聊天框
+    $(".chatBtn").click(function () {
+        if ($(".chatBox").css('display') === "none"){
+            $(".chatBox").toggle(10);
+            $(".chatBox-head-two").css('display', 'block');
+            $(".chatBox-kuang").css('display', 'block');
+        }
+        else{
+            $(".chatBox").toggle(10);
+            $(".chatBox-head-two").css('display', 'none');
+            $(".chatBox-kuang").css('display', 'none');
+        }
+
+        $(".chat-message-num").html(0);
+        {#$(".chatBox-head-one").toggle();#}
+        {#$(".chatBox-head-two").toggle();#}
+        {#$(".chatBox-kuang").fadeToggle();#}
+
+        $(".ChatInfoName").text("Staff");
+
+        //聊天框默认最底部
+        $(document).ready(function () {
+            let chatBox = $("#chatBox-content-demo");
+            chatBox.empty()
+            $.post('/view_chat_history', {}).done(function (response) {
+                let server_chat_query = response['chat_query_dict'];
+                let server_code = response['server_code'];
+                if (server_code === 1) {
+                    window.location.href='\\login'
+                } else {
+                    for (let i = 0; i < server_chat_query["data"].length; i++) {
+                        $(".ChatInfoHead>img").attr("src", server_chat_query["data"][i]["staff-avatar"]);
+                        let root = $("<div>");
+                        root.attr('class', 'clearfloat');
+                        chatBox.append(root);
+                        let divAuthor = $("<div>")
+                        divAuthor.attr('class', 'author-name')
+                        root.append(divAuthor)
+                        let smallTime = $("<small>");
+                        smallTime.attr('class', 'chat-date');
+                        smallTime.text(server_chat_query["data"][i]["gmtcreate"]);
+                        divAuthor.append(smallTime);
+                        let divSide = $("<div>")
+
+                        if (server_chat_query["data"][i]["status"] === "1") {
+                            divSide.attr('class', 'left')
+                            root.append(divSide);
+                            let divAvatar = $("<div>");
+                            divAvatar.attr('class', 'chat-avatars');
+                            divSide.append(divAvatar);
+                            let img = $("<img>");
+                            img.attr('src', server_chat_query["data"][i]["staff-avatar"]);
+                            img.attr('alt', '头像');
+                            divAvatar.append(img);
+                            let divChat = $("<div>");
+                            divChat.attr('class', 'chat-message');
+                            divChat.html(server_chat_query["data"][i]["content"]);
+                            divSide.append(divChat);
+                        } else {
+                            divSide.attr('class', 'right')
+                            root.append(divSide);
+                            let divChat = $("<div>");
+                            divChat.attr('class', 'chat-message');
+                            divChat.html(server_chat_query["data"][i]["content"]);
+                            divSide.append(divChat);
+                            let divAvatar = $("<div>");
+                            divAvatar.attr('class', 'chat-avatars');
+                            divSide.append(divAvatar);
+                            let img = $("<img>");
+                            img.attr('src', server_chat_query["data"][i]["avatar"]);
+                            img.attr('alt', '头像');
+                            divAvatar.append(img);
+                        }
+                    }
+                }
+                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+            }).fail(function () {
+                error();
+            });
+            $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+        });
+    })
+
+    $(".chat-close").click(function () {
+        $(".chatBox").toggle(10);
+        {#$(".chatBox-head-one").toggle();#}
+        {#$(".chatBox-head-two").toggle();#}
+        {#$(".chatBox-kuang").fadeToggle();#}
+        $(".chatBox-head-two").css('display', 'none');
+        $(".chatBox-kuang").css('display', 'none');
+    })
+
+
+    window.setInterval(function () {
+        $.post('/update_count', {}).done(function (response) {
+            let server_chat_query = response['chat_query_dict'];
+            let server_count = response['chat_count'];
+            let server_code = response['server_code'];
+            if (server_code === 1) {
+
+            } else {
+                {#$(".chat-message-num").html(server_count);#}
+                let chatBox = $("#chatBox-content-demo");
+                for (let i = 0; i < server_chat_query["data"].length; i++) {
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    chatBox.append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+                    smallTime.text(server_chat_query["data"][i]["gmtcreate"]);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+
+                    divSide.attr('class', 'left')
+                    root.append(divSide);
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_chat_query["data"][i]["staff-avatar"]);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divChat.html(server_chat_query["data"][i]["content"]);
+                    divSide.append(divChat);
+                }
+            }
+        }).fail(function () {
+
+        });
+    }, 5000)
+
+
+    // 返回列表
+    /*
+    $(".chat-return").click(function () {
+        $(".chatBox-head-one").toggle(1);
+        $(".chatBox-head-two").toggle(1);
+        $(".chatBox-list").fadeToggle(1);
+        $(".chatBox-kuang").fadeToggle(1);
+    });
+
+     */
+
+    let shift = false;
+    let enter = false;
+    $(".div-textarea").bind("keydown",function(e){
+            　　var theEvent = e || window.event;
+            　　var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            　　 if (code === 13) {
+            　       $("#chat-fasong").click();
+            　　}
+            });
+
+
+/*
+    			document.onkeydown = function(event){
+				alert("按下:"+event.key+"键:"+event);
+			}
+
+ */
+
+    // 发送信息
+    $("#chat-fasong").click(function () {
+        var textContent = $(".div-textarea").html().replace(/[\n\r]/g, '<br>')
+        if (textContent !== "") {
+            $.post('/add_chat', {
+                'text of content': textContent,
+            }).done(function (response) {
+                let server_code = response['server_code'];
+                if (server_code === 1) {
+                    warning()
+                } else {
+                    let server_avatar = response['avatar']
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    $("#chatBox-content-demo").append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+
+                    let nowTime = new Date();
+                    let year = nowTime.getFullYear();
+                    let month = (nowTime.getMonth() + 1).toString().padStart(2, '0');
+                    let date = (nowTime.getDate()).toString().padStart(2, '0');
+                    let hour = (nowTime.getHours()).toString().padStart(2, '0');
+                    let minute = (nowTime.getMinutes()).toString().padStart(2, '0');
+                    let second = (nowTime.getSeconds()).toString().padStart(2, '0');
+
+                    smallTime.text(year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+                    divSide.attr('class', 'right')
+                    root.append(divSide);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divChat.html(textContent);
+                    divSide.append(divChat);
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_avatar);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img);
+                    // 发送后清空输入框
+                    $(".div-textarea").html("");
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                }
+            })
+        }
+    });
+
+    //      发送表情
+    $("#chat-biaoqing").click(function () {
+        $(".biaoqing-photo").toggle();
+    });
+    $(document).click(function () {
+        $(".biaoqing-photo").css("display", "none");
+    });
+    $("#chat-biaoqing").click(function (event) {
+        event.stopPropagation();//阻止事件
+    });
+
+    $(".emoji-picker-image").each(function () {
+        $(this).click(function () {
+            var bq = $(this).parent().html();
+            console.log(bq)
+            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+                "<div class=\"author-name\"><small class=\"chat-date\">2017-12-02 14:26:58</small> </div> " +
+                "<div class=\"right\"> <div class=\"chat-message\"> " + bq + " </div> " +
+                "<div class=\"chat-avatars\"><img src=\"img/icon01.png\" alt=\"头像\" /></div> </div> </div>");
+            //发送后关闭表情框
+            $(".biaoqing-photo").toggle();
+            //聊天框默认最底部
+            $(document).ready(function () {
+                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+            });
+        })
+    });
+
+    //      发送图片
+    function selectImg(pic) {
+        if (!pic.files || !pic.files[0]) {
+            return;
+        }
+        let formData = new FormData();
+        formData.append("img", pic.files[0]);
+
+        $.ajax({
+            url:"/add_img",
+            type:"post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                let server_code = response["server_code"];
+                if (server_code === 1){
+                    warning();
+                }
+                else{
+                    let server_avatar = response["avatar"]
+                    var reader = new FileReader();
+                    reader.onload = function (evt) {
+                    var images = evt.target.result;
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    $("#chatBox-content-demo").append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+
+                    let nowTime = new Date();
+                    let year = nowTime.getFullYear();
+                    let month = (nowTime.getMonth() + 1).toString().padStart(2, '0');
+                    let date = (nowTime.getDate()).toString().padStart(2, '0');
+                    let hour = (nowTime.getHours()).toString().padStart(2, '0');
+                    let minute = (nowTime.getMinutes()).toString().padStart(2, '0');
+                    let second = (nowTime.getSeconds()).toString().padStart(2, '0');
+
+                    smallTime.text(year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+                    divSide.attr('class', 'right')
+                    root.append(divSide);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divSide.append(divChat);
+                    let imgChat = $("<img>");
+                    imgChat.attr('src', images);
+                    imgChat.attr('alt', 'img');
+                    divChat.html(imgChat)
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_avatar);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img)
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                };
+                    reader.readAsDataURL(pic.files[0]);
+                }
+            },
+            error:function(data) {
+                error();
+            }
+        });
+
+
+    }
+
+
+</script>
+    {#    <!-- JS here -->#}
+    <script src="{{ url_for('static',filename="assets/js/search.js") }}"></script>
+
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</main>

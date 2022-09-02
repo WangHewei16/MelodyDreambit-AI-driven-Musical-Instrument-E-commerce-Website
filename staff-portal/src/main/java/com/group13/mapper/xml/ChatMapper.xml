@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group13.mapper.ChatMapper">
+
+    <select id="getUserList" resultType="com.group13.entity.dto.ChatUserList">
+        select u.id as userId,
+        any_value(u.username) as username,
+        ANY_VALUE(c.gmt_create) as gmtCreate
+        from chat as c LEFT JOIN `user` u
+        on c.user_id = u.id
+        where c.staff_id = #{staffId}
+		group by userid
+	    order by ANY_VALUE(gmtCreate) desc
+        limit 10
+    </select>
+    <select id="list7Day" resultType="com.group13.entity.Chat">
+        select *
+        from chat
+        WHERE user_id = #{userId}
+        and staff_id = #{staffId}
+        and datediff(CURRENT_DATE, chat.gmt_create) <![CDATA[ <= 30]]>
+        order by gmt_create desc
+        limit 75
+    </select>
+</mapper>

@@ -1,0 +1,341 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% block title %} <title>{{ _("GoldMelody - Sign up")}} </title> {% endblock %}
+{#    <meta name="csrf-token" content="{{ csrf_token() }}">#}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+{#    <title>Blackwood - Clean Minimal eCommerce HTML5 Template</title>#}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <script src="{{ url_for('static', filename='assets/js/register.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    {% include "newFront/head_base.html" %}
+
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="\https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+<!-- back to top end -->
+
+        {% include "newFront/header_area.html" %}
+
+<main>
+    <!-- page__title-start -->
+    <section class="page__title p-relative d-flex align-items-center"
+             data-background="{{url_for('static',filename='assets/img/bg/page-title-4.jpg')}}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1>{{ _("Sign Up")}}</h1>
+                        <div class="page__title-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="\index">{{ _("Home") }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ _("Sign Up")}}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- signup__area start -->
+    <section class="signup__area po-rel-z1 pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                    <div class="sign__wrapper white-bg">
+{#                        <div class="sign__header mb-35">#}
+{#                            <div class="sign__in text-center">#}
+{#                                <a href="\#" class="sign__social g-plus text-start mb-15"><i#}
+{#                                        class="fab fa-google-plus-g"></i>Sign Up with Google</a>#}
+{#                                <p><span>........</span> Or, <a href="\/login">sign up</a> with your#}
+{#                                    email<span> ........</span></p>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="sign__form">
+                            <form action="#">
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>{{ _("Full Name")}}</h5>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="{{ _("Full name")}}" name="username">
+                                        <i class="fal fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>{{ _("Work email")}}</h5>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="{{ _("e-mail address")}}" name="email">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                </div>
+
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>{{ _("Email-captcha") }}</h5>
+                                    <span class="input-group-btn">
+
+                                    </span>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="{{ _("email-captcha") }}" name="email-captcha">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                    <button id="email-captcha-btn" class="btn-tp">{{ _("Send") }}</button>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>{{ _("Password") }}</h5>
+                                    <div class="sign__input">
+                                        <input type="password" placeholder="{{ _("Password") }}" name="password">
+                                        <i class="fal fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-10">
+                                    <h5>{{ _("Re-Password") }}</h5>
+                                    <div class="sign__input">
+                                        <input type="password" placeholder="{{ _("Re-Password") }}" name="repeat-password">
+                                        <i class="fal fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-10">
+                                    <h5>{{ _("Graph-captcha") }}</h5>
+                                    <span class="input-group-addon captcha-addon">
+                                    <img id="captcha-img" class="captcha-img" src="{{ url_for('front.graph_captcha') }}" alt="">
+                                    </span>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="{{ _("Graph-captcha") }}" name="graph-captcha">
+                                        <i class="fal fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__action d-flex justify-content-between mb-30">
+                                    <div class="sign__agree d-flex align-items-center">
+                                        <input class="m-check-input" type="checkbox" id="m-agree" name ="m-agree" >
+                                        <label class="m-check-label" for="m-agree">{{ _("I agree to the")}} <a href="\terms&conditions">{{ _("Terms
+                                                &amp; Conditions")}}</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <a class="golden_hover_btn" style="height: 100px;width: 200px"  id="submit-btn-register"><span></span> {{ _("Sign Up")}}</a>
+                                <div class="sign__new text-center mt-20">
+                                    <p>{{ _("Already in Markit") }} ? <a href="\login"> {{ _("Sign In")}}</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- signup__area end -->
+
+</main>
+
+    {% include "newFront/footer.html" %}
+    {% include "newFront/button_base.html" %}
+{#    <script src="{{ url_for('static', filename='front/js/register.js') }}"></script>#}
+{#    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>#}
+{#    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>#}
+{#    <script src="{{ url_for('static', filename='front/js/zlajax.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='front/js/zlparam.js') }}"></script>#}
+{##}
+{##}
+{##}
+{#<script src="{{ url_for('static', filename='front/js/bootstrap.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/vendor/jquery.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/vendor/waypoints.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/bootstrap-bundle.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/meanmenu.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/swiper-bundle.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/owl-carousel.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/jquery-ui-slider-range.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/magnific-popup.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/parallax.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/backtotop.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/nice-select.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/counterup.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/countdown.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/wow.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/isotope-pkgd.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/imagesloaded-pkgd.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/ajax-form.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>#}
+<!-- JS here -->
+{#    <script src="assets/js/vendor/jquery.js"></script>#}
+{#    <script src="assets/js/vendor/waypoints.js"></script>#}
+{#    <script src="assets/js/bootstrap-bundle.js"></script>#}
+{#    <script src="assets/js/meanmenu.js"></script>#}
+{#    <script src="assets/js/swiper-bundle.js"></script>#}
+{#    <script src="assets/js/owl-carousel.js"></script>#}
+{#    <script src="assets/js/jquery-ui-slider-range.js"></script>#}
+{#    <script src="assets/js/magnific-popup.js"></script>#}
+{#    <script src="assets/js/parallax.js"></script>#}
+{#    <script src="assets/js/backtotop.js"></script>#}
+{#    <script src="assets/js/nice-select.js"></script>#}
+{#    <script src="assets/js/counterup.js"></script>#}
+{#    <script src="assets/js/countdown.js"></script>#}
+{#    <script src="assets/js/wow.js"></script>#}
+{#    <script src="assets/js/isotope-pkgd.js"></script>#}
+{#    <script src="assets/js/imagesloaded-pkgd.js"></script>#}
+{#    <script src="assets/js/ajax-form.js"></script>#}
+{#    <script src="assets/js/main.js"></script>#}
+</body>
+
+    <!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Success message',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error, Please try again later',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+
+        function warningEmail() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Warning',
+                description: 'Please enter an email address in the correct format\n请输入正确格式的邮箱',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningEmail2() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Warning',
+                description: 'Failed to send the verification code. Procedure\n发送验证码失败',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningAgree() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please choose I agree to these requirements\n请选择我同意这些要求',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningCorrect() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Parameter error.\n参数错误',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Custom message',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+
+</html>

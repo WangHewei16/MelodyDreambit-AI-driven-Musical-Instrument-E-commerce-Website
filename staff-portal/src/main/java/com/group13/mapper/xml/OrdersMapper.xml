@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group13.mapper.OrdersMapper">
+    <update id="changeAmount">
+        update commodity set amount = (#{amount} + amount)
+        where id = #{commodityId}
+    </update>
+
+    <select id="getCommodityDetail" resultType="com.group13.entity.dto.RefundDto">
+        select
+	        commodity_id, amount
+        from
+	        cart
+        where
+	        order_id = #{id}
+        order by
+	        commodity_id
+    </select>
+</mapper>

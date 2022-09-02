@@ -1,0 +1,57 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?2ed30a5aa4f649b97cd13cccc5a47f29") format("truetype"),
+url("./flaticon.woff?2ed30a5aa4f649b97cd13cccc5a47f29") format("woff"),
+url("./flaticon.woff2?2ed30a5aa4f649b97cd13cccc5a47f29") format("woff2"),
+url("./flaticon.eot?2ed30a5aa4f649b97cd13cccc5a47f29#iefix") format("embedded-opentype"),
+url("./flaticon.svg?2ed30a5aa4f649b97cd13cccc5a47f29#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "truck": "\f101",
+    "credit-card": "\f102",
+    "exchange": "\f103",
+    "call-center-agent": "\f104",
+    "heart": "\f105",
+    "user": "\f106",
+    "random-button": "\f107",
+    "shopping-cart": "\f108",
+);
+
+.flaticon-truck:before {
+    content: map-get($flaticon-map, "truck");
+}
+.flaticon-credit-card:before {
+    content: map-get($flaticon-map, "credit-card");
+}
+.flaticon-exchange:before {
+    content: map-get($flaticon-map, "exchange");
+}
+.flaticon-call-center-agent:before {
+    content: map-get($flaticon-map, "call-center-agent");
+}
+.flaticon-heart:before {
+    content: map-get($flaticon-map, "heart");
+}
+.flaticon-user:before {
+    content: map-get($flaticon-map, "user");
+}
+.flaticon-random-button:before {
+    content: map-get($flaticon-map, "random-button");
+}
+.flaticon-shopping-cart:before {
+    content: map-get($flaticon-map, "shopping-cart");
+}

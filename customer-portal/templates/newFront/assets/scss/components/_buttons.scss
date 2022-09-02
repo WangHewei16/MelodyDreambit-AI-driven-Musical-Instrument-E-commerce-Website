@@ -1,0 +1,407 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  04. Button CSS START
+/*----------------------------------------*/ 
+
+.b-btn{
+	position: relative;
+	display: inline-block;
+	font-size: 14px;
+	color: $white;
+	background-color: $black;
+	border: 2px solid $black;
+	height: 50px;
+	line-height: 42px;
+	text-align: center;
+	padding: 0 40px;
+	text-transform: uppercase;
+	font-weight: 500;
+	&:hover{
+		background-color: $white;
+		color: $black;
+	}
+	&:focus{
+		background-color: $black;
+		border-color: $black;
+		color: $white;
+	}
+}
+
+.b-btn-2{
+	position: relative;
+	display: inline-block;
+	font-size: 14px;
+	color: $black;
+	background-color: $white;
+	border: 2px solid $black;
+	height: 50px;
+	line-height: 46px;
+	text-align: center;
+	padding: 0 40px;
+	text-transform: uppercase;
+	font-weight: 500;
+	&:hover{
+		background-color: $black;
+		color: $white;
+	}
+	&:focus{
+		background-color: $white;
+		border-color: $black;
+		color: $black;
+	}
+}
+
+.b-btn-3{
+	position: relative;
+	display: inline-block;
+	font-size: 13px;
+	color: $white;
+	background-color: $theme-color-2;
+	border: 2px solid $theme-color-2;
+	height: 38px;
+	line-height: 32px;
+	text-align: center;
+	padding: 0 23px;
+	text-transform: capitalize;
+	font-weight: 500;
+	@include border-radius(3px);
+	&:hover{
+		background-color: $black;
+		border-color: $black;
+		color: $white;
+	}
+	&:focus{
+		background-color: $theme-color-2;
+		border-color: $theme-color-2;
+		color: $white;
+	}
+}
+
+
+/* caterogy button */
+
+.cat-btn{
+	display: inline-block;
+	padding: 0 25px;
+	height: 40px;
+	line-height: 40px;
+	color: $white;
+	font-weight: 500;
+	background-color: $theme-color-1;
+	@include border-radius(3px);
+	& i{
+		margin-right: 5px;
+	}
+	&:hover{
+		background-color: $black;
+	}
+}
+
+.link-btn{
+	font-size: 14px;
+	font-weight: 600;
+	color: $theme-color-1;
+	text-transform: capitalize;
+
+	&:hover{
+		color: $black;
+	}
+}
+.link-btn-2{
+	font-size: 14px;
+	font-weight: 600;
+	color: $theme-color-2;
+	text-transform: capitalize;
+	text-decoration: underline;
+	transition: .3s;
+	&:hover{
+		color: $black;
+		text-decoration: underline;
+	}
+}
+
+.link-btn-3{
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: capitalize;
+	transition: .3s;
+	display: inline-block;
+	& i{
+		margin-left: 5px;
+		position: relative;
+		top: 2px;
+	}
+	&:hover{
+		color: $theme-color-3;
+	}
+}
+
+/* slider btn */
+
+.slider-btn{
+	font-size: 20px;
+	text-transform: capitalize;
+	color: $white;
+	font-weight: 300;
+	& i{
+		margin-left: 5px;
+		@include transform(translateY(2px));
+	}
+	&:hover{
+		color: $white;
+	}
+}
+
+/* pulse btn */
+
+.pulse-btn{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	background-color: $white;
+	@include border-radius(50%);
+	color: $black;
+	animation: pulse 2s infinite;
+	&:hover{
+		background-color: $black;
+		color: $white;
+	}
+	& i{
+		padding-left: 2px;
+	}
+}
+
+/* add to cart btn */
+
+.add-to-cart-btn{
+	position: relative;
+	display: inline-block;
+	font-size: 15px;
+	color: $white;
+	background-color: $black;
+	border: 2px solid $black;
+	height: 50px;
+	line-height: 46px;
+	text-align: center;
+	padding: 0 40px;
+
+	&:hover{
+		background-color: $white;
+		color: $black;
+	}
+}
+.add-to-cart-btn-2{
+	position: relative;
+	display: inline-block;
+	font-size: 12px;
+	line-height: 1.2;
+	color: $theme-color-2;
+	font-weight: 600;
+
+	&::after{
+		position: absolute;
+		content: '';
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $theme-color-2;
+	}
+	&:hover{
+		color: $theme-color-2;
+	}
+}
+.select-btn {
+	display: inline-block;
+	height: 40px;
+	line-height: 36px;
+	border: 1px solid $border-3;
+	border-radius: 2px;
+	padding: 0 15px;
+	font-size: 14px;
+	font-weight: 500;
+	color: $heading-color;
+	transition: .4s;
+	text-align: center;
+	&:hover{
+		background-color: $theme-color-3;
+		color: $white;
+		border-color: $theme-color-3;
+	}
+}
+.select-btn-3{
+	display: inline-block;
+	height: 40px;
+	line-height: 36px;
+	border: 1px solid $border-3;
+	border-radius: 3px;
+	padding: 0 40px;
+	font-size: 14px;
+	font-weight: 500;
+	color: $heading-color;
+	transition: .4s;
+	text-align: center;
+	&:hover{
+		background-color: $theme-color-3;
+		color: $white;
+		border-color: $theme-color-3;
+	}
+}
+.add-cart-btn{
+	display: inline-block;
+	height: 48px;
+	line-height: 44px;
+	text-align: center;
+	padding: 0 70px;
+	color: $white;
+	background: $black;
+	border: 2px solid $black;
+	font-size: 14px;
+	&:hover{
+	  background: $white;
+	  color: $black;
+	}
+}
+.btn-tp{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	background-color: $theme-color-3;
+	border-color: transparent;
+	color: $black;
+	border-radius: 0px;
+	font-size: 14px;
+	font-weight: 700;
+	height: 60px;
+	line-height: 60px;
+	padding: 0px 50px;
+	border-width: 0;
+	border-style: solid;
+	box-shadow: none;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	z-index: 1;
+	white-space: nowrap;
+	border-radius: 8px;
+	&::before {
+		position: absolute;
+		content: '';
+		width: 75px;
+		height: 75px;
+		background-color: #000000;
+		border-radius: 50%;
+		left: 0;
+		bottom: 0;
+		transform: translate(-50%, 50%);
+		z-index: -1;
+		opacity: 0.1;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	&:hover::before {
+		width: 1200px;
+		height: 470px;
+	}
+	&:hover{
+		box-shadow: none;
+		color: $white;
+	}
+}
+.btn-tp-2{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	background-color: $theme-color-3;
+	border-color: transparent;
+	color: $black;
+	border-radius: 0px;
+	font-size: 14px;
+	font-weight: 700;
+	height: 50px;
+	line-height: 48px;
+	padding: 0px 50px;
+	border-width: 0;
+	border-style: solid;
+	box-shadow: none;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	z-index: 1;
+	white-space: nowrap;
+	border-radius: 8px;
+	&::before {
+		position: absolute;
+		content: '';
+		width: 75px;
+		height: 75px;
+		background-color: #000000;
+		border-radius: 50%;
+		left: 0;
+		bottom: 0;
+		transform: translate(-50%, 50%);
+		z-index: -1;
+		opacity: 0.1;
+		transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	&:hover::before {
+		width: 1200px;
+		height: 470px;
+	}
+	&:hover{
+		box-shadow: none;
+		color: $white;
+	}
+}
+.btn-d:focus, .btn:focus:active {
+box-shadow: none;
+}
+.btn-d:hover {
+box-shadow: none;
+}
+.btn-d:hover::before {
+width: 420px;
+height: 420px;
+}
+.btn-d-margin {
+margin-top: 40px;
+}
+.btn-d {
+display: inline-block;
+position: relative;
+overflow: hidden;
+background-color: transparent;
+border-color: transparent;
+color: #666666;
+border-radius: 0px;
+font-size: 16px;
+font-weight: 700;
+font-family: "Archivo", sans-serif;
+height: 50px;
+line-height: 50px;
+padding: 0px 35px;
+border-width: 0;
+border-style: solid;
+box-shadow: none;
+transition: all 0.3s ease 0s;
+cursor: pointer;
+z-index: 1;
+white-space: nowrap;
+}
+
+@media only screen and (max-width: 575px) {
+.btn {
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+}
+}
+/* more btn */
+.more-btn{
+	font-size: 14px;
+	display: inline-block;
+	font-weight: 500;
+	color: $theme-color-2;
+	& i{
+		padding-left: 2px;
+	}
+}

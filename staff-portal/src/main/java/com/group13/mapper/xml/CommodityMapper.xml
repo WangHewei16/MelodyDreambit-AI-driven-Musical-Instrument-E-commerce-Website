@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.group13.mapper.CommodityMapper">
+
+    <select id="countVisit" resultType="java.lang.Integer">
+        select sum(visit_amount) from commodity
+    </select>
+
+    <select id="countBuy" resultType="java.lang.Integer">
+        select sum(buy_amount) from commodity
+    </select>
+    <select id="countVisitByType" resultType="java.lang.Integer">
+        select sum(visit_amount)
+        from commodity
+        where `type` = #{type}
+    </select>
+</mapper>

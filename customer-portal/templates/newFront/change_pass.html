@@ -1,0 +1,563 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% block title %} <title>{{ _("GoldMelody - Change Password")}}</title> {% endblock %}
+{% include "newFront/head_base.html" %}
+{#    <meta name="csrf-token" content="{{ csrf_token() }}">#}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+{#    <title>Blackwood - Clean Minimal eCommerce HTML5 Template</title>#}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <!-- CSS here -->
+    <script src="{{ url_for('static', filename='assets/js/changepass.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+
+
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="\https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+<!-- back to top end -->
+
+        {% include "newFront/header_area.html" %}
+
+<main>
+    <!-- page__title-start -->
+    <section class="page__title p-relative d-flex align-items-center"
+             data-background="{{url_for('static',filename='assets/img/bg/page-title-4.jpg')}}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1>{{ _("Change Password")}}</h1>
+                        <div class="page__title-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="\index">{{ _("Home") }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ _("Change Password")}}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- signup__area start -->
+    <section class="signup__area po-rel-z1 pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                    <div class="sign__wrapper white-bg">
+                        <div class="sign__form">
+                            <form action="#">
+{#                                <div class="sign__input-wrapper mb-25">#}
+{#                                    <h5>Full Name</h5>#}
+{#                                    <div class="sign__input">#}
+{#                                        <input type="text" placeholder="Full name" name="username">#}
+{#                                        <i class="fal fa-user"></i>#}
+{#                                    </div>#}
+{#                                </div>#}
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>{{ _("Work email")}}</h5>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="{{ _("e-mail address")}}" name="email">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                </div>
+
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>{{ _("Email-captcha") }}</h5>
+                                    <span class="input-group-btn">
+
+                                    </span>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="{{ _("email-captcha") }}" name="email-captcha">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                    <button id="email-captcha-btn" class="btn-tp">Send email captcha</button>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>{{ _("New Password")}}</h5>
+                                    <div class="sign__input">
+                                        <input type="password" placeholder="{{ _("Password") }}" name="password">
+                                        <i class="fal fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-10">
+                                    <h5>{{ _("Re-Password") }}</h5>
+                                    <div class="sign__input">
+                                        <input type="password" placeholder="{{ _("Re-Password") }}" name="repeat-password">
+                                        <i class="fal fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-10">
+                                    <h5>{{ _("Graph-captcha") }}</h5>
+                                    <span class="input-group-addon captcha-addon">
+                                    <img id="captcha-img" class="captcha-img" src="{{ url_for('front.graph_captcha') }}" alt="">
+                                    </span>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="{{ _("Graph-captcha") }}" name="graph-captcha">
+                                        <i class="fal fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__action d-flex justify-content-between mb-30">
+                                    <div class="sign__agree d-flex align-items-center">
+                                        <input class="m-check-input" type="checkbox" id="m-agree">
+                                        <label class="m-check-label" for="m-agree">{{ _("I agree to the ")}}<a href="\#">{{ _("Terms") }}
+                                            &amp; {{ _("Conditions") }}</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <button class="btn-tp w-100" id="submit-btn-change"><span></span> {{ _("Change the Password")}}</button>
+{#                                <div class="sign__new text-center mt-20">#}
+{#                                    <p>Already in Markit ? <a href="\login"> Sign In</a></p>#}
+{#                                </div>#}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- signup__area end -->
+
+</main>
+
+<!-- footer area start -->
+<footer>
+    <div class="footer__area footer-bg">
+        <div class="footer__top footer__top-space pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                        <div class="footer__widget pb-30">
+                            <h3 class="footer__widget-title footer__widget-title-3">{{ _("Need help")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__contact">
+                                    <h3 class="footer__contact-phone"><a href="\tel:1234-5678-90">(+86) 138 209
+                                        60171</a></h3>
+                                    <div class="footer__opening mb-15">
+                                        <p>{{ _("Monday - Friday") }}: 9:00-20:00</p>
+                                        <p>{{ _("Saturady") }}: 11:00 - 15:00</p>
+                                    </div>
+                                    <div class="footer__contact-email footer__contact-email-2">
+                                        <p><a href="\mailto:balckwood@support.com">737272215@qq.com</a></p>
+                                    </div>
+                                    <div class="footer__social footer__social-3">
+                                        <ul>
+                                            <li>
+                                                <a href="\#">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="\#">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="\#">
+                                                    <i class="fab fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="\#">
+                                                    <i class="fab fa-youtube"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="\#">
+                                                    <i class="fab fa-pinterest"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                        <div class="footer__widget footer-col-3 pb-30">
+                            <h3 class="footer__widget-title footer__widget-title-3">{{ _("Useful Links")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__links footer__links-2">
+                                    <ul>
+                                        <li>
+                                            <a href="\contact">{{ _("Privacy Policy")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Returns") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Terms & Conditions")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Contact Us")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\blog_details">{{ _("Latest News")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Our Sitemap")}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                        <div class="footer__widget footer-col-4 pb-30">
+                            <h3 class="footer__widget-title footer__widget-title-3">{{ _("Our Stores")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__links footer__links-2">
+                                    <ul>
+                                        <li>
+                                            <a href="\about">{{ _("New York")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\about">{{ _("London SF")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\about">{{ _("Cockfosters BP")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\#">{{ _("Los Angele")}}s</a>
+                                        </li>
+                                        <li>
+                                            <a href="\about">{{ _("Chicago") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\about">{{ _("Las Vegas")}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                        <div class="footer__widget footer-col-5 pb-30">
+                            <h3 class="footer__widget-title footer__widget-title-3">{{ _("My Account")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__links footer__links-2">
+                                    <ul>
+                                        <li>
+                                            <a href="\contact">{{ _("My Account")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Order History")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\wishlist">{{ _("Wish List")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact.htmcontact">{{ _("Newsletter") }}</a>
+                                        </li>
+                                        <li><a href="\contact">{{ _("Shipping & Returns")}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                        <div class="footer__widget footer-col-5 pb-30">
+                            <h3 class="footer__widget-title footer__widget-title-3">{{ _("Customer Service")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__links footer__links-2">
+                                    <ul>
+                                        <li>
+                                            <a href="\contact">{{ _("Search Terms")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Advanced Search")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Help & FAQs")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Furniture Expert")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Our Sitemap")}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\contact">{{ _("Find A Store")}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__offer">
+            <div class="container">
+                <div class="footer__offer-inner footer__offer-inner-2">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-6 col-lg-6 col-md-6">
+                            <div class="footer__subscribe footer__subscribe-3">
+                                <p>{{ _("Sign up for our Newsletter")}}</p>
+                                <form action="#">
+                                    <div class="footer__subscribe-input">
+                                        <input type="email" placeholder="{{ _("Enter Email ID")}} ...">
+                                        <button type="submit"><i class="fab fa-telegram-plane"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-lg-6 col-md-6">
+                            <div class="payment-image-2 text-md-end">
+                                <a href="\#"><img src ="{{url_for('static',filename='assets/img/payment/payment-2.png')}}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="footer__bottom-wrapper text-center">
+                            <div class="footer__bottom-links">
+                                <ul>
+                                    <li>
+                                        <a href="\about">{{ _("About Us")}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="\contact">{{ _("Delivery Information")}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="\contact">{{ _("Privacy Policy")}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="\contact">{{ _("Terms & Conditions")}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="\contact">{{ _("Contact Us")}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="\contact">{{ _("Site Map")}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer__copyright">
+                                <p>Copyright ©2022 By <a href="\http://www.bootstrapmb.com/">bootstrapmb</a> All
+                                    Rights Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer area end -->
+    {% include "newFront/button_base.html" %}
+{#    <script src="{{ url_for('static', filename='front/js/register.js') }}"></script>#}
+{#    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>#}
+{#    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>#}
+{#    <script src="{{ url_for('static', filename='front/js/zlajax.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='front/js/zlparam.js') }}"></script>#}
+{##}
+{##}
+{##}
+{#<script src="{{ url_for('static', filename='front/js/bootstrap.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/vendor/jquery.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/vendor/waypoints.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/bootstrap-bundle.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/meanmenu.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/swiper-bundle.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/owl-carousel.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/jquery-ui-slider-range.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/magnific-popup.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/parallax.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/backtotop.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/nice-select.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/counterup.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/countdown.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/wow.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/isotope-pkgd.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/imagesloaded-pkgd.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/ajax-form.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>#}
+<!-- JS here -->
+{#    <script src="assets/js/vendor/jquery.js"></script>#}
+{#    <script src="assets/js/vendor/waypoints.js"></script>#}
+{#    <script src="assets/js/bootstrap-bundle.js"></script>#}
+{#    <script src="assets/js/meanmenu.js"></script>#}
+{#    <script src="assets/js/swiper-bundle.js"></script>#}
+{#    <script src="assets/js/owl-carousel.js"></script>#}
+{#    <script src="assets/js/jquery-ui-slider-range.js"></script>#}
+{#    <script src="assets/js/magnific-popup.js"></script>#}
+{#    <script src="assets/js/parallax.js"></script>#}
+{#    <script src="assets/js/backtotop.js"></script>#}
+{#    <script src="assets/js/nice-select.js"></script>#}
+{#    <script src="assets/js/counterup.js"></script>#}
+{#    <script src="assets/js/countdown.js"></script>#}
+{#    <script src="assets/js/wow.js"></script>#}
+{#    <script src="assets/js/isotope-pkgd.js"></script>#}
+{#    <script src="assets/js/imagesloaded-pkgd.js"></script>#}
+{#    <script src="assets/js/ajax-form.js"></script>#}
+{#    <script src="assets/js/main.js"></script>#}
+
+<!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Success',
+                description: 'Add Address Successfully',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+
+        function warning() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please Login',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningEmail() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please enter an email address in the correct format',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningHuge() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'The picture is too large, please select it again.',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningError() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Something is error',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Custom message',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</body>
+
+</html>

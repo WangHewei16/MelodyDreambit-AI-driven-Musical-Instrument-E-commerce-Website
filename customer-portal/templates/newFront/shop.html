@@ -1,0 +1,1548 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - Shop") }} </title> {% endblock %}
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="/static/assets/js/star.js"></script>
+
+
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+<!-- back to top end -->
+
+        {% include "newFront/header_area.html" %}
+
+<!-- page__title-start -->
+{#        <section class="page__title p-relative d-flex align-items-center"#}
+{#            data-background="../assets/img/bg/page-title-1.jpg"#}
+{#            style="background-image: url(assets/img/page-title/page-title-1.jpg);">#}
+<main>
+    <section class="page__title p-relative d-flex align-items-center"
+             data-background="{{ url_for('static',filename='assets/img/bg/page-title-1.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1 style="color:white">{{ _("Shop") }}</h1>
+                        <div class="page__title-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="\index" style="color:white">{{ _("Home") }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page" style="color:white">{{ _("Shop") }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- product-details-start -->
+    <section class="shop-details pt-90 pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-4">
+                    <div class="product-sidebar-area mr-60">
+                        <div class="product-widget mb-30">
+                            <h5 class="pt-title mb-20">{{ _("Product categories")}}</h5>
+                            <div class="widget-category-list">
+                                <form method="post" action="/shop">
+                                    <div class="single-widget-category">
+                                        <input type="checkbox" id="cat-item-1" name="cat-item">
+                                        <label for="cat-item-1">{{ _("Pipes") }} <span>({{ pipes_number_type }})</span></label>
+                                    </div>
+                                    <div class="single-widget-category">
+                                        <input type="checkbox" id="cat-item-2" name="cat-item">
+                                        <label for="cat-item-2">{{ _("Electronic") }}
+                                            <span>({{ electronic_number_type }})</span></label>
+                                    </div>
+                                    <div class="single-widget-category">
+                                        <input type="checkbox" id="cat-item-3" name="cat-item">
+                                        <label for="cat-item-3">{{ _("Percussion") }}
+                                            <span>({{ precussion_number_type }})</span></label>
+                                    </div>
+                                    <div class="single-widget-category">
+                                        <input type="checkbox" id="cat-item-4" name="cat-item">
+                                        <label for="cat-item-4">{{ _("Piano") }} <span>({{ piano_number_type }})</span></label>
+                                    </div>
+                                    <div class="single-widget-category">
+                                        <input type="checkbox" id="cat-item-5" name="cat-item">
+                                        <label for="cat-item-5">{{ _("Guitar") }} <span>({{ guitar_number_type }})</span></label>
+                                    </div>
+                                    <div class="single-widget-category">
+                                        <input type="checkbox" id="cat-item-6" name="cat-item">
+                                        <label for="cat-item-6">{{ _("Other") }} <span>({{ other_number_type }})</span></label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="product-widget mb-30">
+                            <div class="single-widget">
+                                <h5 class="pt-title pb-20">{{ _("Filter By Price")}}</h5>
+                                <form action="#">
+                                    <div class="ui-price-slider">
+                                        <div class="slider-range">
+                                            <div id="slider-range"
+                                                 class="mb-20 ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                                <span tabindex="0"
+                                                      class="ui-slider-handle ui-corner-all ui-state-default"></span><span
+                                                    tabindex="0"
+                                                    class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <p>
+                                                        <label for="amount">{{ _("Price") }} :</label>
+                                                        <input type="text" id="amount" name="price" readonly="">
+                                                    </p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="text-end">
+                                                        <a href="javascript:void(0);" class="sm-filter-title"
+                                                           id="search">{{ _("Filter") }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {#                            <div class="product-widget mb-30">#}
+                        {#                                <div class="single-widget">#}
+                        {#                                    <h5 class="pt-title mb-20">Filter By Choose Color</h5>#}
+                        {#                                    <div class="widget-color-list widget-color-box scroll-box-default">#}
+                        {#                                        <form action="#">#}
+                        {#                                            <div class="single-widget-category">#}
+                        {#                                                <input type="checkbox" id="color-item-1" name="cat-item">#}
+                        {#                                                <label for="color-item-1" class="color-black-bg">Black#}
+                        {#                                                    <span>(12)</span></label>#}
+                        {#                                            </div>#}
+                        {#                                            <div class="single-widget-category">#}
+                        {#                                                <input type="checkbox" id="color-item-2" name="cat-item">#}
+                        {#                                                <label for="color-item-2" class="color-green-bg">Green#}
+                        {#                                                    <span>(02)</span></label>#}
+                        {#                                            </div>#}
+                        {#                                            <div class="single-widget-category">#}
+                        {#                                                <input type="checkbox" id="color-item-3" name="cat-item">#}
+                        {#                                                <label for="color-item-3" class="color-blue-bg">Blue#}
+                        {#                                                    <span>(06)</span></label>#}
+                        {#                                            </div>#}
+                        {#                                            <div class="single-widget-category">#}
+                        {#                                                <input type="checkbox" id="color-item-4" name="cat-item">#}
+                        {#                                                <label for="color-item-4" class="color-red-bg">Red#}
+                        {#                                                    <span>(08)</span></label>#}
+                        {#                                            </div>#}
+                        {#                                            <div class="single-widget-category">#}
+                        {#                                                <input type="checkbox" id="color-item-5" name="cat-item">#}
+                        {#                                                <label for="color-item-5" class="color-gray-bg">Gray#}
+                        {#                                                    <span>(09)</span></label>#}
+                        {#                                            </div>#}
+                        {#                                            <div class="single-widget-category">#}
+                        {#                                                <input type="checkbox" id="color-item-7" class="white-input"#}
+                        {#                                                    name="cat-item">#}
+                        {#                                                <label for="color-item-7" class="color-white-bg">White#}
+                        {#                                                    <span>(04)</span></label>#}
+                        {#                                            </div>#}
+                        {#                                        </form>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                            <div class="product-widget mb-30">#}
+                        {#                                <h5 class="pt-title mb-20">Choose Color</h5>#}
+                        {#                                <div class="widget-category-list scroll-box-default">#}
+                        {#                                    <form action="#">#}
+                        {#                                        <div class="single-widget-category">#}
+                        {#                                            <input type="checkbox" id="size-item-1" name="cat-item">#}
+                        {#                                            <label for="size-item-1">S <span>(02)</span></label>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="single-widget-category">#}
+                        {#                                            <input type="checkbox" id="size-item-2" name="cat-item">#}
+                        {#                                            <label for="size-item-2">M <span>(08)</span></label>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="single-widget-category">#}
+                        {#                                            <input type="checkbox" id="size-item-3" name="cat-item">#}
+                        {#                                            <label for="size-item-3">L <span>(19)</span></label>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="single-widget-category">#}
+                        {#                                            <input type="checkbox" id="size-item-4" name="cat-item">#}
+                        {#                                            <label for="size-item-4">XL <span>(21)</span></label>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="single-widget-category">#}
+                        {#                                            <input type="checkbox" id="size-item-5" name="cat-item">#}
+                        {#                                            <label for="size-item-5">XXL <span>(09)</span></label>#}
+                        {#                                        </div>#}
+                        {#                                        <div class="single-widget-category">#}
+                        {#                                            <input type="checkbox" id="size-item-6" name="cat-item">#}
+                        {#                                            <label for="size-item-6">XXXL <span>(06)</span></label>#}
+                        {#                                        </div>#}
+                        {#                                    </form>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                        {#                            <div class="product-widget mb-50">#}
+                        {#                                <h5 class="pt-title mb-20">Choose Color</h5>#}
+                        {#                                <div class="tagcloud">#}
+                        {#                                    <a href="\#">Lighting</a>#}
+                        {#                                    <a href="\#">Decor</a>#}
+                        {#                                    <a href="\#">Interior</a>#}
+                        {#                                    <a href="\#">Puik</a>#}
+                        {#                                    <a href="\#">Fashion</a>#}
+                        {#                                    <a href="\#">Sport</a>#}
+                        {#                                    <a href="\#">Bathroom</a>#}
+                        {#                                    <a href="\#">Chair</a>#}
+                        {#                                    <a href="\#">Accessories</a>#}
+                        {#                                    <a href="\#">Easy Chairs</a>#}
+                        {#                                    <a href="\#">Living room</a>#}
+                        {#                                    <a href="\#">Office</a>#}
+                        {#                                    <a href="\#">Bags</a>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                    </div>
+                </div>
+                <div class="col-xxl-9 col-xl-8">
+                    <div class="shop-top-area mb-20">
+                        <div class="row">
+                            <div class="col-xxl-4 col-xl-2 col-md-3 col-sm-3">
+                                <div class="shop-top-left">
+                                    <span id="label mr-15" class="label mr-15">{{ _("View") }}:</span>
+                                    <div class="nav d-inline-block tab-btn-group" id="nav-tab" role="tablist">
+                                        <button class="active" data-bs-toggle="tab" data-bs-target="#tab1"
+                                                type="button"><i class="fas fa-border-none"></i></button>
+                                        <button data-bs-toggle="tab" data-bs-target="#tab2" type="button"
+                                                class=""><i class="fas fa-list"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-xxl-4 col-xl-6 col-md-6 col-sm-6">
+                                    {% if conditional_query|length > 0 %}
+                                    <p class="show-total-result text-sm-center" id="show-total-result">{{ _("Total of")}} {{ total_query|length }}
+                                        {{ _("results") }}</p>
+                                    {% else  %}
+                                    <p class="show-total-result text-sm-center" id="show-total-result">{{ _("No results")}}</p>
+                                    {% endif %}
+                                </div>
+                            <div class="col-xl-4 col-xl-4 col-md-3 col-sm-3">
+                                <div class="text-sm-end">
+                                    <div class="select-default">
+                                        <select name="short" id="short" class="shorting-select" onchange="sort_method(1)"
+                                                style="display: none;">
+                                            <option value="0">{{ _("Default sorting")}}</option>
+                                            <option value="1">ASC</option>
+                                            <option value="2">DESC</option>
+                                        </select>
+                                        <div class="nice-select shorting-select" tabindex="0"><span
+                                                class="current" id="sorting">{{ _("Default sorting")}}</span>
+                                            <ul class="list">
+                                                <li data-value="" class="option selected focus">{{ _("Default sorting")}}</li>
+                                                <li data-value="" class="option">ASC</li>
+                                                <li data-value="" class="option">DESC</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-main-area mb-40">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade active show" id="tab1">
+                                <div id="result_div" class="row">
+
+
+                                    {% for commodity in conditional_query %}
+                                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                                            <div class="product__item mb-20">
+                                                <div class="product__thumb w-img fix">
+                                                    <a href="{{ url_for('front.product_details', commodity_id=commodity.id) }}">
+                                                        {#                                                        <img src ="{{url_for('static',filename="assets/img/products/product-2/product-1.jpg")}}" alt="">#}
+                                                        <img src={{ commodity.image_oss }} alt="">
+                                                    </a>
+
+                                                    <div class="product__action transition-3">
+                                                        <ul>
+                                                            <li>
+                                                                <a class="add_cart" href="javascript:void(0)"
+                                                                id="{{ commodity.id }}">
+                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+{#                                                                    <svg viewBox="0 0 22 22">#}
+{#                                                                        <g>#}
+{#                                                                            <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39#}
+{#                                                                           l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10#}
+{#                                                                           C18.83,18.71,18.44,19,18,19z"></path>#}
+{#                                                                        </g>#}
+{#                                                                    </svg>#}
+                                                                </a>
+                                                            </li>
+{#                                                            <li>#}
+{#                                                                <a href="\#">#}
+{#                                                                    <svg viewBox="0 0 22 22">#}
+{#                                                                        <path#}
+{#                                                                                d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0#}
+{#                                                                        L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53#}
+{#                                                                        c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3#}
+{#                                                                        C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91#}
+{#                                                                        c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21#}
+{#                                                                        c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1#}
+{#                                                                        c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24#}
+{#                                                                        c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18#}
+{#                                                                        c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z">#}
+{#                                                                        </path>#}
+{#                                                                    </svg>#}
+{#                                                                </a>#}
+{#                                                            </li>#}
+                                                            <li>
+                                                                <a class="view-details" href="\javascript:void(0)" data-bs-toggle="modal"
+                                                                   data-bs-target="#productModalId{{ commodity.id }}">
+                                                                    <i class="fa fa-eye" aria-hidden="true"></i>
+{#                                                                    <svg viewBox="0 0 22 22">#}
+{#                                                                        <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47#}
+{#                                                                        C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5#}
+{#                                                                        C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2#}
+{#                                                                        s2-0.9,2-2S12.1,9,11,9z"></path>#}
+{#                                                                    </svg>#}
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product__content text-center">
+                                                    {#                                                    <div class="product__tag product__tag-4">#}
+                                                    {#                                                        <span>#}
+                                                    {#                                                            <a href="\shop">{{ commodity.type }}</a>#}
+                                                    {#                                                        </span>#}
+                                                    {#                                                    </div>#}
+                                                    <h3 class="product__title">
+                                                        <a href="{{ url_for('front.product_details', commodity_id=commodity.id) }}">{{ commodity.name }}</a>
+                                                    </h3>
+
+                                                    <!-- 星星   -->
+
+                                                    <div class="product__price">
+                                                        <span class="price">${{ commodity.price }}</span>
+                                                    </div>
+                                                    <div class="product__select-button">
+                                                        <a href="{{ url_for('front.product_details', commodity_id=commodity.id) }}"
+                                                           class="select-btn w-100">{{ _("See details")}}</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        <script>
+                                                                    $(document).on("click", ".view-details", function(){
+                                                                        let goal_remove = $(":root").find(".starRatingContainer");
+                                                                        goal_remove.remove();
+                                                                    {#$(".view-details").click(function (){#}
+                                                                        let product_id = $(this).attr("data-bs-target");
+                                                                        $.post('/get_star_view', {
+                                                                            'product_id': product_id,
+                                                                        }).done(function (response){
+                                                                            let star = response['star'];
+                                                                            let modal = $(":root").find(product_id)
+                                                                            let goal = modal.find(".product__modal-review");
+                                                                            goal.html("<div class=\"starRatingContainer\"><div class=\"ratingSystem\"></div></div> <div class=\"ratingHolder\"></div>");
+                                                                            var properties1 = [
+                                                                            { "rating": star, "maxRating": "5", "readOnly": "yes", "starImage": "/static/assets/img/star/star.png", "emptyStarImage": "/static/assets/img/star/starbackground.png", "starSize": "32" }
+                                                                        ];
+                                                                        var className = "ratingSystem";
+                                                                        rateSystem(className, properties1, function (rating, ratingTargetElement) { ratingTargetElement.parentElement.parentElement.getElementsByClassName("ratingHolder")[0].innerHTML = rating; });})
+                                                                               });
+                                                                    </script>
+                        <script>
+                                    $(document).on("click", ".add_cart", function(){
+                                        let commodity_id = $(this).attr("id");
+                                        zlajax.post({
+                                            url: "/add_cart",
+                                            data: {
+                                                "commodity_id": commodity_id,
+                                                "num_of_item": 1
+                                            },
+                                            success: function (response) {
+                                                let server_code = response['returnvalue'];
+                                                let server_cart_query = response['cart_query'];
+                                                let server_sum_modify = response['sum_modify'];
+                                                let server_cart_count = response['cart_count'];
+                                                if (server_code === 0) {
+                                                    $(".cart-price").text(server_sum_modify)
+                                                    $(".cart-count").text(server_cart_count)
+
+                                                    $(".cartmini__list").empty()
+                                                    let div = $(".cartmini__list");
+                                                    let ul = $("<ul>");
+                                                    div.append(ul);
+                                                    for (let i = 0; i < server_cart_query["data"].length; i++) {
+                                                        let root = ul;
+                                                        let li = $("<li>");
+                                                        li.attr('class', 'cartmini__item p-relative d-flex align-items-start');
+                                                        root.append(li);
+                                                        let a = $("<a>");
+                                                        a.attr("href", "\\cart")
+                                                        li.append(a)
+                                                        let div1 = $("<div>");
+                                                        div1.attr('class', 'cartmini__thumb mr-15');
+                                                        a.append(div1);
+                                                        let img = $("<img>");
+                                                        img.attr('src', server_cart_query["data"][i]["commodity_image_oss"]);
+                                                        img.attr('alt', '');
+                                                        div1.append(img);
+                                                        let div2 = $("<div>");
+                                                        div2.attr('class', 'cartmini__content');
+                                                        li.append(div2);
+                                                        let h3 = $("<h3>");
+                                                        h3.attr('class', 'cartmini__title');
+                                                        h3.text(server_cart_query["data"][i]["commodity_name"]);
+                                                        div2.append(h3);
+                                                        let span1 = $("<span>");
+                                                        span1.attr('class', 'cartmini__price');
+                                                        div2.append(span1);
+                                                        let span2 = $("<span>");
+                                                        span2.attr('class', 'price');
+                                                        span2.text(server_cart_query["data"][i]["amount"] + " × $" + server_cart_query["data"][i]["commodity_price"]);
+                                                        span1.append(span2);
+                                                    }
+                                                    success();
+                                                } else {
+                                                    if (response["returnvalue"] === 2) {
+                                                        warning();
+                                                        window.location = "/login";
+                                                    }
+                                                    else if (server_code === 3){
+                                                        warningAmount();
+                                                    }
+                                                    else{
+                                                        error();
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    });
+
+                            </script>
+                            <div class="tab-pane fade" id="tab2">
+                                <div class="row">
+                                    <div class="productwrap" id="result_div2">
+                                            {% for commodity in conditional_query %}
+                                            <div class="single-product mb-30 wood-list-product-wrap">
+                                                <div class="row align-items-xl-center">
+                                                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                                                        <div class="product-thumb mr-30 product-thumb-list w-img">
+                                                            <img src ="{{ commodity.image_oss }}" alt="#">
+                                                            <img src ="{{ commodity.image_oss }}" alt="#">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8">
+                                                        <div class="wood-product-content wood-product-list-content">
+                                                            <h4 class="pro-title pro-title-1"><a
+                                                                    href={{ url_for('front.product_details', commodity_id=commodity.id) }}>{{ commodity.name }}
+                                                                    </a></h4>
+                                                            <div class="product__price">
+                                                                <span class="price">${{ commodity.price }}</span>
+                                                            </div>
+{#                                                            <div class="rating">#}
+{#                                                                <i class="fal fa-star active"></i>#}
+{#                                                                <i class="fal fa-star active"></i>#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                                <i class="fal fa-star"></i>#}
+{#                                                            </div>#}
+                                                                <div class="product__modal-content-2">
+                                                                    <a>{{ _("Buy amount")}} : {{ commodity.buy_amount }}</a>
+                                                                    <span class="rating-no ml-10 rating-left">
+                                                                    <a>{{ _("Visit amount")}} : {{ commodity.visit_amount }}</a></span>
+                                                                    <br>
+                                                                    <a>{{ _("Collect amount")}} : {{ commodity.collect_amount }}</a>
+                                                                    <span class="rating-no ml-10 rating-left">
+                                                                    <a>{{ _("Inventory") }} : {{ commodity.amount }}</a></span>
+                                                                </div>
+                                                            <div class="wood-shop-product-actions">
+                                                                <a href="{{ url_for('front.product_details', commodity_id=commodity.id) }}" class="wood-cart-btn">See Details</a>
+                                                                <a href="\javascript:void(0)" data-bs-toggle="modal" data-bs-target="#productModalId{{ commodity.id }}"class="wood-proudct-btn-boxed view-details"><i
+                                                                        class="fa fa-eye"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+{#                    页面分页#}
+{#                    {% if pagination1 %}#}
+{#                        <div class="shop-pagination">#}
+{#                            <div class="basic-pagination">#}
+{#                            <nav>#}
+{#                                <ul>#}
+{#                                    <li>#}
+{#                            {{ macros.pagination_widget(pagination1, '.shop', type_num=6) }}#}
+{#                            <div class="basic-pagination">#}
+{#                                <nav>#}
+{#                                    <ul>#}
+{#                                        <li>#}
+{#                                            <a href="\shop">#}
+{#                                                <i class="far fa-angle-left"></i>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\shop">1</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\shop.html" class="active">2</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\shop">3</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\shop">#}
+{#                                                <i class="far fa-angle-right"></i>#}
+{#                                            </a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </nav>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                                    </li>#}
+{#                                </ul>#}
+{#                                </nav>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endif %}#}
+                    {#                    页面分页#}
+
+                            <div class="basic-pagination">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a href="#label mr-15" onclick="pre_page()">
+                                                <i class="far fa-angle-left"></i>
+                                            </a>
+                                        </li>
+                                        {% for i in range(page_num) %}
+                                            <li>
+                                                <a href="#label mr-15" onclick="change_page({{ i }})" id="curpage{{ i }}">{{ loop.index }}</a>
+                                            </li>
+                                        {% endfor %}
+{#                                        <li>#}
+{#                                            <a href="\shop">1</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\shop.html" class="active">2</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\shop">3</a>#}
+{#                                        </li>#}
+                                        <li>
+                                            <a href="#label mr-15" onclick="next_page()">
+                                                <i class="far fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- product-details-end -->
+
+    <!-- shop modal start -->
+{% for commodity in total_query %}
+    <div class="modal fade" id="productModalId{{ commodity.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered product__modal" role="document">
+            <div class="modal-content">
+                <div class="product__modal-wrapper p-relative">
+                    <div class="product__modal-close p-absolute">
+                        <button class="close-modal" data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
+                    </div>
+                    <div class="product__modal-inner">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="product__modal-box">
+                                    <div class="tab-content" id="modalTabContent">
+                                        <div class="tab-pane fade show active" id="nav1" role="tabpanel"
+                                             aria-labelledby="nav1-tab">
+                                            <div class="product__modal-img w-img">
+                                                <img src="{{ commodity.image_oss }}"
+                                                     alt="">
+                                            </div>
+                                        </div>
+{#                                        <div class="tab-pane fade" id="nav2" role="tabpanel"#}
+{#                                             aria-labelledby="nav2-tab">#}
+{#                                            <div class="product__modal-img w-img">#}
+{#                                                <img src="{{ commodity.image_oss }}"#}
+{#                                                     alt="">#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="tab-pane fade" id="nav3" role="tabpanel"#}
+{#                                             aria-labelledby="nav3-tab">#}
+{#                                            <div class="product__modal-img w-img">#}
+{#                                                <img src="{{ commodity.image_oss }}"#}
+{#                                                     alt="">#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="tab-pane fade" id="nav4" role="tabpanel"#}
+{#                                             aria-labelledby="nav4-tab">#}
+{#                                            <div class="product__modal-img w-img">#}
+{#                                                <img src="{{ commodity.image_oss }}"#}
+{#                                                     alt="">#}
+{#                                            </div>#}
+{#                                        </div>#}
+                                    </div>
+{#                                    <ul class="nav nav-tabs" id="modalTab" role="tablist">#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1"#}
+{#                                                    aria-selected="true">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-4.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link" id="nav2-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2"#}
+{#                                                    aria-selected="false">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-4.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link" id="nav3-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav3" type="button" role="tab" aria-controls="nav3"#}
+{#                                                    aria-selected="false">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-4.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link" id="nav4-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav4" type="button" role="tab" aria-controls="nav4"#}
+{#                                                    aria-selected="false">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-4.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="product__modal-content">
+                                    <h4 class="product__modal-title"><a href="\product-details">{{ commodity.name }}</a></h4>
+                                    <div class="product__modal-des mb-40">
+                                        <p>{{ intro_query_dict[commodity.id] }}</p>
+                                    </div>
+                                    <div class="product__modal-stock">
+                                        <span>{{ _("Availability") }} :</span>
+                                        {% if commodity.amount > 0 %}
+                                            <span>{{ _("In Stock")}}</span>
+                                        {% else %}
+                                            <span>{{ _("Out of Stock")}}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="product__modal-stock">
+                                        <span>{{ _("Type") }} :</span>
+                                        {% if commodity.type == 0 %}
+                                            <span>{{ _("Pipes") }}</span>
+                                        {% elif commodity.type == 1 %}
+                                            <span>{{ _("Electronic") }}</span>
+                                        {% elif commodity.type == 2 %}
+                                            <span>{{ _("Precussion") }}</span>
+                                        {% elif commodity.type == 3 %}
+                                            <span>{{ _("Piano") }}</span>
+                                        {% elif commodity.type == 4 %}
+                                            <span>{{ _("Guitar") }}</span>
+                                        {% else %}
+                                            <span>{{ _("Other") }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="product__modal-stock sku mb-30">
+                                        <span>{{ _("Discount") }}:</span>
+                                        {% if commodity.discount == 0 %}
+                                            <span>{{ _("No") }}</span>
+                                        {% else %}
+                                            <span>{{ _("Yes") }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="product__modal-review d-sm-flex">
+
+
+{#                                        <div class="rating mb-15 mr-35">#}
+{#                                            <ul>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                            </ul>#}
+{#                                        </div>#}
+{#                                        <div class="product__modal-add-review mb-15">#}
+{#                                            <span><a href="\#">1 Review</a></span>#}
+{#                                            <span><a href="\#">Add Review</a></span>#}
+{#                                        </div>#}
+                                    </div>
+                                    <br>
+                                    <div class="product__modal-content-2">
+                                        <a>{{ _("Buy amount")}} &nbsp&nbsp&nbsp&nbsp&nbsp: {{ commodity.buy_amount }}</a></span>
+                                        <span class="rating-no ml-10 rating-left">
+                                        <a>{{ _("Visit amount")}} : {{ commodity.visit_amount }}</a></span>
+                                        <br>
+                                        <a>{{ _("Collect amount")}} : {{ commodity.collect_amount }}</a></span>
+                                        <span class="rating-no ml-10 rating-left">
+                                        <a>{{ _("Inventory") }} : {{ commodity.amount }}</a></span>
+                                    </div>
+                                    <br>
+
+                                    <div class="product__price">
+                                        <span class="price">{{ _("Price") }} : ${{ commodity.price }}</span>
+                                    </div>
+{#                                    <div class="product__modal-form mb-30">#}
+{#                                        <form action="#">#}
+{#                                            <div class="pro-quan-area d-lg-flex align-items-center">#}
+{#                                                <div class="product-quantity mr-20 mb-25">#}
+{#                                                    <div class="cart-plus-minus p-relative"><input type="text"#}
+{#                                                                                                   value="1"/></div>#}
+{#                                                </div>#}
+{#                                                <div class="pro-cart-btn mb-25">#}
+{#                                                    <a href="\cart.html" class="add-to-cart-btn">Add to cart</a>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </form>#}
+{#                                    </div>#}
+{#                                    <div class="product__modal-links">#}
+{#                                        <ul>#}
+{#                                            <li><a href="\#" title="Add to Wishlist"><i class="fal fa-heart"></i></a>#}
+{#                                            </li>#}
+{#                                            <li><a href="\#" title="Compare"><i class="far fa-sliders-h"></i></a>#}
+{#                                            </li>#}
+{#                                            <li><a href="\#" title="Print"><i class="fal fa-print"></i></a></li>#}
+{#                                            <li><a href="\#" title="Print"><i class="fal fa-share-alt"></i></a></li>#}
+{#                                        </ul>#}
+{#                                    </div>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+    <!-- shop modal end -->
+
+
+{#    <!-- shop modal start -->#}
+{#    <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">#}
+{#        <div class="modal-dialog modal-dialog-centered product__modal" role="document">#}
+{#            <div class="modal-content">#}
+{#                <div class="product__modal-wrapper p-relative">#}
+{#                    <div class="product__modal-close p-absolute">#}
+{#                        <button data-bs-dismiss="modal"><i class="fal fa-times"></i></button>#}
+{#                    </div>#}
+{#                    <div class="product__modal-inner">#}
+{#                        <div class="row">#}
+{#                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">#}
+{#                                <div class="product__modal-box">#}
+{#                                    <div class="tab-content" id="modalTabContent">#}
+{#                                        <div class="tab-pane fade show active" id="nav1" role="tabpanel"#}
+{#                                             aria-labelledby="nav1-tab">#}
+{#                                            <div class="product__modal-img w-img">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/quick-view-1.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="tab-pane fade" id="nav2" role="tabpanel"#}
+{#                                             aria-labelledby="nav2-tab">#}
+{#                                            <div class="product__modal-img w-img">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/quick-view-2.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="tab-pane fade" id="nav3" role="tabpanel"#}
+{#                                             aria-labelledby="nav3-tab">#}
+{#                                            <div class="product__modal-img w-img">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/quick-view-3.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="tab-pane fade" id="nav4" role="tabpanel"#}
+{#                                             aria-labelledby="nav4-tab">#}
+{#                                            <div class="product__modal-img w-img">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/quick-view-4.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <ul class="nav nav-tabs" id="modalTab" role="tablist">#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1"#}
+{#                                                    aria-selected="true">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-1.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link" id="nav2-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2"#}
+{#                                                    aria-selected="false">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-2.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link" id="nav3-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav3" type="button" role="tab" aria-controls="nav3"#}
+{#                                                    aria-selected="false">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-3.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                        <li class="nav-item" role="presentation">#}
+{#                                            <button class="nav-link" id="nav4-tab" data-bs-toggle="tab"#}
+{#                                                    data-bs-target="#nav4" type="button" role="tab" aria-controls="nav4"#}
+{#                                                    aria-selected="false">#}
+{#                                                <img src="{{ url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-4.jpg") }}"#}
+{#                                                     alt="">#}
+{#                                            </button>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">#}
+{#                                <div class="product__modal-content">#}
+{#                                    <h4 class="product__modal-title"><a href="\product-details">Samsung C49J89:#}
+{#                                        £875, Debenhams Plus</a></h4>#}
+{#                                    <div class="product__modal-des mb-40">#}
+{#                                        <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit#}
+{#                                            eorum claritatem. Investigationes demonstraverunt </p>#}
+{#                                    </div>#}
+{#                                    <div class="product__modal-stock">#}
+{#                                        <span>Availability :</span>#}
+{#                                        <span>In Stock</span>#}
+{#                                    </div>#}
+{#                                    <div class="product__modal-stock sku mb-30">#}
+{#                                        <span>SKU:</span>#}
+{#                                        <span>Samsung C49J89: £875, Debenhams Plus</span>#}
+{#                                    </div>#}
+{#                                    <div class="product__modal-review d-sm-flex">#}
+{#                                        <div class="rating mb-15 mr-35">#}
+{#                                            <ul>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                                <li><a href="\#"><i class="fal fa-star"></i></a></li>#}
+{#                                            </ul>#}
+{#                                        </div>#}
+{#                                        <div class="product__modal-add-review mb-15">#}
+{#                                            <span><a href="\#">1 Review</a></span>#}
+{#                                            <span><a href="\#">Add Review</a></span>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="product__modal-price">#}
+{#                                        <span>$560.00</span>#}
+{#                                    </div>#}
+{#                                    <div class="product__modal-form mb-30">#}
+{#                                        <form action="#">#}
+{#                                            <div class="pro-quan-area d-lg-flex align-items-center">#}
+{#                                                <div class="product-quantity mr-20 mb-25">#}
+{#                                                    <div class="cart-plus-minus p-relative"><input type="text"#}
+{#                                                                                                   value="1"/></div>#}
+{#                                                </div>#}
+{#                                                <div class="pro-cart-btn mb-25">#}
+{#                                                    <a href="\cart.html" class="add-to-cart-btn">Add to cart</a>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </form>#}
+{#                                    </div>#}
+{#                                    <div class="product__modal-links">#}
+{#                                        <ul>#}
+{#                                            <li><a href="\#" title="Add to Wishlist"><i class="fal fa-heart"></i></a>#}
+{#                                            </li>#}
+{#                                            <li><a href="\#" title="Compare"><i class="far fa-sliders-h"></i></a>#}
+{#                                            </li>#}
+{#                                            <li><a href="\#" title="Print"><i class="fal fa-print"></i></a></li>#}
+{#                                            <li><a href="\#" title="Print"><i class="fal fa-share-alt"></i></a></li>#}
+{#                                        </ul>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <!-- shop modal end -->#}
+
+                         <script>
+                            $(".close-modal").click(function (){
+
+                            });
+
+                        </script>
+
+</main>
+{% include "newFront/footer.html" %}
+<div class="chatContainer">
+    <div class="chatBtn">
+        <i class="iconfont icon-xiaoxi1"></i>
+    </div>
+{#    <div class="chat-message-num">0</div>#}
+    <div class="chatBox" ref="chatBox">
+        <div class="chatBox-head">
+{#            <div class="chatBox-head-one">#}
+{#                Conversations#}
+{#                <div class="chat-close" style="margin: 10px 10px 0 0;font-size: 14px">CLOSE</div>#}
+{#            </div>#}
+            <div class="chatBox-head-two">
+                {#                <div class="chat-return">BACK</div>#}
+                <div class="chat-people">
+                    <div class="ChatInfoHead">
+                        <img src="" alt="头像"/>
+                    </div>
+                    <div class="ChatInfoName">这是用户的名字，看看名字到底能有多长</div>
+                </div>
+                <div class="chat-close">{{ _("CLOSE") }}</div>
+            </div>
+        </div>
+        <div class="chatBox-info">
+            {#            <div class="chatBox-list" ref="chatBoxlist" style="display: none">#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"#}
+            {#                              alt="头像"></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 哈哈</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">5</div>#}
+            {#                </div>#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon02.png") }}" alt="头像"/></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 呵呵</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">8</div>#}
+            {#                </div>#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon03.png") }}" alt="头像"/></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 凯文</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">2</div>#}
+            {#                </div>#}
+            {#            </div>#}
+            <div class="chatBox-kuang" ref="chatBoxkuang">
+                <div class="chatBox-content">
+                    <div class="chatBox-content-demo" id="chatBox-content-demo">
+
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="left">
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"
+                                        alt="头像"/></div>
+                                <div class="chat-message">
+                                    给你看张图
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="left">
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"
+                                        alt="头像"/></div>
+                                <div class="chat-message">
+                                    <img src="{{ url_for('static',filename="assets/img/chatfigure/1.png") }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="right">
+                                <div class="chat-message">嗯，适合做壁纸</div>
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon02.png") }}"
+                                        alt="头像"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatBox-send">
+                    <div class="div-textarea" contenteditable="true"></div>
+                    <div>
+                        <label id="chat-tuxiang" title="发送图片" for="inputImage" class="btn-default-styles">
+                            <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png"
+                                   name="file" id="inputImage" class="hidden">
+                            <i class="iconfont icon-tuxiang"></i>
+                        </label>
+                        <button id="chat-fasong" class="btn-default-styles"><i class="iconfont icon-fasong"></i>
+                        </button>
+                    </div>
+                    <div class="biaoqing-photo">
+                        <ul>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script>
+    screenFuc();
+
+    function screenFuc() {
+        var topHeight = $(".chatBox-head").innerHeight();//聊天头部高度
+        //屏幕小于768px时候,布局change
+        var winWidth = $(window).innerWidth();
+        if (winWidth <= 768) {
+            var totalHeight = $(window).height(); //页面整体高度
+            $(".chatBox-info").css("height", totalHeight - topHeight);
+            var infoHeight = $(".chatBox-info").innerHeight();//聊天头部以下高度
+            //中间内容高度
+            $(".chatBox-content").css("height", infoHeight - 46);
+            $(".chatBox-content-demo").css("height", infoHeight - 46);
+
+            $(".chatBox-list").css("height", totalHeight - topHeight);
+            $(".chatBox-kuang").css("height", totalHeight - topHeight);
+            $(".div-textarea").css("width", winWidth - 106);
+        } else {
+            $(".chatBox-info").css("height", 495);
+            $(".chatBox-content").css("height", 448);
+            $(".chatBox-content-demo").css("height", 448);
+            $(".chatBox-list").css("height", 495);
+            $(".chatBox-kuang").css("height", 495);
+            $(".div-textarea").css("width", 300);
+        }
+    }
+
+    (window.onresize = function () {
+        screenFuc();
+        $(".chatBox").toggle(10);
+    })();
+    //未读信息数量为空时
+    var totalNum = $(".chat-message-num").html();
+    if (totalNum == "") {
+        $(".chat-message-num").css("padding", 0);
+    }
+    $(".message-num").each(function () {
+        var wdNum = $(this).html();
+        if (wdNum == "") {
+            $(this).css("padding", 0);
+        }
+    });
+
+
+    // 打开/关闭聊天框
+    $(".chatBtn").click(function () {
+        if ($(".chatBox").css('display') === "none"){
+            $(".chatBox").toggle(10);
+            $(".chatBox-head-two").css('display', 'block');
+            $(".chatBox-kuang").css('display', 'block');
+        }
+        else{
+            $(".chatBox").toggle(10);
+            $(".chatBox-head-two").css('display', 'none');
+            $(".chatBox-kuang").css('display', 'none');
+        }
+
+        $(".chat-message-num").html(0);
+        {#$(".chatBox-head-one").toggle();#}
+        {#$(".chatBox-head-two").toggle();#}
+        {#$(".chatBox-kuang").fadeToggle();#}
+
+        $(".ChatInfoName").text("Staff");
+
+        //聊天框默认最底部
+        $(document).ready(function () {
+            let chatBox = $("#chatBox-content-demo");
+            chatBox.empty()
+            $.post('/view_chat_history', {}).done(function (response) {
+                let server_chat_query = response['chat_query_dict'];
+                let server_code = response['server_code'];
+                if (server_code === 1) {
+                    window.location.href='\\login'
+                } else {
+                    for (let i = 0; i < server_chat_query["data"].length; i++) {
+                        $(".ChatInfoHead>img").attr("src", server_chat_query["data"][i]["staff-avatar"]);
+                        let root = $("<div>");
+                        root.attr('class', 'clearfloat');
+                        chatBox.append(root);
+                        let divAuthor = $("<div>")
+                        divAuthor.attr('class', 'author-name')
+                        root.append(divAuthor)
+                        let smallTime = $("<small>");
+                        smallTime.attr('class', 'chat-date');
+                        smallTime.text(server_chat_query["data"][i]["gmtcreate"]);
+                        divAuthor.append(smallTime);
+                        let divSide = $("<div>")
+
+                        if (server_chat_query["data"][i]["status"] === "1") {
+                            divSide.attr('class', 'left')
+                            root.append(divSide);
+                            let divAvatar = $("<div>");
+                            divAvatar.attr('class', 'chat-avatars');
+                            divSide.append(divAvatar);
+                            let img = $("<img>");
+                            img.attr('src', server_chat_query["data"][i]["staff-avatar"]);
+                            img.attr('alt', '头像');
+                            divAvatar.append(img);
+                            let divChat = $("<div>");
+                            divChat.attr('class', 'chat-message');
+                            divChat.html(server_chat_query["data"][i]["content"]);
+                            divSide.append(divChat);
+                        } else {
+                            divSide.attr('class', 'right')
+                            root.append(divSide);
+                            let divChat = $("<div>");
+                            divChat.attr('class', 'chat-message');
+                            divChat.html(server_chat_query["data"][i]["content"]);
+                            divSide.append(divChat);
+                            let divAvatar = $("<div>");
+                            divAvatar.attr('class', 'chat-avatars');
+                            divSide.append(divAvatar);
+                            let img = $("<img>");
+                            img.attr('src', server_chat_query["data"][i]["avatar"]);
+                            img.attr('alt', '头像');
+                            divAvatar.append(img);
+                        }
+                    }
+                }
+                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+            }).fail(function () {
+                error();
+            });
+            $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+        });
+    })
+
+    $(".chat-close").click(function () {
+        $(".chatBox").toggle(10);
+        {#$(".chatBox-head-one").toggle();#}
+        {#$(".chatBox-head-two").toggle();#}
+        {#$(".chatBox-kuang").fadeToggle();#}
+        $(".chatBox-head-two").css('display', 'none');
+        $(".chatBox-kuang").css('display', 'none');
+    })
+
+
+    window.setInterval(function () {
+        $.post('/update_count', {}).done(function (response) {
+            let server_chat_query = response['chat_query_dict'];
+            let server_count = response['chat_count'];
+            let server_code = response['server_code'];
+            if (server_code === 1) {
+
+            } else {
+                {#$(".chat-message-num").html(server_count);#}
+                let chatBox = $("#chatBox-content-demo");
+                for (let i = 0; i < server_chat_query["data"].length; i++) {
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    chatBox.append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+                    smallTime.text(server_chat_query["data"][i]["gmtcreate"]);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+
+                    divSide.attr('class', 'left')
+                    root.append(divSide);
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_chat_query["data"][i]["staff-avatar"]);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divChat.html(server_chat_query["data"][i]["content"]);
+                    divSide.append(divChat);
+                }
+            }
+        }).fail(function () {
+
+        });
+    }, 5000)
+
+
+    // 返回列表
+    /*
+    $(".chat-return").click(function () {
+        $(".chatBox-head-one").toggle(1);
+        $(".chatBox-head-two").toggle(1);
+        $(".chatBox-list").fadeToggle(1);
+        $(".chatBox-kuang").fadeToggle(1);
+    });
+
+     */
+
+    let shift = false;
+    let enter = false;
+    $(".div-textarea").bind("keydown",function(e){
+            　　var theEvent = e || window.event;
+            　　var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            　　 if (code === 13) {
+            　       $("#chat-fasong").click();
+            　　}
+            });
+
+
+/*
+    			document.onkeydown = function(event){
+				alert("按下:"+event.key+"键:"+event);
+			}
+
+ */
+
+    // 发送信息
+    $("#chat-fasong").click(function () {
+        var textContent = $(".div-textarea").html().replace(/[\n\r]/g, '<br>')
+        if (textContent !== "") {
+            $.post('/add_chat', {
+                'text of content': textContent,
+            }).done(function (response) {
+                let server_code = response['server_code'];
+                if (server_code === 1) {
+                    warning()
+                } else {
+                    let server_avatar = response['avatar']
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    $("#chatBox-content-demo").append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+
+                    let nowTime = new Date();
+                    let year = nowTime.getFullYear();
+                    let month = (nowTime.getMonth() + 1).toString().padStart(2, '0');
+                    let date = (nowTime.getDate()).toString().padStart(2, '0');
+                    let hour = (nowTime.getHours()).toString().padStart(2, '0');
+                    let minute = (nowTime.getMinutes()).toString().padStart(2, '0');
+                    let second = (nowTime.getSeconds()).toString().padStart(2, '0');
+
+                    smallTime.text(year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+                    divSide.attr('class', 'right')
+                    root.append(divSide);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divChat.html(textContent);
+                    divSide.append(divChat);
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_avatar);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img);
+                    // 发送后清空输入框
+                    $(".div-textarea").html("");
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                }
+            })
+        }
+    });
+
+    //      发送表情
+    $("#chat-biaoqing").click(function () {
+        $(".biaoqing-photo").toggle();
+    });
+    $(document).click(function () {
+        $(".biaoqing-photo").css("display", "none");
+    });
+    $("#chat-biaoqing").click(function (event) {
+        event.stopPropagation();//阻止事件
+    });
+
+    $(".emoji-picker-image").each(function () {
+        $(this).click(function () {
+            var bq = $(this).parent().html();
+            console.log(bq)
+            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+                "<div class=\"author-name\"><small class=\"chat-date\">2017-12-02 14:26:58</small> </div> " +
+                "<div class=\"right\"> <div class=\"chat-message\"> " + bq + " </div> " +
+                "<div class=\"chat-avatars\"><img src=\"img/icon01.png\" alt=\"头像\" /></div> </div> </div>");
+            //发送后关闭表情框
+            $(".biaoqing-photo").toggle();
+            //聊天框默认最底部
+            $(document).ready(function () {
+                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+            });
+        })
+    });
+
+    //      发送图片
+    function selectImg(pic) {
+        if (!pic.files || !pic.files[0]) {
+            return;
+        }
+        let formData = new FormData();
+        formData.append("img", pic.files[0]);
+
+        $.ajax({
+            url:"/add_img",
+            type:"post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                let server_code = response["server_code"];
+                if (server_code === 1){
+                    warning();
+                }
+                else{
+                    let server_avatar = response["avatar"]
+                    var reader = new FileReader();
+                    reader.onload = function (evt) {
+                    var images = evt.target.result;
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    $("#chatBox-content-demo").append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+
+                    let nowTime = new Date();
+                    let year = nowTime.getFullYear();
+                    let month = (nowTime.getMonth() + 1).toString().padStart(2, '0');
+                    let date = (nowTime.getDate()).toString().padStart(2, '0');
+                    let hour = (nowTime.getHours()).toString().padStart(2, '0');
+                    let minute = (nowTime.getMinutes()).toString().padStart(2, '0');
+                    let second = (nowTime.getSeconds()).toString().padStart(2, '0');
+
+                    smallTime.text(year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+                    divSide.attr('class', 'right')
+                    root.append(divSide);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divSide.append(divChat);
+                    let imgChat = $("<img>");
+                    imgChat.attr('src', images);
+                    imgChat.attr('alt', 'img');
+                    divChat.html(imgChat)
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_avatar);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img)
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                };
+                    reader.readAsDataURL(pic.files[0]);
+                }
+            },
+            error:function(data) {
+                error();
+            }
+        });
+
+
+    }
+
+
+</script>
+
+<!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Success',
+                description: 'Add to cart successfully!',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+
+        function warning() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please Login',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningAmount() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Warning',
+                    description: 'Shortage of product stock',
+                    type: 'warning',
+                    timeout: 5000
+                })
+            }
+
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Custom message',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+
+
+{% include "newFront/button_base.html" %}
+<script src="{{ url_for('static',filename="assets/js/search.js") }}"></script>
+</body>
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</html>

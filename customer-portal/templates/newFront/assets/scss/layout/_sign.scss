@@ -1,0 +1,217 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  06. Sign CSS START
+/*----------------------------------------*/    
+
+
+.sign{
+    &__wrapper{
+        padding: 50px 70px;
+        padding-bottom: 45px;
+        margin: 0 30px;
+
+        @include border-radius(10px);
+        @include box-shadow(0px 40px 80px 0px rgba(2, 2, 26, 0.14));
+        z-index: 11;
+
+        @media #{$xs}{
+            margin: 0;
+            padding: 30px 20px;
+            padding-bottom: 25px;
+        }
+    }
+    &__header{
+        padding: 0 35px;
+        @media #{$sm}{
+            padding: 0 10px;
+        }
+        @media #{$xs}{
+            padding: 0px;
+        }
+        & p{
+            margin-bottom: 0;
+            color: $grey-6;
+            position: relative;
+            padding: 0 40px;
+            display: inline-block;
+            & span{
+                position: absolute;
+                top: 40%;
+                left: 0;
+                @include transform(translateY(-50%));
+                &:last-child{
+                    left: auto;
+                    right: 0;
+                }
+            }
+            & a{
+                &:hover{
+                    color: $theme-color-3;
+                }
+            }
+        }
+    }
+    &__social{
+        display: block;
+        height: 50px;
+        background: $grey-3;
+        @include border-radius(6px);
+        position: relative;
+        line-height: 48px;
+        padding-left: 23px;
+        z-index: 1;
+        overflow: hidden;
+        font-size: 16px;
+        &::after{
+            position: absolute;
+            content: '';
+            left: -40%;
+            top: 45%;
+            @include transform(translateY(-50%));
+            height: 220px;
+            width: 220px;
+            background: #3360bd;
+            @include border-radius(50%);
+            z-index: -1;
+            @media #{$sm}{
+                left: -50%;
+            }
+            @media #{$md}{
+                left: -35%;
+            }
+            @media #{$xs} {
+                left: -35%;
+            }
+        }
+        & i{
+            color: $white;
+            font-size: 16px;
+            margin-right: 50px;
+            @media #{$xs}{
+                margin-right: 35px;
+            }
+        }
+        &:hover{
+            color: $white;
+            &::after{
+                width: 100%;
+                height: 150%;
+                left: 0;
+                @include border-radius(6px);
+            }
+        }
+        &.g-plus{
+            &::after{
+                background: #e93e30;
+            }
+        }
+    }
+    &__form{
+        & h5{
+            font-size: 16px;
+            font-weight: 500;
+            color: $black-2;
+            margin-bottom: 11px;
+        }
+    }
+    &__input{
+        position: relative;
+        &-wrapper{
+
+        }
+        & input{
+            width: 100%;
+            height: 60px;
+            line-height: 52px;
+            padding: 0 50px;
+            font-size: 14px;
+            border: 2px solid transparent;
+            background: #f5f5f5;
+            color: $black;
+            @include border-radius(6px);
+            &::placeholder{
+                color: $grey-6;
+            }
+            &:focus{
+                outline: none;
+                background: $white;
+                border-color: $theme-color-3;
+                @include box-shadow(0px 1px 4px 0px rgba(8, 0, 42, 0.2));
+            }
+        }
+        & i{
+            position: absolute;
+            top: 51%;
+            @include transform(translateY(-50%));
+            left: 25px;
+            font-size: 14px;
+            color: $grey-6;
+        }
+    }
+    &__agree{
+        & input{
+            margin: 0;
+            appearance: none;
+            -moz-appearance: none;
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: transparent;
+            border: 1px solid $grey-6;
+            outline: none;
+            margin-top: 2px;
+            @include border-radius(4px);
+            &:checked{
+                position: relative;
+                background-color: $theme-color-3;
+                border-color: transparent;
+                &::after{
+                    box-sizing: border-box;
+                    content: '\f00c';
+                    position: absolute;
+                    font-family: $fontawesome;
+                    font-size: 10px;
+                    color: $white;
+                    top: 46%;
+                    left: 50%;
+                    @include transform(translate(-50%, -50%));
+                }
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        & label{
+            padding-left: 10px;
+            font-size: 14px;
+            &:hover{
+                cursor: pointer;
+            }
+            & a{
+                color: $black-2;
+                font-weight: 500;
+                &:hover{
+                    color: $theme-color-3;
+                }
+            }
+        }
+    }
+    &__forgot{
+        & a{
+            color: $grey-6;
+            &:hover{
+                color: $theme-color-3;
+            }
+        }
+    }
+    &__new{
+        & p{
+            color: $grey-6;
+            margin-bottom: 0;
+            & a{
+                color: $theme-color-3;
+            }
+        }
+    }
+}

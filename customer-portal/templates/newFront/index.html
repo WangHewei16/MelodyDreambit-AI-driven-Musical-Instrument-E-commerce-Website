@@ -1,0 +1,1576 @@
+<!doctype html>
+<html>
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody") }}</title> {% endblock %}
+
+    <!-- flaticon -->
+    <link rel="stylesheet" href="assets/font/flaticon.css">
+    <script src="{{ url_for('static', filename='front/js/login.js') }}"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ url_for('static', filename='front/js/zlajax.js') }}"></script>
+    <script src="{{ url_for('static', filename='front/js/zlparam.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="/static/assets/js/star.js"></script>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+<!-- back to top end -->
+
+<!-- header area start -->
+<header>
+    <div class="header__area">
+        <div class="header__top black-bg d-none d-md-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="header__top-info text-center">
+                            <ul>
+                                <li>
+                                    <p>20% {{ _("off some products in this month ") }}<a
+                                            href="{{ url_for('front.shop', type_num=6) }}">{{ _("Shop Now")}}</a></p>
+                                </li>
+                                <li>
+                                    <p><a>{{ _("Free delivery for all orders over") }} <span>$200</span></a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__middle header__border d-none d-md-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-8">
+                        <div class="header__social">
+                            <ul>
+                                <li><a href="javascript:;"><i class="fal fa-headphones"></i> (+86) 138 209 60171
+                                </a></li>
+                                <li><a href="javascript:;"><i class="fal fa-envelope"></i>
+                                    737272215@qq.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-4 col-md-4">
+                        <div class="header__middle-right d-flex align-items-center justify-content-end">
+                            <div class="main-menu main-menu-border main-menu-4">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        {#                                        <li class="#">#}
+                                        {#                                            <a href="{{ url_for('front.shop', type_num=6) }}">{{ _("Shop") }}</a>#}
+                                        {#                                        </li>#}
+                                        <li class="#">
+                                            <a href="\blog">{{ _("Blog") }}</a>
+                                        </li>
+                                        <li class="#">
+                                            <a href="\cart">{{ _("Cart") }}</a>
+                                        </li>
+                                        <li class="#">
+                                            <a href="\checkout">{{ _("Checkout") }}</a>
+                                        </li>
+                                        <li class="#">
+                                            <a href="\order">{{ _("Order") }}</a>
+                                        </li>
+                                        <li class="#">
+                                            <a href="\about">{{ _("About Us") }}</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header__select d-flex align-items-center">
+                                <div class="header__lang header__select-item mr-15">
+                                    <select id="language_switch">
+                                        <option>{{ _("English") }}</option>
+                                        <option>{{ _("汉语") }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xxl-2 col-xl-2 col-lg-3 col-6">
+                        <div class="logo">
+                            <a href="javascript:;">
+                                <img src="{{ url_for('static',filename="assets/img/logo/logo.png") }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-8 d-none d-lg-block">
+                        <div class="category__menu d-flex align-items-center">
+                            <div class="category__btn mr-20">
+                                <button class="cat-btn" type="button"
+                                        onclick="javascrtpt:window.location.href='{{ url_for('front.shop', type_num=6) }}'">
+                                    <i class="fal fa-baby-carriage"></i>{{ _("Go Shopping")}}
+                                </button>
+                                <div class="side-submenu transition-3">
+
+                                </div>
+                            </div>
+                            <nav>
+
+                                <ul>
+                                    <li>
+                                        <a href="#Top_Categories">{{ _("Top Categories") }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Special_Offer">{{ _("Special Offer") }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Most_Popular">{{ _("Most Popular") }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#Best_Seller">{{ _("Best Seller") }}</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-1 col-6">
+                        <div class="header__bottom-right-wrapper d-flex justify-content-end align-items-center">
+                            <div
+                                    class="header__bottom-right d-none d-xl-flex align-items-center justify-content-end">
+                                <div class="header__search">
+                                    <form action="" method="post">
+                                        <div class="header__search-input">
+                                            <input type="text" name="keyword" placeholder="{{ _("Search product")}}..">
+                                            <button type="submit"><i class="far fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="header__action ml-30">
+                                    <ul>
+                                        <li>
+                                            <a href="\setting"><i class="fal fa-user-circle"></i></a>
+                                        </li>
+                                        {% if session.get("user_id") %}
+                                            <li>
+                                                <a href="javascript:;" data-bs-toggle="modal"
+                                                   data-bs-target="#cartMiniModal">
+                                                    <i class="fal fa-shopping-basket"></i>
+                                                    <span class="cart-count">{{ count }}</span>
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="header-bar ml-20 d-xl-none">
+                                <button type="button" class="header-bar-btn" data-bs-toggle="modal"
+                                        data-bs-target="#offCanvasModal">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header area end -->
+
+<!-- cart mini area start -->
+<div class="cartmini__area">
+    <div class="modal fade" id="cartMiniModal" tabindex="-1" aria-labelledby="cartMiniModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="cartmini__wrapper">
+                    <div class="cartmini__top d-flex align-items-center justify-content-between">
+                        <h4>Your Cart</h4>
+                        <div class="cartminit__close">
+                            <button type="button" data-bs-dismiss="modal" data-bs-target="#cartMiniModal"
+                                    class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="cartmini__list">
+                        <ul>
+                            {% for i in carts %}
+                                <li class="cartmini__item p-relative d-flex align-items-start">
+                                    <div class="cartmini__thumb mr-15">
+                                        <a href="\product-details\{{ i[3] }}">
+                                            <img src={{ i[5] }} alt="">
+                                        </a>
+                                    </div>
+                                    <div class="cartmini__content">
+                                        <h3 class="cartmini__title">
+                                            <a href="\product-details\{{ i[3] }}">{{ i[4] }}</a>
+                                        </h3>
+                                        <span class="cartmini__price">
+                                            <span class="price">{{ i[2] }} × ${{ i[6] }}</span>
+                                        </span>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="cartmini__total d-flex align-items-center justify-content-between">
+                        <h5>Total</h5>
+                        <span>${{ sum }}</span>
+                    </div>
+                    <div class="cartmini__bottom">
+                        <a href="\cart" class="b-btn w-100 mb-20">{{ _("view cart") }}</a>
+                        <a href="\checkout" class="b-btn-2 w-100">{{ _("checkout") }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cart mini area end -->
+    <div class="body-overlay"></div>
+    <!-- cart mini area end -->
+
+    <!-- sidebar area start -->
+    <section class="offcanvas__area">
+        <div class="modal fade" id="offCanvasModal" tabindex="-1" aria-labelledby="offCanvasModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="offcanvas__wrapper">
+                        <div class="offcanvas__top d-flex align-items-center mb-60 justify-content-between">
+                            <div class="logo">
+                                <a href="\index">
+                                    <img src="{{ url_for('static',filename="assets/img/logo/logo.png") }}" alt="logo">
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button class="offcanvas__close-btn" data-bs-dismiss="modal"
+                                        data-bs-target="#offCanvasModal">
+                                    <svg viewBox="0 0 22 22">
+                                        <path
+                                                d="M12.41,11l5.29-5.29c0.39-0.39,0.39-1.02,0-1.41s-1.02-0.39-1.41,0L11,9.59L5.71,4.29c-0.39-0.39-1.02-0.39-1.41,0
+                                            s-0.39,1.02,0,1.41L9.59,11l-5.29,5.29c-0.39,0.39-0.39,1.02,0,1.41C4.49,17.9,4.74,18,5,18s0.51-0.1,0.71-0.29L11,12.41l5.29,5.29
+                                            C16.49,17.9,16.74,18,17,18s0.51-0.1,0.71-0.29c0.39-0.39,0.39-1.02,0-1.41L12.41,11z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="sidebar__search mb-25">
+                            <form action="#">
+                                <input type="text" placeholder="What are you searching for?">
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div class="offcanvas__content p-relative z-index-1">
+                            <div class="canvas__menu">
+                                <div class="mobile-menu fix"></div>
+                            </div>
+                            <div class="offcanvas__action mt-40 mb-15">
+                                <a href="\contact">{{ _("Login") }}</a>
+                                <a href="\wishlist" class="has-tag">
+                                    <svg viewBox="0 0 22 22">
+                                        <path
+                                                d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0
+                                            L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53
+                                            c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3
+                                            C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91
+                                            c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21
+                                            c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1
+                                            c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24
+                                            c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18
+                                            c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z"/>
+                                    </svg>
+                                    <span class="tag">2</span>
+                                </a>
+                                <a href="\cart" class="has-tag">
+                                    <i class="far fa-shopping-bag"></i>
+                                    <span class="tag">{{ count }}</span>
+                                </a>
+                                <div class="header__select header__select-d d-flex align-items-center mt-10">
+                                    <div class="header__lang header__select-item mr-15">
+                                        <select>
+                                            <option>EN</option>
+                                            <option>BN</option>
+                                            <option>IN</option>
+                                            <option>CH</option>
+                                            <option>AM</option>
+                                        </select>
+                                        <div class="nice-select" tabindex="0"><span class="current">EN</span>
+                                            <ul class="list list-2">
+                                                <li data-value="EN" class="option selected focus">EN</li>
+                                                <li data-value="BN" class="option">BN</li>
+                                                <li data-value="IN" class="option">IN</li>
+                                                <li data-value="CH" class="option">CH</li>
+                                                <li data-value="AM" class="option">AM</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="header__currency header__select-item">
+                                        <select>
+                                            <option>🇬🇧 ENGLISH</option>
+                                            <option>🇨🇳 CHINESE</option>
+                                        </select>
+                                        <!-- <div class="nice-select" tabindex="0"><span class="current">USD</span>
+                                            <ul class="list list-2">
+                                                <li data-value="USD" class="option selected focus">USD</li>
+                                                <li data-value="Euro" class="option">Euro</li>
+                                                <li data-value="Yen" class="option">Yen</li>
+                                                <li data-value="Rupee" class="option">Rupee</li>
+                                                <li data-value="Sterlin" class="option">Sterlin</li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas__social mt-15">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><i class="fab fa-google-plus-g"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- sidebar area end -->
+
+    <main>
+        <!-- slider area start -->
+        <section class="slider__area">
+            <div class="slider__active swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="slider__item slider__height swiper-slide d-flex align-items-center include-bg"
+                         data-background="{{ url_for('static',filename='assets/img/slider/slider-1.jpg') }}">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xxl-5">
+                                    <div class="slider__content p-relative z-index-11">
+                                        <span data-animation="fadeInUp" data-delay=".3s">SUMMER 2022</span>
+                                        <h3 class="slider__title" data-animation="fadeInUp" data-delay=".5s">Classical
+                                            Style</h3>
+                                        <div class="slider__btn" data-animation="fadeInUp" data-delay=".4s">
+                                            <a href="{{ url_for('front.shop', type_num=3) }}" class="slider-btn">Discover
+                                                Now <i
+                                                        class="fal fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__item slider__height swiper-slide d-flex align-items-center include-bg"
+                         data-background="{{ url_for('static',filename='assets/img/slider/slider-2.jpg') }}">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xxl-5">
+                                    <div class="slider__content p-relative z-index-11">
+                                        <span data-animation="fadeInUp" data-delay=".3s">SUMMER 2022</span>
+                                        <h3 class="slider__title" data-animation="fadeInUp" data-delay=".5s">Playing
+                                            Luxury</h3>
+                                        <div class="slider__btn" data-animation="fadeInUp" data-delay=".4s">
+                                            <a href="{{ url_for('front.shop', type_num=4) }}" class="slider-btn">Discover
+                                                Now <i
+                                                        class="fal fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-slider-pagination">
+                    <button class="main-slider-button-prev"><i class="fal fa-angle-left"></i></button>
+                    <button class="main-slider-button-next"><i class="fal fa-angle-right"></i></button>
+                </div>
+            </div>
+        </section>
+        <!-- slider area end -->
+
+        <!-- category area start -->
+        <section class="category__area pt-40 grey-bg-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="section__title-wrapper section__title-line mb-40">
+                            <h3 class="section__title" id="Top_Categories">{{ _("Top Categories")}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="category__item mb-30 grey-bg-3">
+                            <div class="category__thumb w-img fix">
+                                <a href="{{ url_for('front.shop', type_num=0) }}">
+                                    <img src="{{ url_for('static',filename="assets/img/products/category/category-1.jpg") }}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="category__content text-center">
+                                <h3 class="category__title">
+                                    <a id="type0" href="{{ url_for('front.shop', type_num=0) }}">{{ _("Pipes") }}</a>
+                                </h3>
+                                <span class="category__quantity">({{ pipes_number_type }})</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="category__item mb-30 grey-bg-3">
+                            <div class="category__thumb w-img fix">
+                                <a href="{{ url_for('front.shop', type_num=1) }}">
+                                    <img src="{{ url_for('static',filename="assets/img/products/category/category-2.jpg") }}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="category__content text-center">
+                                <h3 class="category__title">
+                                    <a href="{{ url_for('front.shop', type_num=1) }}">{{ _("Electronic") }}</a>
+                                </h3>
+                                <span class="category__quantity">({{ electronic_number_type }})</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="category__item mb-30 grey-bg-3">
+                            <div class="category__thumb w-img fix">
+                                <a href="{{ url_for('front.shop', type_num=2) }}">
+                                    <img src="{{ url_for('static',filename="assets/img/products/category/category-3.jpg") }}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="category__content text-center">
+                                <h3 class="category__title">
+                                    <a href="{{ url_for('front.shop', type_num=2) }}">{{ _("Percussion") }}</a>
+                                </h3>
+                                <span class="category__quantity">({{ precussion_number_type }})</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="category__item mb-30 grey-bg-3">
+                            <div class="category__thumb w-img fix">
+                                <a href="{{ url_for('front.shop', type_num=3) }}">
+                                    <img src="{{ url_for('static',filename="assets/img/products/category/category-4.jpg") }}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="category__content text-center">
+                                <h3 class="category__title">
+                                    <a href="{{ url_for('front.shop', type_num=3) }}">{{ _("Piano") }}</a>
+                                </h3>
+                                <span class="category__quantity">({{ piano_number_type }})</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="category__item mb-30 grey-bg-3">
+                            <div class="category__thumb w-img fix">
+                                <a href="{{ url_for('front.shop', type_num=4) }}">
+                                    <img src="{{ url_for('static',filename="assets/img/products/category/category-5.jpg") }}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="category__content text-center">
+                                <h3 class="category__title">
+                                    <a href="{{ url_for('front.shop', type_num=4) }}">{{ _("Guitar") }}</a>
+                                </h3>
+                                <span class="category__quantity">({{ guitar_number_type }})</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6">
+                        <div class="category__item mb-30 grey-bg-3">
+                            <div class="category__thumb w-img fix">
+                                <a href="{{ url_for('front.shop', type_num=5) }}">
+                                    <img src="{{ url_for('static',filename="assets/img/products/category/category-6.jpg") }}"
+                                         alt="">
+                                </a>
+                            </div>
+                            <div class="category__content text-center">
+                                <h3 class="category__title">
+                                    <a href="{{ url_for('front.shop', type_num=5) }}">{{ _("Other") }}</a>
+                                </h3>
+                                <span class="category__quantity">({{ other_number_type }})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- category area end -->
+
+        <!-- product area start -->
+        <section class="product__area pt-95 pb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-6 col-lg-6">
+                        <div class="product__sale-wrapper">
+                            <div class="section__title-wrapper mb-20">
+                                <h3 class="section__title-2">{{ _("Sale Products")}}</h3>
+                            </div>
+                            <div class="product__sale-slider common-nav owl-carousel">
+                                {% for discount_commodity in discount_commodities[1:] %}
+                                    <div class="product__sale-item p-relative">
+                                        <div class="product__sale-thumb w-img fix">
+                                            <a href="{{ url_for('front.product_details', commodity_id=discount_commodity.id) }}">
+                                                <img src="{{ discount_commodity.image_oss }}"
+                                                     alt="">
+                                            </a>
+                                            <div class="product__sale-flash">
+                                                <span>20%</span>
+                                            </div>
+                                            <div class="product__action transition-3">
+                                                <ul>
+                                                    <li>
+                                                        <a class="add_cart" id="{{ discount_commodity.id }}" href="javascript:;">
+                                                            <svg viewBox="0 0 22 22">
+                                                                <g>
+                                                                    <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                               l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                               C18.83,18.71,18.44,19,18,19z"/>
+                                                                </g>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="\javascript:void(0)" class="view-details" data-bs-toggle="modal"
+                                                           data-bs-target="#productModalId{{ discount_commodity.id }}">
+                                                            <svg viewBox="0 0 22 22">
+                                                                <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product__sale-content text-center">
+                                        <span class="product__sale-tag">
+                                            <a href="javascript:;">{{ type_dic[discount_commodity.type] }}</a>
+                                        </span>
+                                            <h3 class="product__sale-title">
+                                                <a href="\product-details">{{ discount_commodity.name }}</a>
+                                            </h3>
+                                            <div class="product__sale-price">
+                                                <span class="price old-price">${{ discount_price_dic[discount_commodity.id] }}</span>
+                                                <span class="price new-price">${{ discount_commodity.price }}</span>
+                                            </div>
+                                            <div class="product__countdown-wrapper product__border mt-20 pt-20">
+                                                <div class="product__countdown"
+                                                     data-countdown={{ date_dic[discount_commodity.id] }}></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <div class="product__sale-item p-relative">
+                                    <div class="product__sale-thumb w-img fix">
+                                        <a href="{{ url_for('front.product_details', commodity_id=discount_commodities[0].id) }}">
+                                            <img src="{{ discount_commodities[0].image_oss }}"
+                                                 alt="">
+                                        </a>
+                                        <div class="product__sale-flash">
+                                            <span>20%</span>
+                                        </div>
+                                        <div class="product__action transition-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="add_cart" id="{{ discount_commodities[0].id }}" href="javascript:;">
+                                                        <svg viewBox="0 0 22 22">
+                                                            <g>
+                                                                <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                               l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                               C18.83,18.71,18.44,19,18,19z"/>
+                                                            </g>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="\javascript:void(0)" class="view-details" data-bs-toggle="modal"
+                                                       data-bs-target="#productModalId{{ discount_commodities[0].id }}">
+                                                        <svg viewBox="0 0 22 22">
+                                                            <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product__sale-content text-center">
+                                        <span class="product__sale-tag">
+                                            <a href="javascript:;">{{ type_dic[discount_commodities[0].type] }}</a>
+                                        </span>
+                                        <h3 class="product__sale-title">
+                                            <a href="{{ url_for('front.product_details', commodity_id = discount_commodities[0].id) }}">{{ discount_commodities[0].name }}</a>
+                                        </h3>
+                                        <div class="product__sale-price">
+                                            <span class="price old-price">${{ discount_price_dic[discount_commodities[0].id] }}</span>
+                                            <span class="price new-price">${{ discount_commodities[0].price }}</span>
+                                        </div>
+                                        <div class="product__countdown-wrapper product__border mt-20 pt-20">
+                                            <div class="product__countdown" data-countdown={{ date_dic[discount_commodities[0].id] }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 col-xl-6 col-lg-6">
+                        <div class="product__item-wrapper pt-15">
+                            <div class="product__top section__title-line d-sm-flex align-items-start mb-35">
+                                <div class="section__title-wrapper mr-30">
+                                    <h3 class="section__title" id="Special_Offer">{{ _("Special Offer")}}</h3>
+                                </div>
+                                <div class="product__tab">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="new-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#new" type="button" role="tab" aria-controls="new"
+                                                    aria-selected="true">{{ _("Top Sellers")}}
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="featured-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#featured" type="button" role="tab"
+                                                    aria-controls="featured" aria-selected="false">{{ _("Most Collected")}}
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="top-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#top" type="button" role="tab" aria-controls="top"
+                                                    aria-selected="false">{{ _("Most Viewed")}}
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="product__tab-content">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="new" role="tabpanel"
+                                         aria-labelledby="new-tab">
+                                        <div class="product__item-slider common-nav owl-carousel">
+
+                                            {% for item in buy_most %}
+                                                <div class="product__item-single">
+                                                    <div class="product__item mb-20">
+                                                        <div class="product__thumb w-img fix">
+
+                                                            <a href="{{ url_for('front.product_details', commodity_id = item[0].id) }}">
+                                                                <img src="{{ item[0].image }}" alt="">
+                                                            </a>
+                                                            <div class="product__action transition-3">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="add_cart" id="{{ item[0].id }}" href="javascript:;">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <g>
+                                                                                    <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                                                l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                                                C18.83,18.71,18.44,19,18,19z"/>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\javascript:void(0)" class="view-details"
+                                                                           data-bs-toggle="modal"
+                                                                           data-bs-target="#productModalId{{ item[0].id }}">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__content text-center">
+                                                            {#                                                        <div class="product__tag">#}
+                                                            {#                                                            <span>#}
+                                                            {#                                                                <a href="\#">{{item[0].type}}</a>#}
+                                                            {#                                                            </span>#}
+                                                            {#                                                        </div>#}
+                                                            <h3 class="product__title">
+                                                                <a href="\product-details">{{ item[0].name }}</a>
+                                                            </h3>
+                                                            <div class="product__price">
+                                                                <span class="price">${{ item[0].price }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__item mb-20">
+                                                        <div class="product__thumb w-img fix">
+                                                            <a href="{{ url_for('front.product_details', commodity_id = item[1].id) }}">
+                                                                <img src="{{ item[1].image }}" alt="">
+                                                            </a>
+
+                                                            <div class="product__action transition-3">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="add_cart" id="{{ item[1].id }}" href="javascript:;">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <g>
+                                                                                    <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                                                l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                                                C18.83,18.71,18.44,19,18,19z"/>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\javascript:void(0)" class="view-details"
+                                                                           data-bs-toggle="modal"
+                                                                           data-bs-target="#productModalId{{ item[1].id }}">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__content text-center">
+                                                            {#                                                        <div class="product__tag">#}
+                                                            {#                                                            <span>#}
+                                                            {#                                                                <a href="\#">{{item[1].type}}</a>#}
+                                                            {#                                                            </span>#}
+                                                            {#                                                        </div>#}
+                                                            <h3 class="product__title">
+                                                                <a href="\product-details">{{ item[1].name }}</a>
+                                                            </h3>
+                                                            <div class="product__price">
+                                                                <span class="price">${{ item[1].price }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="featured" role="tabpanel"
+                                         aria-labelledby="featured-tab">
+                                        <div class="product__item-slider common-nav owl-carousel">
+                                            {% for item in collect_most %}
+                                                <div class="product__item-single">
+                                                    <div class="product__item mb-20">
+                                                        <div class="product__thumb w-img fix">
+
+                                                            <a href="{{ url_for('front.product_details', commodity_id = item[0].id) }}">
+                                                                <img src="{{ item[0].image }}" alt="">
+                                                            </a>
+                                                            <div class="product__action transition-3">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="add_cart" id="{{ item[0].id }}" href="javascript:;">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <g>
+                                                                                    <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                                                l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                                                C18.83,18.71,18.44,19,18,19z"/>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\#">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path
+                                                                                        d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0
+                                                                            L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53
+                                                                            c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3
+                                                                            C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91
+                                                                            c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21
+                                                                            c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1
+                                                                            c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24
+                                                                            c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18
+                                                                            c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\javascript:void(0)" class="view-details"
+                                                                           data-bs-toggle="modal"
+                                                                           data-bs-target="#productModalId{{ item[0].id }}">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__content text-center">
+                                                            {#                                                            <div class="product__tag">#}
+                                                            {#                                                            <span>#}
+                                                            {#                                                                <a href="\#">{{item[0].type}}</a>#}
+                                                            {#                                                            </span>#}
+                                                            {#                                                            </div>#}
+                                                            <h3 class="product__title">
+                                                                <a href="\product-details">{{ item[0].name }}</a>
+                                                            </h3>
+                                                            <div class="product__price">
+                                                                <span class="price">${{ item[0].price }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__item mb-20">
+                                                        <div class="product__thumb w-img fix">
+                                                            <a href="{{ url_for('front.product_details', commodity_id = item[1].id) }}">
+                                                                <img src="{{ item[1].image }}" alt="">
+                                                            </a>
+
+                                                            <div class="product__action transition-3">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="add_cart" id="{{ item[1].id }}" href="javascript:;">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <g>
+                                                                                    <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                                                l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                                                C18.83,18.71,18.44,19,18,19z"/>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\#">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path
+                                                                                        d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0
+                                                                            L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53
+                                                                            c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3
+                                                                            C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91
+                                                                            c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21
+                                                                            c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1
+                                                                            c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24
+                                                                            c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18
+                                                                            c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\javascript:void(0)" class="view-details"
+                                                                           data-bs-toggle="modal"
+                                                                           data-bs-target="#productModalId{{ item[1].id }}">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__content text-center">
+                                                            {#                                                            <div class="product__tag">#}
+                                                            {#                                                            <span>#}
+                                                            {#                                                                <a href="\#">{{item[1].type}}</a>#}
+                                                            {#                                                            </span>#}
+                                                            {#                                                            </div>#}
+                                                            <h3 class="product__title">
+                                                                <a href="\product-details">{{ item[1].name }}</a>
+                                                            </h3>
+                                                            <div class="product__price">
+                                                                <span class="price">${{ item[1].price }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="top" role="tabpanel" aria-labelledby="top-tab">
+                                        <div class="product__item-slider common-nav owl-carousel">
+                                            {% for item in visit_most %}
+                                                <div class="product__item-single">
+                                                    <div class="product__item mb-20">
+                                                        <div class="product__thumb w-img fix">
+
+                                                            <a href="{{ url_for('front.product_details', commodity_id = item[0].id) }}">
+                                                                <img src="{{ item[0].image }}" alt="">
+                                                            </a>
+                                                            <div class="product__action transition-3">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="add_cart" id="{{ item[0].id }}" href="javascript:;">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <g>
+                                                                                    <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                                                l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                                                C18.83,18.71,18.44,19,18,19z"/>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\#">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path
+                                                                                        d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0
+                                                                            L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53
+                                                                            c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3
+                                                                            C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91
+                                                                            c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21
+                                                                            c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1
+                                                                            c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24
+                                                                            c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18
+                                                                            c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\javascript:void(0)" class="view-details"
+                                                                           data-bs-toggle="modal"
+                                                                           data-bs-target="#productModalId{{ item[0].id }}">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__content text-center">
+                                                            {#                                                            <div class="product__tag">#}
+                                                            {#                                                            <span>#}
+                                                            {#                                                                <a href="\#">{{item[0].type}}</a>#}
+                                                            {#                                                            </span>#}
+                                                            {#                                                            </div>#}
+                                                            <h3 class="product__title">
+                                                                <a href="\product-details">{{ item[0].name }}</a>
+                                                            </h3>
+                                                            <div class="product__price">
+                                                                <span class="price">${{ item[0].price }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__item mb-20">
+                                                        <div class="product__thumb w-img fix">
+                                                            <a href="{{ url_for('front.product_details', commodity_id = item[1].id) }}">
+                                                                <img src="{{ item[1].image }}" alt="">
+                                                            </a>
+
+                                                            <div class="product__action transition-3">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a class="add_cart" id="{{ item[1].id }}" href="javascript:;">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <g>
+                                                                                    <path d="M18,19H6c-0.5,0-0.92-0.37-0.99-0.86L3.13,5H1C0.45,5,0,4.55,0,4s0.45-1,1-1h3c0.5,0,0.92,0.37,0.99,0.86L6.87,17h10.39
+                                                                                l2.4-8H11c-0.55,0-1-0.45-1-1s0.45-1,1-1h10c0.32,0,0.61,0.15,0.8,0.4c0.19,0.25,0.25,0.58,0.16,0.88l-3,10
+                                                                                C18.83,18.71,18.44,19,18,19z"/>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\#">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path
+                                                                                        d="M20.26,11.3c2.31-2.36,2.31-6.18-0.02-8.53C19.11,1.63,17.6,1,16,1c0,0,0,0,0,0c-1.57,0-3.05,0.61-4.18,1.71c0,0,0,0,0,0
+                                                                            L11,3.41l-0.81-0.69c0,0,0,0,0,0C9.06,1.61,7.58,1,6,1C4.4,1,2.89,1.63,1.75,2.77c-2.33,2.35-2.33,6.17-0.02,8.53
+                                                                            c0,0,0,0.01,0.01,0.01l0.01,0.01c0,0,0,0,0,0c0,0,0,0,0,0L11,20.94l9.25-9.62c0,0,0,0,0,0c0,0,0,0,0,0L20.26,11.3
+                                                                            C20.26,11.31,20.26,11.3,20.26,11.3z M3.19,9.92C3.18,9.92,3.18,9.92,3.19,9.92C3.18,9.92,3.18,9.91,3.18,9.91
+                                                                            c-1.57-1.58-1.57-4.15,0-5.73C3.93,3.42,4.93,3,6,3c1.07,0,2.07,0.42,2.83,1.18C8.84,4.19,8.85,4.2,8.86,4.21
+                                                                            c0.01,0.01,0.01,0.02,0.03,0.03l1.46,1.25c0.07,0.06,0.14,0.09,0.22,0.13c0.01,0,0.01,0.01,0.02,0.01c0.13,0.06,0.27,0.1,0.41,0.1
+                                                                            c0.08,0,0.16-0.03,0.25-0.05c0.03-0.01,0.07-0.01,0.1-0.02c0.07-0.03,0.13-0.07,0.2-0.11c0.03-0.02,0.07-0.03,0.1-0.06l1.46-1.24
+                                                                            c0.01-0.01,0.02-0.02,0.03-0.03c0.01-0.01,0.03-0.01,0.04-0.02C13.93,3.42,14.93,3,16,3c0,0,0,0,0,0c1.07,0,2.07,0.42,2.83,1.18
+                                                                            c1.56,1.58,1.56,4.15,0,5.73c0,0,0,0.01-0.01,0.01c0,0,0,0,0,0L11,18.06L3.19,9.92z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="\javascript:void(0)" class="view-details"
+                                                                           data-bs-toggle="modal"
+                                                                           data-bs-target="#productModalId{{ item[1].id }}">
+                                                                            <svg viewBox="0 0 22 22">
+                                                                                <path d="M11,19c-6.53,0-10.42-7.23-10.58-7.53L0.17,11l0.25-0.47C0.58,10.23,4.47,3,11,3s10.42,7.23,10.58,7.53L21.83,11l-0.25,0.47
+                                                                            C21.42,11.77,17.53,19,11,19z M2.46,11c0.92,1.49,4.08,6,8.54,6c4.48,0,7.63-4.51,8.54-6C18.62,9.52,15.46,5,11,5
+                                                                            C6.52,5,3.37,9.51,2.46,11z M11,15c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S13.21,15,11,15z M11,9c-1.1,0-2,0.9-2,2s0.9,2,2,2
+                                                                            s2-0.9,2-2S12.1,9,11,9z"/>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product__content text-center">
+                                                            {#                                                            <div class="product__tag">#}
+                                                            {#                                                            <span>#}
+                                                            {#                                                                <a href="\#">{{item[1].type}}</a>#}
+                                                            {#                                                            </span>#}
+                                                            {#                                                            </div>#}
+                                                            <h3 class="product__title">
+                                                                <a>{{ item[1].name }}</a>
+                                                            </h3>
+                                                            <div class="product__price">
+                                                                <span class="price">${{ item[1].price }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product area end -->
+
+        <!-- banner area start -->
+        <section class="banner__area pb-100">
+            <div class="container">
+                <div class="row gx-0">
+                    <div class="col-xxl-8 col-xl-8 col-lg-8">
+                        <div class="banner__thumb-big w-img">
+                            <a href="/product-details/1511697656802988034">
+                                <img src="{{ url_for('static',filename="assets/img/products/banner/banner-11.jpg") }}"
+                                     alt="" id="Most_Popular">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4">
+                        <div class="banner__content text-center grey-bg-4">
+                            <div class="banner__top">
+                                <h3 class="banner__title">{{ _("Most Popular")}}</h3>
+                                <p>{{ _("Squiers really started to make their mark in the 1980s. Most popular product ever in
+                                        off-line shop.")}}</p>
+                            </div>
+                            <a href="/product-details/1511697656802988034">
+                                <div class="banner__thumb w-img">
+                                    <img src="{{ url_for('static',filename="assets/img/products/banner/banner-12.jpg") }}"
+                                         alt="">
+                                </div>
+                            </a>
+                            <div class="product__tag-2">
+                                <span>
+                                    <a href="javascript:;">{{ _("GUITAR") }}</a>
+                                </span>
+                            </div>
+                            <h3 class="product__title-2">
+                                <a href="/product-details/1511697656802988034">Fender Squier Bullet</a>
+                            </h3>
+                            <div class="product__price-2">
+                                <span class="price">$220.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner area end -->
+                            <script>
+                                                                    $(document).on("click", ".view-details", function(){
+                                                                    {#$(".view-details").click(function (){#}
+                                                                        let goal_remove = $(":root").find(".starRatingContainer");
+                                                                        goal_remove.remove();
+                                                                        let product_id = $(this).attr("data-bs-target");
+                                                                        $.post('/get_star_view', {
+                                                                            'product_id': product_id,
+                                                                        }).done(function (response){
+                                                                            let star = response['star'];
+                                                                            let modal = $(":root").find(product_id)
+                                                                            let goal = modal.find(".product__modal-review");
+                                                                            goal.html("<div class=\"starRatingContainer\"><div class=\"ratingSystem\"></div></div> <div class=\"ratingHolder\"></div>");
+                                                                            var properties1 = [
+                                                                            { "rating": star, "maxRating": "5", "readOnly": "yes", "starImage": "/static/assets/img/star/star.png", "emptyStarImage": "/static/assets/img/star/starbackground.png", "starSize": "32" }
+                                                                        ];
+                                                                        var className = "ratingSystem";
+                                                                        rateSystem(className, properties1, function (rating, ratingTargetElement) { ratingTargetElement.parentElement.parentElement.getElementsByClassName("ratingHolder")[0].innerHTML = rating; });})
+                                                                               });
+                                                                    </script>
+
+    <script>
+                                    $(document).on("click", ".add_cart", function(){
+                                        let commodity_id = $(this).attr("id");
+                                        zlajax.post({
+                                            url: "/add_cart",
+                                            data: {
+                                                "commodity_id": commodity_id,
+                                                "num_of_item": 1
+                                            },
+                                            success: function (response) {
+                                                let server_code = response['returnvalue'];
+                                                let server_cart_query = response['cart_query'];
+                                                let server_sum_modify = response['sum_modify'];
+                                                let server_cart_count = response['cart_count'];
+                                                if (server_code === 0) {
+                                                    $(".cart-price").text(server_sum_modify)
+                                                    $(".cart-count").text(server_cart_count)
+
+                                                    $(".cartmini__list").empty()
+                                                    let div = $(".cartmini__list");
+                                                    let ul = $("<ul>");
+                                                    div.append(ul);
+                                                    for (let i = 0; i < server_cart_query["data"].length; i++) {
+                                                        let root = ul;
+                                                        let li = $("<li>");
+                                                        li.attr('class', 'cartmini__item p-relative d-flex align-items-start');
+                                                        root.append(li);
+                                                        let a = $("<a>");
+                                                        a.attr("href", "\\cart")
+                                                        li.append(a)
+                                                        let div1 = $("<div>");
+                                                        div1.attr('class', 'cartmini__thumb mr-15');
+                                                        a.append(div1);
+                                                        let img = $("<img>");
+                                                        img.attr('src', server_cart_query["data"][i]["commodity_image_oss"]);
+                                                        img.attr('alt', '');
+                                                        div1.append(img);
+                                                        let div2 = $("<div>");
+                                                        div2.attr('class', 'cartmini__content');
+                                                        li.append(div2);
+                                                        let h3 = $("<h3>");
+                                                        h3.attr('class', 'cartmini__title');
+                                                        h3.text(server_cart_query["data"][i]["commodity_name"]);
+                                                        div2.append(h3);
+                                                        let span1 = $("<span>");
+                                                        span1.attr('class', 'cartmini__price');
+                                                        div2.append(span1);
+                                                        let span2 = $("<span>");
+                                                        span2.attr('class', 'price');
+                                                        span2.text(server_cart_query["data"][i]["amount"] + " × $" + server_cart_query["data"][i]["commodity_price"]);
+                                                        span1.append(span2);
+                                                    }
+                                                    success();
+                                                } else {
+                                                    if (response["returnvalue"] === 2) {
+                                                        warning();
+                                                        window.location = "/login";
+                                                    }
+                                                    else if (server_code === 3){
+                                                        warningAmount();
+                                                    }
+                                                    else{
+                                                        error();
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    });
+
+                            </script>
+
+        <!-- features area start -->
+        <section class="features__area pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="features__item text-center mb-30 features__item-border">
+                            <div class="features__icon">
+                                {#                                <i class="flaticon-truck"></i>#}
+                                <img src="{{ url_for('static',filename="assets/img/smallfigure/small1.png") }}" alt=""
+                                     width="70">
+                            </div>
+                            <div class="features__content">
+                                <h3 class="features__title">{{ _("Free Shipping")}}</h3>
+                                <p>{{ _("Capped $39 per order")}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="features__item text-center mb-30 features__item-border">
+                            <div class="features__icon">
+                                {#                                <i class="flaticon-credit-card"></i>#}
+                                <img src="{{ url_for('static',filename="assets/img/smallfigure/small2.png") }}" alt=""
+                                     width="70">
+                            </div>
+                            <div class="features__content">
+                                <h3 class="features__title">{{ _("Securety Payments")}}</h3>
+                                <p>{{ _("Up to 12 months installments")}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="features__item text-center mb-30 features__item-border">
+                            <div class="features__icon">
+                                {#                                <i class="flaticon-exchange"></i>#}
+                                <img src="{{ url_for('static',filename="assets/img/smallfigure/small3.png") }}" alt=""
+                                     width="70">
+                            </div>
+                            <div class="features__content">
+                                <h3 class="features__title">{{ _("14-Day Returns")}}</h3>
+                                <p>{{ _("Shop with confidence")}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="features__item text-center mb-30">
+                            <div class="features__icon">
+                                <img src="{{ url_for('static',filename="assets/img/smallfigure/small4.png") }}" alt=""
+                                     width="70">
+                            </div>
+                            <div class="features__content">
+                                <h3 class="features__title">{{ _("24/7 Support")}}</h3>
+                                <p>{{ _("Capped $39 per order")}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- features area end -->
+
+        <!-- banner area start -->
+        <section class="banner__area pb-100">
+            <div class="container">
+                <div class="row gx-0" id="Best_Seller">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4">
+                        <div class="banner__content text-center grey-bg-4">
+                            <div class="banner__top">
+                                <h3 class="banner__title">{{ _("Best Seller")}}</h3>
+                                <p>{{ _("A compact 15W amp that packs plenty of power. Best seller product ever in off-line
+                                        shop.")}}</p>
+                            </div>
+                            <a href="{{ url_for('front.product_details', commodity_id="1513385371319681026") }}">
+                                <div class="banner__thumb w-img">
+                                    <img src="{{ url_for('static',filename="assets/img/products/banner/banner-2-1.jpg") }}"
+                                         alt="">
+                                </div>
+                            </a>
+                            <div class="product__tag-2">
+                                <span>
+                                    <a href="javascript:;">{{ _("Electronic") }}</a>
+                                </span>
+                            </div>
+                            <h3 class="product__title-2">
+                                <a href="{{ url_for('front.product_details', commodity_id="1513385371319681026") }}">Marshall
+                                    MG15FX</a>
+                            </h3>
+                            <div class="product__price-2">
+                                <span class="price">$180.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-8 col-xl-8 col-lg-8">
+                        <div class="banner__thumb-big w-img">
+                            <a href="{{ url_for('front.product_details', commodity_id="1513385371319681026") }}">
+                                <img src="{{ url_for('static',filename="assets/img/products/banner/banner-2.jpg") }}"
+                                     alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner area end -->
+
+        <!-- blog area start -->
+        <section class="blog__area pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="section__title-wrapper  section__title-line mb-20">
+                            <h3 class="section__title">{{ _("Blog") }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="blog__slider blog__slider-d common-nav owl-carousel">
+                            {% for post in post_query %}
+                                <div class="blog__item transition-3 mb-30 white-bg">
+                                    <div class="blog__thumb w-img fix p-relative "style="overflow: hidden;height: 400px">
+                                        <a href="\blog_details\{{ post.id }}">
+                                            <img src="{{ post.post_picture[0].image_oss }}" alt=""
+                                                style="max-height: 600px;" >
+                                        </a>
+                                    </div>
+                                    <div class="blog__content p-relative text-center">
+                                        <div class="blog__tag">
+                                        <span>
+{#                                                                                    <p></p>#}
+                                            <a>{{ post.gmt_create }}</a>
+                                        </span>
+                                        </div>
+                                        <h3 class="blog__title">
+                                            <a>{{ post.title }}</a>
+                                        </h3>
+                                        <div class="blog__meta mb-10">
+                                        <span>
+                                            {{ _("Posted By")}}
+                                            <a class="blog__author-d">
+                                                {{ post.author.username }}
+                                            </a>
+                                        </span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</section>
+
+<!-- blog area end -->
+
+<!-- shop modal start -->
+{% for commodity in total_query %}
+    <div class="modal fade" id="productModalId{{ commodity.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered product__modal" role="document">
+            <div class="modal-content">
+                <div class="product__modal-wrapper p-relative">
+                    <div class="product__modal-close p-absolute">
+                        <button class="close-modal" data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
+                    </div>
+                    <div class="product__modal-inner">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="product__modal-box">
+                                    <div class="tab-content" id="modalTabContent">
+                                        <div class="tab-pane fade show active" id="nav1" role="tabpanel"
+                                             aria-labelledby="nav1-tab">
+                                            <div class="product__modal-img w-img">
+                                                <img src="{{ commodity.image_oss }}"
+                                                     alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="product__modal-content">
+                                    <h4 class="product__modal-title"><a href="\product-details">{{ commodity.name }}</a></h4>
+                                    <div class="product__modal-des mb-40">
+                                        <p>{{ intro_query_dict[commodity.id] }}</p>
+                                    </div>
+                                    <div class="product__modal-stock">
+                                        <span>{{ _("Availability") }} :</span>
+                                        {% if commodity.amount > 0 %}
+                                            <span>{{ _("In Stock")}}</span>
+                                        {% else %}
+                                            <span>{{ _("Out of Stock")}}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="product__modal-stock">
+                                        <span>Type :</span>
+                                        {% if commodity.type == 0 %}
+                                            <span>{{ _("Pipes") }}</span>
+                                        {% elif commodity.type == 1 %}
+                                            <span>{{ _("Electronic") }}</span>
+                                        {% elif commodity.type == 2 %}
+                                            <span>{{ _("Precussion") }}</span>
+                                        {% elif commodity.type == 3 %}
+                                            <span>{{ _("Piano") }}</span>
+                                        {% elif commodity.type == 4 %}
+                                            <span>{{ _("Guitar") }}</span>
+                                        {% else %}
+                                            <span>{{ _("Other") }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="product__modal-stock sku mb-30">
+                                        <span>{{ _("Discount") }}:</span>
+                                        {% if commodity.discount == 0 %}
+                                            <span>{{ _("No") }}</span>
+                                        {% else %}
+                                            <span>{{ _("Yes") }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="product__modal-review d-sm-flex">
+
+                                    </div>
+                                    <br>
+                                    <div class="product__modal-content-2">
+                                        <a>{{ _("Buy amount")}} &nbsp&nbsp&nbsp&nbsp&nbsp: {{ commodity.buy_amount }}</a></span>
+                                        <span class="rating-no ml-10 rating-left">
+                                        <a>{{ _("Visit amount")}} : {{ commodity.visit_amount }}</a></span>
+                                        <br>
+                                        <a>{{ _("Collect amount")}} : {{ commodity.collect_amount }}</a></span>
+                                        <span class="rating-no ml-10 rating-left">
+                                        <a>{{ _("Inventory") }} : {{ commodity.amount }}</a></span>
+                                    </div>
+                                    <br>
+
+                                    <div class="product__price">
+                                        <span class="price">{{ _("Price") }} : ${{ commodity.price }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+<!-- shop modal end -->
+
+</main>
+
+<!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Success',
+                description: 'Add to cart successfully!',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+
+        function warning() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please Login',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningAmount() {
+                init({
+                    fade_in: 800,
+                    fade_out: 800,
+                    position: 'top-center'
+                });
+
+
+                toast({
+                    title: 'Warning',
+                    description: 'Shortage of product stock',
+                    type: 'warning',
+                    timeout: 5000
+                })
+            }
+
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Custom message',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+
+
+{% include "newFront/footer.html" %}
+{% include "newFront/button_base.html" %}
+{#    <!-- JS here -->#}
+<script src="{{ url_for('static',filename="assets/js/search.js") }}"></script>
+<script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+</div>
+
+</body>
+
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</html>

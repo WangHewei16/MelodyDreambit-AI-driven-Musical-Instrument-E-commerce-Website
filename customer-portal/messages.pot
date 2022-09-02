@@ -1,0 +1,2738 @@
+# Translations template for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-05-07 16:37+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#: templates/newFront/about.html:6
+msgid "GoldMelody - About us"
+msgstr ""
+
+#: templates/newFront/about.html:48 templates/newFront/about.html:54
+#: templates/newFront/blog.html:215 templates/newFront/change_pass.html:356
+#: templates/newFront/header_area.html:128 templates/newFront/index.html:102
+msgid "About Us"
+msgstr ""
+
+#: templates/newFront/about.html:52 templates/newFront/blog-details.html:52
+#: templates/newFront/blog.html:254 templates/newFront/cart.html:50
+#: templates/newFront/change_pass.html:64 templates/newFront/checkout.html:51
+#: templates/newFront/company_profile.html:82
+#: templates/newFront/header_area.html:110 templates/newFront/order.html:49
+#: templates/newFront/order_detail.html:52
+#: templates/newFront/product-details.html:55
+#: templates/newFront/setting.html:76 templates/newFront/shop.html:57
+#: templates/newFront/sign-in.html:52 templates/newFront/sign-up.html:63
+#: templates/newFront/terms_conditions.html:60
+msgid "Home"
+msgstr ""
+
+#: templates/newFront/about.html:72
+msgid "Our History"
+msgstr ""
+
+#: templates/newFront/about.html:74
+msgid "Hello, We are GoldMelody."
+msgstr ""
+
+#: templates/newFront/about.html:75
+msgid "With 2 Months of Experience"
+msgstr ""
+
+#: templates/newFront/about.html:78
+msgid ""
+"We are a professional team. Our team has 2 months of\n"
+"                                    experience in the development and "
+"production of online stores, and our team members have\n"
+"                                    participated in several programs.\n"
+"                                    We are a young team. Our average age "
+"is only 21 years old and we are full of vigor and\n"
+"                                    innovation."
+msgstr ""
+
+#: templates/newFront/about.html:84
+msgid ""
+"We are a dedicated team. We firmly believe that an excellent brand comes "
+"from the trust\n"
+"                                    of customers, and that only by "
+"focusing can we achieve excellence.\n"
+"                                    We are a team with dreams. We come "
+"from China because of a common dream: to be a really\n"
+"                                    good online store manufacturing "
+"company,\n"
+"                                    and provide the most reliable "
+"products and technical support to our customers."
+msgstr ""
+
+#: templates/newFront/about.html:105
+#: templates/newFront/company_profile.html:113
+#: templates/newFront/company_profile.html:122 templates/newFront/index.html:6
+#: templates/newFront/terms_conditions.html:901
+msgid "GoldMelody"
+msgstr ""
+
+#: templates/newFront/about.html:106
+msgid "PROJECT-TEAM"
+msgstr ""
+
+#: templates/newFront/about.html:107
+msgid ""
+"As a young project team, we try to make users respond to the product "
+"through\n"
+"                                        GoldMelody as opposed to "
+"awakening their passion.\n"
+"                                        This desire will be objectively "
+"driven, like the stirring of the heart when you\n"
+"                                        first touch a musical instrument "
+"and play a syllable.\n"
+"                                        Instrument playing is a haven for"
+" individuality, eccentricity, heresy, perversity,\n"
+"                                        hobby and humor."
+msgstr ""
+
+#: templates/newFront/about.html:154
+msgid "2+ Months of Experience"
+msgstr ""
+
+#: templates/newFront/about.html:155
+msgid "Time brings experience and maturity."
+msgstr ""
+
+#: templates/newFront/about.html:155
+msgid "We're trying to do better."
+msgstr ""
+
+#: templates/newFront/about.html:165
+msgid "A wide range of products on sale"
+msgstr ""
+
+#: templates/newFront/about.html:166
+msgid "Offers instruments covering a wide range of musical styles."
+msgstr ""
+
+#: templates/newFront/about.html:176
+msgid "Elegant, premium service process"
+msgstr ""
+
+#: templates/newFront/about.html:177
+msgid ""
+"At GoldMelody, choosing the item you desire is the only thing you need to"
+" do. Leave\n"
+"                                        the rest to us."
+msgstr ""
+
+#: templates/newFront/about.html:188
+msgid "Excellent post-sales service"
+msgstr ""
+
+#: templates/newFront/about.html:189
+msgid "Strong post-sales teams with dedicated service staff and technicians"
+msgstr ""
+
+#: templates/newFront/about.html:207
+msgid "All Orders Are Free Shipping"
+msgstr ""
+
+#: templates/newFront/about.html:208
+msgid ""
+"We cover everything you buy, and yes, that includes shipping and related "
+"insurance."
+msgstr ""
+
+#: templates/newFront/about.html:223
+msgid "Expert Members."
+msgstr ""
+
+#: templates/newFront/about.html:233 templates/newFront/about.html:247
+msgid "In charge of customer-portal"
+msgstr ""
+
+#: templates/newFront/about.html:237
+msgid "Hewei Wang"
+msgstr ""
+
+#: templates/newFront/about.html:238 templates/newFront/about.html:252
+#: templates/newFront/about.html:267 templates/newFront/about.html:281
+msgid "Programmer"
+msgstr ""
+
+#: templates/newFront/about.html:251
+msgid "Ziyuan Wen"
+msgstr ""
+
+#: templates/newFront/about.html:261
+msgid ""
+"In charge of staff-portal and\n"
+"                                                deployment"
+msgstr ""
+
+#: templates/newFront/about.html:266
+msgid "Jinfeng Xu"
+msgstr ""
+
+#: templates/newFront/about.html:276
+msgid "In charge of staff-portal"
+msgstr ""
+
+#: templates/newFront/about.html:280
+msgid "Kaiwen Gong"
+msgstr ""
+
+#: templates/newFront/about.html:302
+msgid "In charge of testing and leading"
+msgstr ""
+
+#: templates/newFront/about.html:306
+msgid "Yunchang Liu"
+msgstr ""
+
+#: templates/newFront/about.html:307
+msgid "Product & Project Manager"
+msgstr ""
+
+#: templates/newFront/about.html:316
+msgid ""
+"In charge of operation and\n"
+"                                                maintenance"
+msgstr ""
+
+#: templates/newFront/about.html:321
+msgid "Yongfei Yan"
+msgstr ""
+
+#: templates/newFront/about.html:322
+msgid "Site Reliability Engineering"
+msgstr ""
+
+#: templates/newFront/blog-details.html:6
+msgid "GoldMelody - Blog details"
+msgstr ""
+
+#: templates/newFront/blog-details.html:48
+msgid "Blog Details"
+msgstr ""
+
+#: templates/newFront/blog-details.html:53
+msgid ""
+"Blog\n"
+"                                            Details"
+msgstr ""
+
+#: templates/newFront/blog-details.html:122
+msgid ""
+"Link to\n"
+"                                    the commodity"
+msgstr ""
+
+#: templates/newFront/blog-details.html:130
+msgid "Comments"
+msgstr ""
+
+#: templates/newFront/blog-details.html:185
+msgid "Leave a Comment"
+msgstr ""
+
+#: templates/newFront/blog-details.html:194
+#: templates/newFront/commodity_comment_tanchuang.html:62
+msgid "Send comment"
+msgstr ""
+
+#: templates/newFront/blog.html:104 templates/newFront/contact.html:61
+#: templates/newFront/header_area.html:24
+msgid "Payments"
+msgstr ""
+
+#: templates/newFront/blog.html:105 templates/newFront/contact.html:62
+#: templates/newFront/header_area.html:25
+msgid "Monthly Installment"
+msgstr ""
+
+#: templates/newFront/blog.html:114 templates/newFront/contact.html:71
+#: templates/newFront/header_area.html:34 templates/newFront/index.html:1255
+msgid "14-Day Returns"
+msgstr ""
+
+#: templates/newFront/blog.html:115 templates/newFront/contact.html:72
+#: templates/newFront/header_area.html:35
+msgid "Secure Payments"
+msgstr ""
+
+#: templates/newFront/blog.html:162
+msgid "Customer Service "
+msgstr ""
+
+#: templates/newFront/blog.html:170 templates/newFront/header_area.html:92
+#: templates/newFront/index.html:110
+msgid "English"
+msgstr ""
+
+#: templates/newFront/blog.html:171 templates/newFront/header_area.html:93
+#: templates/newFront/index.html:111
+msgid "汉语"
+msgstr ""
+
+#: templates/newFront/blog.html:197
+msgid "Home "
+msgstr ""
+
+#: templates/newFront/blog.html:200 templates/newFront/header_area.html:113
+#: templates/newFront/shop.html:53 templates/newFront/shop.html:58
+msgid "Shop"
+msgstr ""
+
+#: templates/newFront/blog.html:203 templates/newFront/cart.html:51
+#: templates/newFront/header_area.html:116 templates/newFront/index.html:93
+msgid "Cart"
+msgstr ""
+
+#: templates/newFront/blog.html:206 templates/newFront/footer.html:322
+#: templates/newFront/header_area.html:119 templates/newFront/index.html:96
+msgid "Checkout"
+msgstr ""
+
+#: templates/newFront/blog.html:209 templates/newFront/header_area.html:122
+#: templates/newFront/index.html:99 templates/newFront/order.html:50
+#: templates/newFront/order_detail.html:53
+msgid "Order"
+msgstr ""
+
+#: templates/newFront/blog.html:212 templates/newFront/header_area.html:125
+msgid "Blogs"
+msgstr ""
+
+#: templates/newFront/blog.html:250 templates/newFront/blog.html:255
+#: templates/newFront/footer.html:267 templates/newFront/index.html:90
+#: templates/newFront/index.html:1327
+msgid "Blog"
+msgstr ""
+
+#: templates/newFront/cart.html:8
+msgid "GoldMelody - Cart "
+msgstr ""
+
+#: templates/newFront/cart.html:46
+msgid "Your Cart"
+msgstr ""
+
+#: templates/newFront/cart.html:72
+msgid "Images"
+msgstr ""
+
+#: templates/newFront/cart.html:73 templates/newFront/checkout.html:199
+msgid "Product"
+msgstr ""
+
+#: templates/newFront/cart.html:74
+msgid "Unit Price"
+msgstr ""
+
+#: templates/newFront/cart.html:75 templates/newFront/product-details.html:277
+msgid "Quantity"
+msgstr ""
+
+#: templates/newFront/cart.html:76 templates/newFront/checkout.html:200
+msgid "Total"
+msgstr ""
+
+#: templates/newFront/cart.html:77
+msgid "Remove"
+msgstr ""
+
+#: templates/newFront/cart.html:289
+msgid "Cart totals"
+msgstr ""
+
+#: templates/newFront/cart.html:294
+msgid "Proceed to checkout"
+msgstr ""
+
+#: templates/newFront/change_pass.html:5
+msgid "GoldMelody - Change Password"
+msgstr ""
+
+#: templates/newFront/change_pass.html:60
+#: templates/newFront/change_pass.html:65
+msgid "Change Password"
+msgstr ""
+
+#: templates/newFront/change_pass.html:92 templates/newFront/sign-in.html:82
+#: templates/newFront/sign-up.html:99
+msgid "Work email"
+msgstr ""
+
+#: templates/newFront/change_pass.html:94 templates/newFront/sign-in.html:84
+#: templates/newFront/sign-up.html:101
+msgid "e-mail address"
+msgstr ""
+
+#: templates/newFront/change_pass.html:100 templates/newFront/sign-up.html:107
+msgid "Email-captcha"
+msgstr ""
+
+#: templates/newFront/change_pass.html:105 templates/newFront/sign-up.html:112
+msgid "email-captcha"
+msgstr ""
+
+#: templates/newFront/change_pass.html:111
+msgid "New Password"
+msgstr ""
+
+#: templates/newFront/change_pass.html:113 templates/newFront/sign-in.html:89
+#: templates/newFront/sign-in.html:91 templates/newFront/sign-up.html:118
+#: templates/newFront/sign-up.html:120
+msgid "Password"
+msgstr ""
+
+#: templates/newFront/change_pass.html:118
+#: templates/newFront/change_pass.html:120 templates/newFront/sign-up.html:125
+#: templates/newFront/sign-up.html:127
+msgid "Re-Password"
+msgstr ""
+
+#: templates/newFront/change_pass.html:125
+#: templates/newFront/change_pass.html:130 templates/newFront/sign-up.html:132
+#: templates/newFront/sign-up.html:137
+msgid "Graph-captcha"
+msgstr ""
+
+#: templates/newFront/change_pass.html:137
+msgid "I agree to the "
+msgstr ""
+
+#: templates/newFront/change_pass.html:137
+msgid "Terms"
+msgstr ""
+
+#: templates/newFront/change_pass.html:138
+msgid "Conditions"
+msgstr ""
+
+#: templates/newFront/change_pass.html:142
+msgid "Change the Password"
+msgstr ""
+
+#: templates/newFront/change_pass.html:165 templates/newFront/footer.html:212
+msgid "Need help"
+msgstr ""
+
+#: templates/newFront/change_pass.html:171 templates/newFront/footer.html:218
+msgid "Monday - Friday"
+msgstr ""
+
+#: templates/newFront/change_pass.html:172 templates/newFront/footer.html:219
+msgid "Saturady"
+msgstr ""
+
+#: templates/newFront/change_pass.html:212 templates/newFront/footer.html:259
+msgid "Useful Links"
+msgstr ""
+
+#: templates/newFront/change_pass.html:217
+#: templates/newFront/change_pass.html:362
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/newFront/change_pass.html:220
+msgid "Returns"
+msgstr ""
+
+#: templates/newFront/change_pass.html:223
+#: templates/newFront/change_pass.html:365 templates/newFront/footer.html:264
+msgid "Terms & Conditions"
+msgstr ""
+
+#: templates/newFront/change_pass.html:226
+#: templates/newFront/change_pass.html:368
+msgid "Contact Us"
+msgstr ""
+
+#: templates/newFront/change_pass.html:229
+msgid "Latest News"
+msgstr ""
+
+#: templates/newFront/change_pass.html:232
+#: templates/newFront/change_pass.html:311
+msgid "Our Sitemap"
+msgstr ""
+
+#: templates/newFront/change_pass.html:241 templates/newFront/footer.html:285
+msgid "Our Stores"
+msgstr ""
+
+#: templates/newFront/change_pass.html:246
+msgid "New York"
+msgstr ""
+
+#: templates/newFront/change_pass.html:249
+msgid "London SF"
+msgstr ""
+
+#: templates/newFront/change_pass.html:252
+msgid "Cockfosters BP"
+msgstr ""
+
+#: templates/newFront/change_pass.html:255
+msgid "Los Angele"
+msgstr ""
+
+#: templates/newFront/change_pass.html:258
+msgid "Chicago"
+msgstr ""
+
+#: templates/newFront/change_pass.html:261
+msgid "Las Vegas"
+msgstr ""
+
+#: templates/newFront/change_pass.html:270
+#: templates/newFront/change_pass.html:275 templates/newFront/footer.html:314
+#: templates/newFront/footer.html:319
+msgid "My Account"
+msgstr ""
+
+#: templates/newFront/change_pass.html:278 templates/newFront/footer.html:325
+msgid "Order History"
+msgstr ""
+
+#: templates/newFront/change_pass.html:281
+msgid "Wish List"
+msgstr ""
+
+#: templates/newFront/change_pass.html:284
+msgid "Newsletter"
+msgstr ""
+
+#: templates/newFront/change_pass.html:286
+msgid "Shipping & Returns"
+msgstr ""
+
+#: templates/newFront/change_pass.html:294
+#: templates/newFront/header_area.html:84
+msgid "Customer Service"
+msgstr ""
+
+#: templates/newFront/change_pass.html:299
+msgid "Search Terms"
+msgstr ""
+
+#: templates/newFront/change_pass.html:302
+msgid "Advanced Search"
+msgstr ""
+
+#: templates/newFront/change_pass.html:305
+msgid "Help & FAQs"
+msgstr ""
+
+#: templates/newFront/change_pass.html:308
+msgid "Furniture Expert"
+msgstr ""
+
+#: templates/newFront/change_pass.html:314
+msgid "Find A Store"
+msgstr ""
+
+#: templates/newFront/change_pass.html:330
+msgid "Sign up for our Newsletter"
+msgstr ""
+
+#: templates/newFront/change_pass.html:333
+msgid "Enter Email ID"
+msgstr ""
+
+#: templates/newFront/change_pass.html:359
+msgid "Delivery Information"
+msgstr ""
+
+#: templates/newFront/change_pass.html:371
+msgid "Site Map"
+msgstr ""
+
+#: templates/newFront/checkout.html:6
+msgid "GoldMelody - Checkout"
+msgstr ""
+
+#: templates/newFront/checkout.html:47 templates/newFront/checkout.html:52
+msgid "Cheakout"
+msgstr ""
+
+#: templates/newFront/checkout.html:77
+msgid "Choose address"
+msgstr ""
+
+#: templates/newFront/checkout.html:82
+#: templates/newFront/company_profile.html:122
+#: templates/newFront/setting.html:180
+msgid "Name"
+msgstr ""
+
+#: templates/newFront/checkout.html:83
+#: templates/newFront/company_profile.html:126
+#: templates/newFront/setting.html:181
+#: templates/newFront/terms_conditions.html:907
+msgid "Phone"
+msgstr ""
+
+#: templates/newFront/checkout.html:84
+#: templates/newFront/company_profile.html:124 templates/newFront/order.html:71
+#: templates/newFront/setting.html:147 templates/newFront/setting.html:154
+#: templates/newFront/setting.html:182
+msgid "Address"
+msgstr ""
+
+#: templates/newFront/checkout.html:104
+msgid ""
+"Go Setting to\n"
+"                                            add Address"
+msgstr ""
+
+#: templates/newFront/checkout.html:194
+msgid "Your order"
+msgstr ""
+
+#: templates/newFront/checkout.html:217
+msgid "Cart Subtotal"
+msgstr ""
+
+#: templates/newFront/checkout.html:221
+msgid "Way to Place Order"
+msgstr ""
+
+#: templates/newFront/checkout.html:228
+msgid "Pickup"
+msgstr ""
+
+#: templates/newFront/checkout.html:234
+msgid "Delivery"
+msgstr ""
+
+#: templates/newFront/checkout.html:240
+msgid "Order Total"
+msgstr ""
+
+#: templates/newFront/checkout.html:260
+msgid "Direct Bank Transfer"
+msgstr ""
+
+#: templates/newFront/checkout.html:266
+msgid ""
+"Make your payment directly into our bank account. Please use your Order "
+"ID as the payment reference. Your order won’t be shipped until the funds "
+"have cleared in our account."
+msgstr ""
+
+#: templates/newFront/checkout.html:278
+msgid "Wechat Payment"
+msgstr ""
+
+#: templates/newFront/checkout.html:286
+msgid "Scan QR code for payment"
+msgstr ""
+
+#: templates/newFront/checkout.html:297
+msgid "PayPal"
+msgstr ""
+
+#: templates/newFront/checkout.html:305
+msgid ""
+"Pay via PayPal; you can pay with your credit card if you don’t have a "
+"PayPal account."
+msgstr ""
+
+#: templates/newFront/checkout.html:326
+msgid "Pay"
+msgstr ""
+
+#: templates/newFront/commodity_comment_tanchuang.html:51
+msgid "Write comment"
+msgstr ""
+
+#: templates/newFront/company_profile.html:6
+msgid "GoldMelody - Company Profile"
+msgstr ""
+
+#: templates/newFront/company_profile.html:78
+#: templates/newFront/footer.html:328
+msgid "Company Profile"
+msgstr ""
+
+#: templates/newFront/company_profile.html:83
+msgid ""
+"company\n"
+"                                            profile"
+msgstr ""
+
+#: templates/newFront/company_profile.html:115
+msgid "Online Musical Instrument Sales & Service Company"
+msgstr ""
+
+#: templates/newFront/company_profile.html:117
+msgid "This is our MELODY"
+msgstr ""
+
+#: templates/newFront/company_profile.html:123
+msgid "Setup Time"
+msgstr ""
+
+#: templates/newFront/company_profile.html:123
+msgid "March 1st, 2022"
+msgstr ""
+
+#: templates/newFront/company_profile.html:124
+#: templates/newFront/footer.html:290
+#: templates/newFront/terms_conditions.html:904
+msgid "Beijing & Dublin"
+msgstr ""
+
+#: templates/newFront/company_profile.html:125
+#: templates/newFront/terms_conditions.html:910
+msgid "Email"
+msgstr ""
+
+#: templates/newFront/contact.html:6
+msgid "GoldMelody - Contact"
+msgstr ""
+
+#: templates/newFront/footer.html:204
+msgid "Welcome to contact us during our working hours"
+msgstr ""
+
+#: templates/newFront/footer.html:270
+msgid "On Sale"
+msgstr ""
+
+#: templates/newFront/footer.html:273
+msgid "Shopping Cart"
+msgstr ""
+
+#: templates/newFront/footer.html:276
+msgid "Profile Setting"
+msgstr ""
+
+#: templates/newFront/footer.html:293
+msgid "London SF (Out Soon)"
+msgstr ""
+
+#: templates/newFront/footer.html:296
+msgid "New York (Out Soon)"
+msgstr ""
+
+#: templates/newFront/footer.html:299
+msgid "California (Out Soon)"
+msgstr ""
+
+#: templates/newFront/footer.html:302
+msgid "Chicago (Out Soon)"
+msgstr ""
+
+#: templates/newFront/footer.html:305
+msgid "Las Vegas (Out Soon)"
+msgstr ""
+
+#: templates/newFront/footer.html:348 templates/newFront/index.html:56
+msgid "off some products in this month "
+msgstr ""
+
+#: templates/newFront/footer.html:349 templates/newFront/index.html:57
+msgid "Shop Now"
+msgstr ""
+
+#: templates/newFront/footer.html:352 templates/newFront/index.html:60
+msgid "Free delivery for all orders over"
+msgstr ""
+
+#: templates/newFront/header_area.html:73 templates/newFront/index.html:167
+msgid "Search product"
+msgstr ""
+
+#: templates/newFront/header_area.html:219 templates/newFront/index.html:247
+msgid "view cart"
+msgstr ""
+
+#: templates/newFront/header_area.html:220 templates/newFront/index.html:248
+msgid "checkout"
+msgstr ""
+
+#: templates/newFront/header_area.html:266 templates/newFront/index.html:293
+msgid "Login"
+msgstr ""
+
+#: templates/newFront/header_area.html:307
+#: templates/newFront/header_area.html:313
+#: templates/newFront/header_area.html:315
+msgid "USD"
+msgstr ""
+
+#: templates/newFront/header_area.html:308
+#: templates/newFront/header_area.html:316
+msgid "Euro"
+msgstr ""
+
+#: templates/newFront/header_area.html:309
+#: templates/newFront/header_area.html:317
+msgid "Yen"
+msgstr ""
+
+#: templates/newFront/header_area.html:310
+#: templates/newFront/header_area.html:318
+msgid "Rupee"
+msgstr ""
+
+#: templates/newFront/header_area.html:311
+#: templates/newFront/header_area.html:319
+msgid "Sterlin"
+msgstr ""
+
+#: templates/newFront/index.html:135
+msgid "Go Shopping"
+msgstr ""
+
+#: templates/newFront/index.html:145 templates/newFront/index.html:436
+msgid "Top Categories"
+msgstr ""
+
+#: templates/newFront/index.html:148 templates/newFront/index.html:667
+msgid "Special Offer"
+msgstr ""
+
+#: templates/newFront/index.html:151 templates/newFront/index.html:1098
+msgid "Most Popular"
+msgstr ""
+
+#: templates/newFront/index.html:154 templates/newFront/index.html:1284
+msgid "Best Seller"
+msgstr ""
+
+#: templates/newFront/index.html:451 templates/newFront/index.html:1417
+#: templates/newFront/shop.html:81 templates/newFront/shop.html:688
+msgid "Pipes"
+msgstr ""
+
+#: templates/newFront/index.html:467 templates/newFront/index.html:1296
+#: templates/newFront/index.html:1419 templates/newFront/shop.html:85
+#: templates/newFront/shop.html:690
+msgid "Electronic"
+msgstr ""
+
+#: templates/newFront/index.html:483 templates/newFront/shop.html:90
+msgid "Percussion"
+msgstr ""
+
+#: templates/newFront/index.html:499 templates/newFront/index.html:1423
+#: templates/newFront/shop.html:95 templates/newFront/shop.html:694
+msgid "Piano"
+msgstr ""
+
+#: templates/newFront/index.html:515 templates/newFront/index.html:1425
+#: templates/newFront/shop.html:99 templates/newFront/shop.html:696
+msgid "Guitar"
+msgstr ""
+
+#: templates/newFront/index.html:531 templates/newFront/index.html:1427
+#: templates/newFront/shop.html:103 templates/newFront/shop.html:698
+msgid "Other"
+msgstr ""
+
+#: templates/newFront/index.html:549
+msgid "Sale Products"
+msgstr ""
+
+#: templates/newFront/index.html:674
+msgid "Top Sellers"
+msgstr ""
+
+#: templates/newFront/index.html:680
+msgid "Most Collected"
+msgstr ""
+
+#: templates/newFront/index.html:686
+msgid "Most Viewed"
+msgstr ""
+
+#: templates/newFront/index.html:1099
+msgid ""
+"Squiers really started to make their mark in the 1980s. Most popular "
+"product ever in\n"
+"                                        off-line shop."
+msgstr ""
+
+#: templates/newFront/index.html:1110
+msgid "GUITAR"
+msgstr ""
+
+#: templates/newFront/index.html:1229
+msgid "Free Shipping"
+msgstr ""
+
+#: templates/newFront/index.html:1230 templates/newFront/index.html:1268
+msgid "Capped $39 per order"
+msgstr ""
+
+#: templates/newFront/index.html:1242
+msgid "Securety Payments"
+msgstr ""
+
+#: templates/newFront/index.html:1243
+msgid "Up to 12 months installments"
+msgstr ""
+
+#: templates/newFront/index.html:1256
+msgid "Shop with confidence"
+msgstr ""
+
+#: templates/newFront/index.html:1267
+msgid "24/7 Support"
+msgstr ""
+
+#: templates/newFront/index.html:1285
+msgid ""
+"A compact 15W amp that packs plenty of power. Best seller product ever in"
+" off-line\n"
+"                                        shop."
+msgstr ""
+
+#: templates/newFront/index.html:1354
+msgid "Posted By"
+msgstr ""
+
+#: templates/newFront/index.html:1407 templates/newFront/shop.html:678
+msgid "Availability"
+msgstr ""
+
+#: templates/newFront/index.html:1409 templates/newFront/shop.html:680
+msgid "In Stock"
+msgstr ""
+
+#: templates/newFront/index.html:1411 templates/newFront/shop.html:682
+msgid "Out of Stock"
+msgstr ""
+
+#: templates/newFront/index.html:1421 templates/newFront/shop.html:692
+msgid "Precussion"
+msgstr ""
+
+#: templates/newFront/index.html:1431 templates/newFront/shop.html:702
+msgid "Discount"
+msgstr ""
+
+#: templates/newFront/index.html:1433 templates/newFront/shop.html:704
+msgid "No"
+msgstr ""
+
+#: templates/newFront/index.html:1435 templates/newFront/shop.html:706
+msgid "Yes"
+msgstr ""
+
+#: templates/newFront/index.html:1443
+#: templates/newFront/product-details.html:248 templates/newFront/shop.html:482
+#: templates/newFront/shop.html:728
+msgid "Buy amount"
+msgstr ""
+
+#: templates/newFront/index.html:1445
+#: templates/newFront/product-details.html:250 templates/newFront/shop.html:484
+#: templates/newFront/shop.html:730
+msgid "Visit amount"
+msgstr ""
+
+#: templates/newFront/index.html:1447 templates/newFront/shop.html:486
+#: templates/newFront/shop.html:732
+msgid "Collect amount"
+msgstr ""
+
+#: templates/newFront/index.html:1449
+#: templates/newFront/product-details.html:252 templates/newFront/shop.html:488
+#: templates/newFront/shop.html:734
+msgid "Inventory"
+msgstr ""
+
+#: templates/newFront/index.html:1454 templates/newFront/order_detail.html:76
+#: templates/newFront/product-details.html:259 templates/newFront/shop.html:125
+#: templates/newFront/shop.html:739
+msgid "Price"
+msgstr ""
+
+#: templates/newFront/order.html:6
+msgid "GoldMelody - Order"
+msgstr ""
+
+#: templates/newFront/order.html:45
+msgid "Your Orders"
+msgstr ""
+
+#: templates/newFront/order.html:72
+msgid "Date Time"
+msgstr ""
+
+#: templates/newFront/order.html:73
+msgid "Action"
+msgstr ""
+
+#: templates/newFront/order.html:74
+msgid "Logistics Status"
+msgstr ""
+
+#: templates/newFront/order.html:75
+msgid "Action Status"
+msgstr ""
+
+#: templates/newFront/order.html:76
+msgid "Product Detail"
+msgstr ""
+
+#: templates/newFront/order.html:90
+msgid "Pick up"
+msgstr ""
+
+#: templates/newFront/order.html:105
+msgid "Refund"
+msgstr ""
+
+#: templates/newFront/order.html:108
+msgid "Change Address"
+msgstr ""
+
+#: templates/newFront/order.html:114
+msgid "Submit"
+msgstr ""
+
+#: templates/newFront/order.html:117
+msgid "Modifying"
+msgstr ""
+
+#: templates/newFront/order.html:119
+msgid "Can not modify"
+msgstr ""
+
+#: templates/newFront/order.html:126
+msgid "Sign"
+msgstr ""
+
+#: templates/newFront/order.html:141 templates/newFront/shop.html:237
+msgid "View"
+msgstr ""
+
+#: templates/newFront/order.html:251 templates/newFront/order_detail.html:348
+#: templates/newFront/product-details.html:569 templates/newFront/shop.html:949
+msgid "CLOSE"
+msgstr ""
+
+#: templates/newFront/order_detail.html:6
+msgid "GoldMelody - Order Details"
+msgstr ""
+
+#: templates/newFront/order_detail.html:48
+msgid "Order Detail"
+msgstr ""
+
+#: templates/newFront/order_detail.html:74
+msgid "Picture"
+msgstr ""
+
+#: templates/newFront/order_detail.html:75
+msgid "Item Name"
+msgstr ""
+
+#: templates/newFront/order_detail.html:77
+msgid "Amount"
+msgstr ""
+
+#: templates/newFront/order_detail.html:206
+msgid "Order total"
+msgstr ""
+
+#: templates/newFront/product-details.html:6
+msgid "GoldMelody - Product"
+msgstr ""
+
+#: templates/newFront/product-details.html:51
+msgid "Product Details"
+msgstr ""
+
+#: templates/newFront/product-details.html:56
+msgid ""
+"Product\n"
+"                                            Details"
+msgstr ""
+
+#: templates/newFront/product-details.html:90
+msgid "Write a Blog"
+msgstr ""
+
+#: templates/newFront/product-details.html:99
+msgid "Write a Comment"
+msgstr ""
+
+#: templates/newFront/product-details.html:132
+#: templates/newFront/product-details.html:142
+msgid "new"
+msgstr ""
+
+#: templates/newFront/product-details.html:289
+#: templates/newFront/product-details.html:293
+msgid "Add to Cart"
+msgstr ""
+
+#: templates/newFront/setting.html:6
+msgid "GoldMelody - Setting"
+msgstr ""
+
+#: templates/newFront/setting.html:94
+msgid "Setting"
+msgstr ""
+
+#: templates/newFront/setting.html:116
+msgid "Avatar"
+msgstr ""
+
+#: templates/newFront/setting.html:121
+msgid "Upload"
+msgstr ""
+
+#: templates/newFront/setting.html:129
+msgid "First Name"
+msgstr ""
+
+#: templates/newFront/setting.html:135
+msgid "Last Name"
+msgstr ""
+
+#: templates/newFront/setting.html:141
+msgid "Phone Number"
+msgstr ""
+
+#: templates/newFront/setting.html:166
+msgid "Add"
+msgstr ""
+
+#: templates/newFront/setting.html:167
+msgid "Logout"
+msgstr ""
+
+#: templates/newFront/setting.html:175
+msgid "History Address"
+msgstr ""
+
+#: templates/newFront/shop.html:6
+msgid "GoldMelody - Shop"
+msgstr ""
+
+#: templates/newFront/shop.html:76
+msgid "Product categories"
+msgstr ""
+
+#: templates/newFront/shop.html:110
+msgid "Filter By Price"
+msgstr ""
+
+#: templates/newFront/shop.html:132
+msgid "Filter"
+msgstr ""
+
+#: templates/newFront/shop.html:248
+msgid "Total of"
+msgstr ""
+
+#: templates/newFront/shop.html:249
+msgid "results"
+msgstr ""
+
+#: templates/newFront/shop.html:251
+msgid "No results"
+msgstr ""
+
+#: templates/newFront/shop.html:259 templates/newFront/shop.html:264
+#: templates/newFront/shop.html:266
+msgid "Default sorting"
+msgstr ""
+
+#: templates/newFront/shop.html:355
+msgid "See details"
+msgstr ""
+
+#: templates/newFront/shop.html:686
+msgid "Type"
+msgstr ""
+
+#: templates/newFront/sign-in.html:6
+msgid "GoldMelody - Sign in"
+msgstr ""
+
+#: templates/newFront/sign-in.html:48 templates/newFront/sign-in.html:53
+msgid "Sign in"
+msgstr ""
+
+#: templates/newFront/sign-in.html:98
+msgid "Keep me signed in"
+msgstr ""
+
+#: templates/newFront/sign-in.html:102
+msgid "Forgot/change password"
+msgstr ""
+
+#: templates/newFront/sign-in.html:105 templates/newFront/sign-up.html:151
+msgid "Sign In"
+msgstr ""
+
+#: templates/newFront/sign-in.html:107
+msgid "New to Markit"
+msgstr ""
+
+#: templates/newFront/sign-in.html:107 templates/newFront/sign-up.html:59
+#: templates/newFront/sign-up.html:64 templates/newFront/sign-up.html:149
+msgid "Sign Up"
+msgstr ""
+
+#: templates/newFront/sign-up.html:5
+msgid "GoldMelody - Sign up"
+msgstr ""
+
+#: templates/newFront/sign-up.html:92
+msgid "Full Name"
+msgstr ""
+
+#: templates/newFront/sign-up.html:94
+msgid "Full name"
+msgstr ""
+
+#: templates/newFront/sign-up.html:115
+msgid "Send"
+msgstr ""
+
+#: templates/newFront/sign-up.html:144
+msgid "I agree to the"
+msgstr ""
+
+#: templates/newFront/sign-up.html:144
+msgid ""
+"Terms\n"
+"                                                &amp; Conditions"
+msgstr ""
+
+#: templates/newFront/sign-up.html:151
+msgid "Already in Markit"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:6
+msgid "GoldMelody - Terms & Conditions"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:56
+msgid "Terms and Conditions"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:61
+msgid ""
+"Last\n"
+"                                            Updated April 26, 2022"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:82
+msgid "TABLE OF CONTENTS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:83
+#: templates/newFront/terms_conditions.html:112
+msgid "AGREEMENT TO TERMS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:84
+#: templates/newFront/terms_conditions.html:156
+msgid "INTELLECTUAL PROPERTY RIGHTS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:85
+#: templates/newFront/terms_conditions.html:186
+msgid "USER REPRESENTATIONS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:86
+#: templates/newFront/terms_conditions.html:208
+msgid "USER REGISTRATION"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:87
+#: templates/newFront/terms_conditions.html:219
+msgid "PROHIBITED ACTIVITIES"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:88
+#: templates/newFront/terms_conditions.html:299
+msgid "USER GENERATED CONTRIBUTIONS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:89
+#: templates/newFront/terms_conditions.html:367
+msgid "CONTRIBUTION LICENSE"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:90
+#: templates/newFront/terms_conditions.html:415
+msgid "GUIDELINES FOR REVIEWS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:91
+#: templates/newFront/terms_conditions.html:448
+msgid "MOBILE APPLICATION LICENSE"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:92
+#: templates/newFront/terms_conditions.html:527
+msgid "SOCIAL MEDIA"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:93
+#: templates/newFront/terms_conditions.html:588
+msgid "SUBMISSIONS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:94
+#: templates/newFront/terms_conditions.html:607
+msgid "THIRD-PARTY WEBSITE AND CONTENT"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:95
+#: templates/newFront/terms_conditions.html:649
+msgid "SITE MANAGEMENT"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:96
+#: templates/newFront/terms_conditions.html:669
+msgid "TERM AND TERMINATION"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:97
+#: templates/newFront/terms_conditions.html:689
+msgid "MODIFICATIONS AND INTERRUPTIONS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:98
+#: templates/newFront/terms_conditions.html:715
+msgid "GOVERNING LAW"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:99
+#: templates/newFront/terms_conditions.html:733
+msgid "DISPUTE RESOLUTION"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:100
+#: templates/newFront/terms_conditions.html:761
+msgid "CORRECTIONS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:101
+#: templates/newFront/terms_conditions.html:773
+msgid "DISCLAIMER"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:102
+#: templates/newFront/terms_conditions.html:801
+msgid "LIMITATIONS OF LIABILITY"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:103
+#: templates/newFront/terms_conditions.html:810
+msgid "INDEMNIFICATION"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:104
+#: templates/newFront/terms_conditions.html:835
+msgid "USER DATA"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:105
+msgid ""
+"ELECTRONIC COMMUNICATIONS, TRANSACTIONS,\n"
+"                                        AND SIGNATURES"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:107
+#: templates/newFront/terms_conditions.html:868
+msgid "MISCELLANEOUS"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:108
+#: templates/newFront/terms_conditions.html:896
+msgid "CONTACT US"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:113
+msgid ""
+"These Terms of Use constitute a legally binding agreement made between "
+"you, whether\n"
+"                                    personally or on behalf of an entity "
+"(\"you\") and GoldMelody (\"Company,\" \"We,\" \"us,\" or\n"
+"                                    \"our\"), concerning your access to "
+"and use of the website as well as any other media\n"
+"                                    form, media channel, mobile website "
+"or mobile application related, linked, or otherwise\n"
+"                                    connected thereto (collectively, the "
+"\"Site\"). We are registered in China and have our\n"
+"                                    registered office at Beijing. You "
+"agree that by accessing the Site, you have read,\n"
+"                                    understood, and agreed to be bound by"
+" all of these Terms of Use. IF YOU DO NOT AGREE\n"
+"                                    WITH ALL OF THESE TERMS OF USE, THEN "
+"YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE\n"
+"                                    AND YOU MUST DISCONTINUE USE "
+"IMMEDIATELY."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:122
+msgid ""
+"Supplemental terms and conditions or documents that may be posted on the "
+"Site from time\n"
+"                                    to time are hereby expressly "
+"incorporated herein by reference. We reserve the right, in\n"
+"                                    our sole discretion, to make changes "
+"or modifications to these Terms of Use from time to\n"
+"                                    time. We will alert you about any "
+"changes by updating the 'Last updated' date of these\n"
+"                                    Terms of Use, and you waive any right"
+" to receive specific notice of each such change.\n"
+"                                    Please ensure that you check the "
+"applicable Terms every time you use our Site so that\n"
+"                                    you understand which Terms apply. You"
+" will be subject to, and will be deemed to have\n"
+"                                    been made aware of and to have "
+"accepted, the changes in any revised Terms of Use by your\n"
+"                                    continued use of the Site after the "
+"date such revised Terms of Use are posted."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:131
+msgid ""
+"The information provided on the Site is not intended for distribution to "
+"or use by any\n"
+"                                    person or entity in any\n"
+"                                    jurisdiction or country where such "
+"distribution or use would be contrary to law or\n"
+"                                    regulation or which would\n"
+"                                    subject us to any registration "
+"requirement within such jurisdiction or country.\n"
+"                                    Accordingly, those persons who\n"
+"                                    choose to access the Site from other "
+"locations do so on their own initiative and are\n"
+"                                    solely responsible for\n"
+"                                    compliance with local laws, if and to"
+" the extent local laws are applicable."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:140
+msgid ""
+"The Site is not tailored to comply with industry-specific regulations "
+"(Health Insurance\n"
+"                                    Portability and\n"
+"                                    Accountability Act (HIPAA), Federal "
+"Information Security Management Act (FISMA), etc.),\n"
+"                                    so if your interactions\n"
+"                                    would be subjected to such laws, you "
+"may not use this Site. You may not use the Site in\n"
+"                                    a way that would\n"
+"                                    violate the Gramm-Leach-Bliley Act "
+"(GLBA)."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:147
+msgid ""
+"All users who are minors in the jurisdiction in which they reside "
+"(generally under the\n"
+"                                    age of 18) must have the\n"
+"                                    permission of, and be directly "
+"supervised by, their parent or guardian to use the Site.\n"
+"                                    If you are a minor, you\n"
+"                                    must have your parent or guardian "
+"read and agree to these Terms of Use prior to you\n"
+"                                    using the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:157
+msgid ""
+"Unless otherwise indicated, the Site is our proprietary property and all "
+"source code,\n"
+"                                    databases, functionality,\n"
+"                                    software, website designs, audio, "
+"video, text, photographs, and graphics on the Site\n"
+"                                    (collectively, the \"Content\")\n"
+"                                    and the trademarks, service marks, "
+"and logos contained therein (the \"Marks\") are owned\n"
+"                                    or controlled by us or\n"
+"                                    licensed to us, and are protected by "
+"copyright and trademark laws and various other\n"
+"                                    intellectual property rights\n"
+"                                    and unfair competition laws of the "
+"United States, international copyright laws, and\n"
+"                                    international conventions.\n"
+"                                    The Content and the Marks are "
+"provided on the Site \"AS IS\" for your information and\n"
+"                                    personal use only. Except\n"
+"                                    as expressly provided in these Terms "
+"of Use, no part of the Site and no Content or Marks\n"
+"                                    may be copied,\n"
+"                                    reproduced, aggregated, republished, "
+"uploaded, posted, publicly displayed, encoded,\n"
+"                                    translated, transmitted,\n"
+"                                    distributed, sold, licensed, or "
+"otherwise exploited for any commercial purpose\n"
+"                                    whatsoever, without our express\n"
+"                                    prior written permission."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:176
+msgid ""
+"Provided that you are eligible to use the Site, you are granted a limited"
+" license to\n"
+"                                    access and use the Site and\n"
+"                                    to download or print a copy of any "
+"portion of the Content to which you have properly\n"
+"                                    gained access solely for\n"
+"                                    your personal, non-commercial use. We"
+" reserve all rights not expressly granted to you in\n"
+"                                    and to the Site, the\n"
+"                                    Content and the Marks."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:187
+msgid ""
+"By using the Site, you represent and warrant that: (1) all registration "
+"information you\n"
+"                                    submit will be true,\n"
+"                                    accurate, current, and complete; (2) "
+"you will maintain the accuracy of such information\n"
+"                                    and promptly update\n"
+"                                    such registration information as "
+"necessary; (3) you have the legal capacity and you\n"
+"                                    agree to comply with these\n"
+"                                    Terms of Use; (4) you are not a minor"
+" in the jurisdiction in which you reside, or if a\n"
+"                                    minor, you have received\n"
+"                                    parental permission to use the Site; "
+"(5) you will not access the Site through automated\n"
+"                                    or non-human means,\n"
+"                                    whether through a bot, script, or "
+"otherwise; (6) you will not use the Site for any\n"
+"                                    illegal or unauthorized purpose;\n"
+"                                    and (7) your use of the Site will not"
+" violate any applicable law or regulation."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:200
+msgid ""
+"If you provide any information that is untrue, inaccurate, not current, "
+"or incomplete,\n"
+"                                    we\n"
+"                                    have the right to\n"
+"                                    suspend or terminate your account and"
+" refuse any and all current or future use of the\n"
+"                                    Site (or any portion thereof)."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:209
+msgid ""
+"You may be required to register with the Site. You agree to keep your "
+"password\n"
+"                                    confidential and will be\n"
+"                                    responsible for all use of your "
+"account and password. We reserve the right to remove,\n"
+"                                    reclaim, or change a\n"
+"                                    username you select if we determine, "
+"in our sole discretion, that such username is\n"
+"                                    inappropriate, obscene, or\n"
+"                                    otherwise objectionable."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:220
+msgid ""
+"You may not access or use the Site for any purpose other than that for "
+"which we make the\n"
+"                                    Site available. The\n"
+"                                    Site may not be used in connection "
+"with any commercial endeavors except those that are\n"
+"                                    specifically endorsed\n"
+"                                    or approved by us."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:225
+#: templates/newFront/terms_conditions.html:320
+msgid "As a user of the Site, you agree not to:"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:226
+msgid ""
+"- Systematically retrieve data or other content from the Site to create "
+"or compile,\n"
+"                                        directly or indirectly, a\n"
+"                                        collection, compilation, "
+"database, or directory without written permission from us."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:229
+msgid ""
+"- Trick, defraud, or mislead us and other users, especially in any "
+"attempt to learn\n"
+"                                        sensitive account\n"
+"                                        information such as user "
+"passwords."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:232
+msgid ""
+"- Circumvent, disable, or otherwise interfere with security-related "
+"features of the\n"
+"                                        Site, including features\n"
+"                                        that prevent or restrict the use "
+"or copying of any Content or enforce limitations on the\n"
+"                                        use of the Site\n"
+"                                        and/or the Content contained "
+"therein."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:237
+msgid ""
+"- Disparage, tarnish, or otherwise harm, in our opinion, us and/or the "
+"Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:238
+msgid ""
+"- Use any information obtained from the Site in order to harass, abuse, "
+"or harm another\n"
+"                                        person."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:240
+msgid ""
+"- Make improper use of our support services or submit false reports of "
+"abuse or\n"
+"                                        misconduct."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:242
+msgid ""
+"- Use the Site in a manner inconsistent with any applicable laws or "
+"regulations."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:243
+msgid "- Engage in unauthorized framing of or linking to the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:244
+msgid ""
+"- Upload or transmit (or attempt to upload or to transmit) viruses, "
+"Trojan horses, or\n"
+"                                        other material,\n"
+"                                        including excessive use of "
+"capital letters and spamming (continuous posting of\n"
+"                                        repetitive text), that\n"
+"                                        interferes with any party's "
+"uninterrupted use and enjoyment of the Site or modifies,\n"
+"                                impairs, disrupts,\n"
+"                                alters, or interferes with the use, "
+"features, functions, operation, or maintenance of\n"
+"                                the Site. "
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:252
+msgid ""
+"- Engage in any automated use of the system, such as using scripts to "
+"send comments or\n"
+"                                        messages, or\n"
+"                                        using any data mining, robots, or"
+" similar data gathering and extraction tools."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:255
+msgid ""
+"- Delete the copyright or other proprietary rights notice from any "
+"Content."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:256
+msgid ""
+"- Attempt to impersonate another user or person or use the username of "
+"another user."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:257
+msgid ""
+"- Upload or transmit (or attempt to upload or to transmit) any material "
+"that acts as a\n"
+"        passive or active\n"
+"        information collection or transmission mechanism, including "
+"without limitation, clear\n"
+"        graphics interchange\n"
+"        formats (\"gifs), 1×1 pixels, web bugs, cookies, or other similar"
+" devices (sometimes\n"
+"                                referred to as\n"
+"                                \"spyware\" or \"passive collection "
+"mechanisms\" or \"pcms\")."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:264
+msgid ""
+"- Interfere with, disrupt, or create an undue burden on the Site or the "
+"networks or\n"
+"                                        services connected to\n"
+"                                        the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:267
+msgid ""
+"- Harass, annoy, intimidate, or threaten any of our employees or agents "
+"engaged in\n"
+"                                        providing any portion\n"
+"                                        of the Site to you."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:270
+msgid ""
+"- Attempt to bypass any measures of the Site designed to prevent or "
+"restrict access to\n"
+"                                        the Site, or any\n"
+"                                        portion of the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:273
+msgid ""
+"- Copy or adapt the Site's software, including but not limited to Flash, "
+"PHP, HTML,\n"
+"                                JavaScript, or other\n"
+"                                code."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:276
+msgid ""
+"- Except as permitted by applicable law, decipher, decompile, "
+"disassemble, or reverse\n"
+"                                        engineer any of the\n"
+"                                        software comprising or in any way"
+" making up a part of the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:279
+msgid ""
+"- Except as may be the result of standard search engine or Internet "
+"browser usage, use,\n"
+"                                        launch, develop,\n"
+"                                        or distribute any automated "
+"system, including without limitation, any spider, robot,\n"
+"                                        cheat utility, scraper,\n"
+"                                        or offline reader that accesses "
+"the Site, or using or launching any unauthorized script\n"
+"                                        or other software."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:285
+msgid "- Use a buying agent or purchasing agent to make purchases on the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:286
+msgid ""
+"- Make any unauthorized use of the Site, including collecting usernames "
+"and/or email\n"
+"                                        addresses of users\n"
+"                                        by electronic or other means for "
+"the purpose of sending unsolicited email, or creating\n"
+"                                        user accounts by\n"
+"                                        automated means or under false "
+"pretenses."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:291
+msgid ""
+"- Use the Site as part of any effort to compete with us or otherwise use "
+"the Site\n"
+"                                        and/or\n"
+"                                        the Content for any\n"
+"                                        revenue-generating endeavor or "
+"commercial enterprise."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:295
+msgid "- Use the Site to advertise or offer to sell goods and services."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:300
+msgid ""
+"The Site may invite you to chat, contribute to, or participate in blogs, "
+"message boards,\n"
+"                                    online forums, and other\n"
+"                                    functionality, and may provide you "
+"with the opportunity to create, submit, post,\n"
+"                                    display, transmit, perform,\n"
+"                                    publish, distribute, or broadcast "
+"content and materials to us or on the Site, including\n"
+"                                    but not limited to text,\n"
+"                                    writings, video, audio, photographs, "
+"graphics, comments, suggestions, or personal\n"
+"                                    information or other\n"
+"                                    material (collectively, "
+"\"Contributions\"). Contributions may be viewable by other users\n"
+"                                    of the Site and through\n"
+"                                    third-party websites. As such, any "
+"Contributions you transmit may be treated as\n"
+"                                    non-confidential and non-\n"
+"                                    proprietary. When you create or make "
+"available any Contributions, you thereby represent\n"
+"                                    and warrant that:\n"
+"                                    The creation, distribution, "
+"transmission, public display, or performance, and the\n"
+"                                    accessing, downloading,\n"
+"                                    or copying of your Contributions do "
+"not and will not infringe the proprietary rights,\n"
+"                                    including but not\n"
+"                                    limited to the copyright, patent, "
+"trademark, trade secret, or moral rights of any third\n"
+"                                    party."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:321
+msgid ""
+"- You are the creator and owner of or have the necessary licenses, "
+"rights, consents,\n"
+"                                        releases, and\n"
+"                                        permissions to use and to "
+"authorize us, the Site, and other users of the Site to use\n"
+"                                        your\n"
+"                                        Contributions in\n"
+"                                        any manner contemplated by the "
+"Site and these Terms of Use."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:327
+msgid ""
+"- You have the written consent, release, and/or permission of each and "
+"every\n"
+"                                        identifiable\n"
+"                                        individual person\n"
+"                                        in your Contributions to use the "
+"name or likeness of each and every such identifiable\n"
+"                                        individual person to\n"
+"                                        enable inclusion and use of your "
+"Contributions in any manner contemplated by the Site\n"
+"                                        and\n"
+"                                        these Terms\n"
+"                                        of Use."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:336
+msgid "- Your Contributions are not false, inaccurate, or misleading."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:337
+msgid ""
+"- Your Contributions are not unsolicited or unauthorized advertising, "
+"promotional\n"
+"                                        materials,\n"
+"                                        pyramid\n"
+"                                        schemes, chain letters, spam, "
+"mass mailings, or other forms of solicitation."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:341
+msgid ""
+"- Your Contributions are not obscene, lewd, lascivious, filthy, violent, "
+"harassing,\n"
+"                                        libelous, slanderous, or\n"
+"                                        otherwise objectionable (as "
+"determined by us)."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:344
+msgid ""
+"- Your Contributions do not ridicule, mock, disparage, intimidate, or "
+"abuse anyone."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:345
+msgid ""
+"- Your Contributions are not used to harass or threaten (in the legal "
+"sense of those\n"
+"                                        terms)\n"
+"                                        any other\n"
+"                                        person and to promote violence "
+"against a specific person or class of people."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:349
+msgid ""
+"- Your Contributions do not violate any applicable law, regulation, or "
+"rule."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:350
+msgid ""
+"- Your Contributions do not violate the privacy or publicity rights of "
+"any third\n"
+"                                        party."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:352
+msgid ""
+"- Your Contributions do not violate any applicable law concerning child "
+"pornography, or\n"
+"                                        otherwise intended\n"
+"                                        to protect the health or well-"
+"being of minors."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:355
+msgid ""
+"- Your Contributions do not include any offensive comments that are "
+"connected to race,\n"
+"                                        national origin,\n"
+"                                        gender, sexual preference, or "
+"physical handicap."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:358
+msgid ""
+"- Your Contributions do not otherwise violate, or link to material that "
+"violates, any\n"
+"                                        provision of these Terms\n"
+"                                        of Use, or any applicable law or "
+"regulation."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:361
+msgid ""
+"Any use of the Site in violation of the foregoing violates these Terms of"
+" Use and may\n"
+"                                    result in, among other\n"
+"                                    things, termination or suspension of "
+"your rights to use the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:368
+msgid ""
+"By posting your Contributions to any part of the Site or making "
+"Contributions accessible\n"
+"                                    to the Site by linking\n"
+"                                    your account from the Site to any of "
+"your social networking accounts, you automatically\n"
+"                                    grant, and you\n"
+"                                    represent and warrant that you have "
+"the right to grant, to us an unrestricted,\n"
+"                                    unlimited, irrevocable, perpetual,\n"
+"                                    non-exclusive, transferable, royalty-"
+"free, fully-paid, worldwide right, and license to\n"
+"                                    host, use, copy, reproduce.\n"
+"                                    disclose, sell, resell, publish, "
+"broadcast, retitle, archive, store, cache, publicly\n"
+"                                    perform, publicly display,\n"
+"                                    reformat, translate, transmit, "
+"excerpt (in whole or in part), and distribute such\n"
+"                                    Contributions (including, without\n"
+"                                    limitation, your image and voice) for"
+" any purpose, commercial, advertising, or\n"
+"                                    otherwise, and to prepare\n"
+"                                    derivative works of, or incorporate "
+"into other works, such Contributions, and grant and\n"
+"                                    authorize sublicenses of\n"
+"                                    the foregoing. The use and "
+"distribution may occur in any media formats and through any\n"
+"                                    media channels."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:386
+msgid ""
+"This license will apply to any form, media, or technology now known or "
+"hereafter\n"
+"                                    developed, and includes our\n"
+"                                    use of your name, company name, and "
+"franchise name, as applicable, and any of the\n"
+"                                    trademarks, service\n"
+"                                    marks, trade names, logos, and "
+"personal and commercial images you provide. You waive all\n"
+"                                    moral rights in\n"
+"                                    your Contributions, and you warrant "
+"that moral rights have not otherwise been asserted\n"
+"                                    in your Contributions."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:394
+msgid ""
+"We do not assert any ownership over your Contributions. You retain full "
+"ownership of all\n"
+"                                    of your Contributions\n"
+"                                    and any intellectual property rights "
+"or other proprietary rights associated with your\n"
+"                                    Contributions. We are not\n"
+"                                    liable for any statements or "
+"representations in your Contributions provided by you in\n"
+"                                    any area on the Site. You\n"
+"                                    are solely responsible for your "
+"Contributions to the Site and you expressly agree to\n"
+"                                    exonerate us from any and\n"
+"                                    all responsibility and to refrain "
+"from any legal action against us regarding your\n"
+"                                    Contributions."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:404
+msgid ""
+"We have the right, in our sole and absolute discretion, (1) to edit, "
+"redact, or\n"
+"                                    otherwise\n"
+"                                    change any\n"
+"                                    Contributions; (2) to re-categorize "
+"any Contributions to place them in more appropriate\n"
+"                                    locations on the Site;\n"
+"                                    and (3) to pre-screen or delete any "
+"Contributions at any time and for any reason,\n"
+"                                    without notice. We have no\n"
+"                                    obligation to monitor your "
+"Contributions."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:416
+msgid ""
+"We may provide you areas on the Site to leave reviews or ratings. When "
+"posting a review,\n"
+"                                    you must comply\n"
+"                                    with the following criteria: (1) you "
+"should have firsthand experience with the\n"
+"                                    person/entity being reviewed; (2)\n"
+"                                    your reviews should not contain "
+"offensive profanity, or abusive, racist, offensive, or\n"
+"                                    hate language; (3) your\n"
+"                                    reviews should not contain "
+"discriminatory references based on religion, race, gender,\n"
+"                                    national origin, age,\n"
+"                                    marital status, sexual orientation, "
+"or disability; (4) your reviews should not contain\n"
+"                                    references to illegal activity;\n"
+"                                    (5) you should not be affiliated with"
+" competitors if posting negative reviews; (6) you\n"
+"                                    should not make any\n"
+"                                    conclusions as to the legality of "
+"conduct; (7) you may not post any false or misleading\n"
+"                                    statements; and (8) you\n"
+"                                    may not organize a campaign "
+"encouraging others to post reviews, whether positive or\n"
+"                                    negative."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:432
+msgid ""
+"We may accept, reject, or remove reviews in our sole discretion. We have "
+"absolutely no\n"
+"                                    obligation to screen\n"
+"                                    reviews or to delete reviews, even if"
+" anyone considers reviews objectionable or\n"
+"                                    inaccurate. Reviews are not\n"
+"                                    endorsed by us, and do not "
+"necessarily represent our opinions or the views of any of our\n"
+"                                    affiliates or partners.\n"
+"                                    We do not assume liability for any "
+"review or for any claims, liabilities, or losses\n"
+"                                    resulting from any review. By\n"
+"                                    posting a review, you hereby grant to"
+" us a perpetual, non-exclusive, worldwide,\n"
+"                                    royalty-free, fully-paid,\n"
+"                                    assignable, and sublicensable right "
+"and license to reproduce, modify, translate,\n"
+"                                    transmit by any means, display,\n"
+"                                    perform, and/or distribute all "
+"content relating to reviews."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:449
+msgid ""
+"If you access the Site via a mobile application, then we grant you a "
+"revocable,\n"
+"                                    non-exclusive, non-transferable,\n"
+"                                    limited right to install and use the "
+"mobile application on wireless electronic devices\n"
+"                                    owned or controlled by you,\n"
+"                                    and to access and use the mobile "
+"application on such devices strictly in accordance with\n"
+"                                    the terms and\n"
+"                                    conditions of this mobile application"
+" license contained in these Terms of Use. You shall\n"
+"                                    not: (1) except as\n"
+"                                    permitted by applicable law, "
+"decompile, reverse engineer, disassemble, attempt to derive\n"
+"                                    the source code of,\n"
+"                                    or decrypt the application; (2) make "
+"any modification, adaptation, improvement,\n"
+"                                    enhancement, translation, or\n"
+"                                    derivative work from the application;"
+" (3) violate any applicable laws, rules, or\n"
+"                                    regulations in connection with\n"
+"                                    your access or use of the "
+"application; (4) remove, alter, or obscure any proprietary\n"
+"                                    notice (including any notice\n"
+"                                    of copyright or trademark) posted by "
+"us or the licensors of the application; (5) use the\n"
+"                                    application for any\n"
+"                                    revenue generating endeavor, "
+"commercial enterprise, or other purpose for which it is not\n"
+"                                    designed or intended;\n"
+"                                    (6) make the application available "
+"over a network or other environment permitting access\n"
+"                                    or use by multiple\n"
+"                                    devices or users at the same time; "
+"(7) use the application for creating a product,\n"
+"                                    service, or software that is,\n"
+"                                    directly or indirectly, competitive "
+"with or in any way a substitute for the application;\n"
+"                                    (8) use the application to\n"
+"                                    send automated queries to any website"
+" or to send any unsolicited commercial e-mail; or\n"
+"                                    (9) use any\n"
+"                                    proprietary information or any of our"
+" interfaces or our other intellectual property in\n"
+"                                    the design, development,\n"
+"                                    manufacture, licensing, or "
+"distribution of any applications, accessories, or devices for\n"
+"                                    use with the application."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:481
+msgid ""
+"The following terms apply when you use a mobile application obtained from"
+" either the\n"
+"                                Apple Store or Google\n"
+"                                Play (each an \"App Distributor\") to "
+"access the Site: (1) the license granted to you for\n"
+"                                our mobile application is\n"
+"                                limited to a non-transferable license to "
+"use the application on a device that utilizes\n"
+"                                the Apple iOS or Android\n"
+"                                operating systems, as applicable, and in "
+"accordance with the usage rules set forth in\n"
+"                                the applicable App\n"
+"                                Distributor's terms of service; (2) we "
+"are responsible for providing any maintenance and\n"
+"                                support services with\n"
+"                                respect to the mobile application as "
+"specified in the terms and conditions of this\n"
+"                                mobile application license\n"
+"                                contained in these Terms of Use or as "
+"otherwise required under applicable law, and you\n"
+"                                acknowledge that\n"
+"                                each App Distributor has no obligation "
+"whatsoever to furnish any maintenance and support\n"
+"                                services with\n"
+"                                respect to the mobile application; (3) in"
+" the event of any failure of the mobile\n"
+"                                application to conform to any\n"
+"                                applicable warranty, you may notify the "
+"applicable App Distributor, and the App\n"
+"                                Distributor, in accordance with\n"
+"                                its terms and policies, may refund the "
+"purchase price, if any, paid for the mobile\n"
+"                                application, and to the\n"
+"                                maximum extent permitted by applicable "
+"law, the App Distributor will have no other\n"
+"                                warranty obligation\n"
+"                                whatsoever with respect to the mobile "
+"application; (4) you represent and warrant that\n"
+"                                (i) you are not located in\n"
+"                                a country that is subject to a U.S. "
+"government embargo, or that has been designated by\n"
+"                                the U.S. government\n"
+"                                as a \"terrorist supporting\" country and"
+" (ii) you are not listed on any U.S. government\n"
+"                                list of prohibited or\n"
+"                                restricted parties; (5) you must comply "
+"with applicable third-party terms of agreement\n"
+"                                when using the mobile\n"
+"                                application, e.g., if you have a VolP "
+"application, then you must not be in violation of\n"
+"                                their wireless data service\n"
+"                                agreement when using the mobile "
+"application; and (6) you acknowledge and agree that the\n"
+"                                App Distributors\n"
+"                                are third-party beneficiaries of the "
+"terms and conditions in this mobile application\n"
+"                                license contained in these\n"
+"                                Terms of Use, and that each App "
+"Distributor will have the right (and will be deemed to\n"
+"                                have accepted the right)\n"
+"                                to enforce the terms and conditions in "
+"this mobile application license contained in\n"
+"                                these Terms of Use against\n"
+"                                you as a third-party beneficiary thereof."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:528
+msgid ""
+"As part of the functionality of the Site, you may link your account with "
+"online accounts\n"
+"                                    you have with third-party\n"
+"                                    service providers (each such account,"
+" a \"Third-Party Account\") by either: (1) providing\n"
+"                                    your Third-Party\n"
+"                                    Account login information through the"
+" Site; or (2) allowing us to access your\n"
+"                                    Third-Party Account, as is\n"
+"                                    permitted under the applicable terms "
+"and conditions that govern your use of each\n"
+"                                    Third-Party Account. You\n"
+"                                    represent and warrant that you are "
+"entitled to disclose your Third-Party Account login\n"
+"                                    information to us and/or\n"
+"                                    grant us access to your Third-Party "
+"Account, without breach by you of any of the terms\n"
+"                                    and conditions that\n"
+"                                    govern your use of the applicable "
+"Third-Party Account, and without obligating us to pay\n"
+"                                    any fees or making us\n"
+"                                    subject to any usage limitations "
+"imposed by the third-party service provider of the\n"
+"                                    Third-Party Account. By\n"
+"                                    granting us access to any Third-Party"
+" Accounts, you understand that (1) we may access,\n"
+"                                    make available, and\n"
+"                                    store (if applicable) any content "
+"that you have provided to and stored in your\n"
+"                                    Third-Party Account (the \"Social\n"
+"                                    Network Content\") so that it is "
+"available on and through the Site via your account,\n"
+"                                    including without limitation\n"
+"                                    any friend lists and (2) we may "
+"submit to and receive from your Third-Party Account\n"
+"                                    additional information to\n"
+"                                    the extent you are notified when you "
+"link your account with the Third-Party Account.\n"
+"                                    Depending on the Third-\n"
+"                                    Party Accounts you choose and subject"
+" to the privacy settings that you have set in such\n"
+"                                    Third-Party Accounts,\n"
+"                                    personally identifiable information "
+"that you post to your Third-Party Accounts may be\n"
+"                                    available on and through\n"
+"                                    your account on the Site. Please note"
+" that if a Third-Party Account or associated\n"
+"                                    service becomes unavailable\n"
+"                                    or our access to such Third Party "
+"Account is terminated by the third-party service\n"
+"                                    provider, then Social Network\n"
+"                                    Content may no longer be available on"
+" and through the Site. You will have the ability to\n"
+"                                    disable the connection\n"
+"                                    between your account on the Site and "
+"your Third-Party Accounts at any time. PLEASE NOTE\n"
+"                                    THAT YOUR\n"
+"                                    RELATIONSHIP WITH THE THIRD-PARTY "
+"SERVICE PROVIDERS ASSOCIATED WITH YOUR THIRD-\n"
+"                                    PARTY ACCOUNTS IS GOVERNED SOLELY BY "
+"YOUR AGREEMENT(S) WITH SUCH THIRD-PARTY\n"
+"                                    SERVICE PROVIDERS. We make no effort "
+"to review any Social Network Content for any\n"
+"                                    purpose, including\n"
+"                                    but not limited to, for accuracy, "
+"legality, or non-infringement, and we are not\n"
+"                                    responsible for any Social Network\n"
+"                                    Content. You acknowledge and agree "
+"that we may access your email address book associated\n"
+"                                    with a Third-\n"
+"                                    Party Account and your contacts list "
+"stored on your mobile device or tablet computer\n"
+"                                    solely for purposes of\n"
+"                                    identifying and informing you of "
+"those contacts who have also registered to use the\n"
+"                                    Site. You can deactivate\n"
+"                                    the connection between the Site and "
+"your Third-Party Account by contacting us using the\n"
+"                                    contact information\n"
+"                                    below or through your account "
+"settings (if applicable). We will attempt to delete any\n"
+"                                    information stored on our\n"
+"                                    servers that was obtained through "
+"such Third-Party Account, except the username and\n"
+"                                    profile picture that\n"
+"                                    become associated with your account."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:589
+msgid ""
+"You acknowledge and agree that any questions, comments, suggestions, "
+"ideas, feedback, or\n"
+"                                    other information\n"
+"                                    regarding the Site (\"Submissions\") "
+"provided by you to us are non-confidential and shall\n"
+"                                    become our sole\n"
+"                                    property. We shall own exclusive "
+"rights, including all intellectual property rights, and\n"
+"                                    shall be entitled to the\n"
+"                                    unrestricted use and dissemination of"
+" these Submissions for any lawful purpose,\n"
+"                                    commercial or otherwise,\n"
+"                                    without acknowledgment or "
+"compensation to you. You hereby waive all moral rights to any\n"
+"                                    such Submissions,\n"
+"                                    and you hereby warrant that any such "
+"Submissions are original with you or that you have\n"
+"                                    the right to submit\n"
+"                                    such Submissions. You agree there "
+"shall be no recourse against us for any alleged or\n"
+"                                    actual infringement or\n"
+"                                    misappropriation of any proprietary "
+"right in your Submissions."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:608
+msgid ""
+"The Site may contain (or you may be sent via the Site) links to other "
+"websites\n"
+"                                    (\"Third-Party Websites\") as well\n"
+"                                    as articles, photographs, text, "
+"graphics, pictures, designs, music, sound, video,\n"
+"                                    information, applications,\n"
+"                                    software, and other content or items "
+"belonging to or originating from third parties\n"
+"                                    (\"Third-Party Content\"). Such\n"
+"                                    Third-Party Websites and Third-Party "
+"Content are not investigated, monitored, or checked\n"
+"                                    for accuracy,\n"
+"                                    appropriateness, or completeness by "
+"us, and we are not responsible for any Third-Party\n"
+"                                    Websites accessed\n"
+"                                    through the Site or any Third-Party "
+"Content posted on, available through, or installed\n"
+"                                    from the Site, including\n"
+"                                    the content, accuracy, offensiveness,"
+" opinions, reliability, privacy practices, or other\n"
+"                                    policies of or contained in\n"
+"                                    the Third-Party Websites or the "
+"Third-Party Content. Inclusion of, linking to, or\n"
+"                                    permitting the use or installation\n"
+"                                    of any Third-Party Websites or any "
+"Third-Party Content does not imply approval or\n"
+"                                    endorsement thereof by us.\n"
+"                                    If you decide to leave the Site and "
+"access the Third-Party Websites or to use or install\n"
+"                                    any Third-Party Content,\n"
+"                                    you do so at your own risk, and you "
+"should be aware these Terms of Use no longer govern.\n"
+"                                    You should review\n"
+"                                    the applicable terms and policies, "
+"including privacy and data gathering practices, of\n"
+"                                    any website to which you\n"
+"                                    navigate from the Site or relating to"
+" any applications you use or install from the Site.\n"
+"                                    Any purchases you make\n"
+"                                    through Third-Party Websites will be "
+"through other websites and from other companies,\n"
+"                                    and we take no\n"
+"                                    responsibility whatsoever in relation"
+" to such purchases which are exclusively between\n"
+"                                    you and the applicable\n"
+"                                    third party. You agree and "
+"acknowledge that we do not endorse the products or services\n"
+"                                    offered on Third-Party\n"
+"                                    Websites and you shall hold us "
+"harmless from any harm caused by your purchase of such\n"
+"                                    products or\n"
+"                                    services. Additionally, you shall "
+"hold us harmless from any losses sustained by you or\n"
+"                                    harm caused to you\n"
+"                                    relating to or resulting in any way "
+"from any Third-Party Content or any contact with\n"
+"                                    Third-Party Websites."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:650
+msgid ""
+"We reserve the right, but not the obligation, to: (1) monitor the Site "
+"for violations of\n"
+"                                    these Terms of Use; (2) take\n"
+"                                    appropriate legal action against "
+"anyone who, in our sole discretion, violates the law or\n"
+"                                    these Terms of Use,\n"
+"                                    including without limitation, "
+"reporting such user to law enforcement authorities; (3) in\n"
+"                                    our sole discretion and\n"
+"                                    without limitation, refuse, restrict "
+"access to, limit the availability of, or disable\n"
+"                                    (to the extent technologically\n"
+"                                    feasible) any of your Contributions "
+"or any portion thereof; (4) in our sole discretion\n"
+"                                    and without limitation,\n"
+"                                    notice, or liability, to remove from "
+"the Site or otherwise disable all files and content\n"
+"                                    that are excessive in size or\n"
+"                                    are in any way burdensome to our "
+"systems; and (5) otherwise manage the Site in a manner\n"
+"                                    designed to\n"
+"                                    protect our rights and property and "
+"to facilitate the proper functioning of the\n"
+"                                    Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:670
+msgid ""
+"These Terms of Use shall remain in full force and effect while you use "
+"the Site. Without\n"
+"                                    limiting any other provision of these"
+" terms of use, we reserve the right to, in our sole\n"
+"                                    discretion and without notice or "
+"liability, deny access to and use of the site\n"
+"                                    (including blocking certain ip "
+"addresses), to any person for any reason or for no\n"
+"                                    reason, including without limitation "
+"for breach of any representation, warranty, or\n"
+"                                    covenant contained in these terms of "
+"use or of any applicable law or regulation. We may\n"
+"                                    terminate your use or participation "
+"in the site or delete your account and any content\n"
+"                                    or information that you posted at any"
+" time withoutwarning in our sole discretion."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:678
+msgid ""
+"If we terminate or suspend your account for any reason, you are "
+"prohibited from\n"
+"                                    registering and creating a new\n"
+"                                    account under your name, a fake or "
+"borrowed name, or the name of any third party, even\n"
+"                                    if you may be acting\n"
+"                                    on behalf of the third party. In "
+"addition to terminating or suspending your account, we\n"
+"                                    reserve the right to take\n"
+"                                    appropriate legal action, including "
+"without limitation pursuing civil, criminal, and\n"
+"                                    injunctive redress."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:690
+msgid ""
+"We reserve the right to change, modify, or remove the contents of the "
+"Site at any time\n"
+"                                    or\n"
+"                                    for any reason at our\n"
+"                                    sole discretion without notice. "
+"However, we have no obligation to update any information\n"
+"                                    on our Site. We also\n"
+"                                    reserve the right to modify or "
+"discontinue all or part of the Site without notice at any\n"
+"                                    time. We will not be liable\n"
+"                                    to you or any third party for any "
+"modification, price change, suspension, or\n"
+"                                    discontinuance of the Site."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:699
+msgid ""
+"We cannot guarantee the Site will be available at all times. We may "
+"experience hardware,\n"
+"                                    software, or other\n"
+"                                    problems or need to perform "
+"maintenance related to the Site, resulting in interruptions,\n"
+"                                    delays, or errors. We\n"
+"                                    reserve the right to change, revise, "
+"update, suspend, discontinue, or otherwise modify\n"
+"                                    the Site at any time or\n"
+"                                    for any reason without notice to you."
+" You agree that we have no liability whatsoever for\n"
+"                                    any loss, damage, or\n"
+"                                    inconvenience caused by your "
+"inability to access or use the Site during any downtime or\n"
+"                                    discontinuance of the\n"
+"                                    Site. Nothing in these Terms of Use "
+"will be construed to obligate us to maintain and\n"
+"                                    support the Site or to\n"
+"                                    supply any corrections, updates, or "
+"releases in connection therewith."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:716
+msgid ""
+"These conditions are governed by and interpreted following the laws of "
+"Ireland, and the\n"
+"                                    use of the United\n"
+"                                    Nations Convention of Contracts for "
+"the International Sale of Goods is expressly\n"
+"                                    excluded. If your habitual\n"
+"                                    residence is in the EU, and you are a"
+" consumer, you additionally possess the protection\n"
+"                                    provided to you by\n"
+"                                    obligatory provisions of the law of "
+"your country of residence. GoldMelody and yourself\n"
+"                                    both agree to submit to\n"
+"                                    the non-exclusive jurisdiction of the"
+" courts of Dublin, which means that you may make a\n"
+"                                    claim to defend\n"
+"                                    your consumer protection rights in "
+"regard to these Conditions of Use in Ireland, or in\n"
+"                                    the EU country in which\n"
+"                                    you reside."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:734
+msgid ""
+"The Parties agree that any arbitration shall be limited to the Dispute "
+"between the\n"
+"                                    Parties individually. To the full\n"
+"                                    extent permitted by law, (a) no "
+"arbitration shall be joined with any other proceeding;\n"
+"                                    (b) there is no right or\n"
+"                                    authority for any Dispute to be "
+"arbitrated on a class-action basis or to utilize class\n"
+"                                    action procedures; and (c)\n"
+"                                    there is no right or authority for "
+"any Dispute to be brought in a purported\n"
+"                                    representative capacity on behalf of\n"
+"                                    the public or any other persons."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:743
+msgid ""
+"The Parties agree that the following Disputes are not subject to the "
+"above provisions\n"
+"                                    concerning binding\n"
+"                                    arbitration: (a) any Disputes seeking"
+" to enforce or protect, or concerning the validity\n"
+"                                    of, any of the intellectual\n"
+"                                    property rights of a Party; (b) any "
+"Dispute related to, or arising from, allegations of\n"
+"                                    theft, piracy, invasion of\n"
+"                                    privacy, or unauthorized use; and (c)"
+" any claim for injunctive relief. If this provision\n"
+"                                    is found to be illegal or\n"
+"                                    unenforceable, then neither Party "
+"will elect to arbitrate any Dispute falling within\n"
+"                                    that portion of this provision\n"
+"                                    found to be illegal or unenforceable "
+"and such Dispute shall be decided by a court of\n"
+"                                    competent jurisdiction\n"
+"                                    within the courts listed for "
+"jurisdiction above, and the Parties agree to submit to the\n"
+"                                    personal jurisdiction of that\n"
+"                                    court."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:762
+msgid ""
+"There may be information on the Site that contains typographical errors, "
+"inaccuracies,\n"
+"                                    or\n"
+"                                    omissions, including\n"
+"                                    descriptions, pricing, availability, "
+"and various other information. We reserve the right\n"
+"                                    to correct any errors,\n"
+"                                    inaccuracies, or omissions and to "
+"change or update the information on the Site at any\n"
+"                                    time, without prior\n"
+"                                    notice."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:774
+msgid ""
+"The site is provided on an as-is and as-available basis. You agree that "
+"your use of the\n"
+"                                    site and our services will be at your"
+" sole risk. to the fullest extent permitted by\n"
+"                                    law, we disclaim all warranties, "
+"express or implied, in connection with the site and\n"
+"                                    your use thereof, including, without "
+"limitation, the implied warranties of\n"
+"                                    merchantability, fitness for a "
+"particular purpose, and non-infringement. We make no\n"
+"                                    warranties or representations about "
+"the accuracy or completeness of the site's\n"
+"                                content or the content of any websites "
+"linked to the site and we will assume no\n"
+"                                liability or responsibility for any (1) "
+"errors, mistakes, or inaccuracies of content\n"
+"                                and materials, (2) personal injury or "
+"property damage, of any nature whatsoever,\n"
+"                                resulting from your access to and use of "
+"the site, (3) any unauthorized access to or\n"
+"                                use of our secure servers and/or any and "
+"all personal information and/or financial\n"
+"                                information stored therein, (4) any "
+"interruption or cessation of transmission to or\n"
+"                                from the site, (5) any bugs, viruses, "
+"trojan horses, or the like which may be\n"
+"                                transmitted to or through the site by any"
+" third party, and/or (6) any errors or\n"
+"                                omissions in any content and materials or"
+" for any loss or damage of any kind\n"
+"                                incurred as a result of the use of any "
+"content posted, transmitted, or otherwise\n"
+"                                made available via the site. We do not "
+"warrant, endorse, guarantee or assume\n"
+"                                responsibility for any product or service"
+" advertised or offered by a third party\n"
+"                                through the site, any hyperlinked "
+"website, or any website or mobile application\n"
+"                                featured in any banner or other "
+"advertising, and we will not be a party to or in any\n"
+"                                way be responsible for monitoring any "
+"transaction between you and any third-party\n"
+"                                providers of products or services. As "
+"with the purchase of a product or service\n"
+"                                through any medium or in any environment,"
+" you should use your best judgment and\n"
+"                                exercise caution where appropriate."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:802
+msgid ""
+"In no event will we or our directors, employees, or agents be liable to "
+"you or any\n"
+"                                    third party for any direct, indirect,"
+" consequential, exemplary, incidental, special, or\n"
+"                                    punitive damages, including lost "
+"profit, lost revenue, loss of data, or other\n"
+"                                    damages arising from your use of the "
+"site, even if we have been advised of the\n"
+"                                    possibility of such damages."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:811
+msgid ""
+"You agree to defend, indemnify, and hold us harmless, including our "
+"subsidiaries,\n"
+"        affiliates, and all of our\n"
+"        respective officers, agents, partners, and employees, from and "
+"against any loss, damage,\n"
+"        liability, claim, or\n"
+"        demand, including reasonable attorneys' fees and expenses, made "
+"by any third party due\n"
+"                                to or arising out of:\n"
+"                                (1) your Contributions; (2) use of the "
+"Site; (3) breach of these Terms of Use; (4) any\n"
+"                                breach of your\n"
+"                                representations and warranties set forth "
+"in these Terms of Use; (5) your violation of\n"
+"                                the rights of a third party,\n"
+"                                including but not limited to intellectual"
+" property rights; or (6) any overt harmful act\n"
+"                                toward any other user of the\n"
+"                                Site with whom you connected via the "
+"Site. Notwithstanding the foregoing, we reserve the\n"
+"                                right, at your\n"
+"                                expense, to assume the exclusive defense "
+"and control of any matter for which you are\n"
+"                                required to indemnify\n"
+"                                us, and you agree to cooperate, at your "
+"expense, with our defense of such claims. We\n"
+"                                will use reasonable\n"
+"                                efforts to notify you of any such claim, "
+"action, or proceeding which is subject to this\n"
+"                                indemnification upon\n"
+"                                becoming aware of it."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:836
+msgid ""
+"We will maintain certain data that you transmit to the Site for the "
+"purpose of managing\n"
+"                                    the performance of the\n"
+"                                    Site, as well as data relating to "
+"your use of the Site. Although we perform regular\n"
+"                                    routine backups of data, you\n"
+"                                    are solely responsible for all data "
+"that you transmit or that relates to any activity\n"
+"                                    you have undertaken using the\n"
+"                                    Site. You agree that we shall have no"
+" liability to you for any loss or corruption of any\n"
+"                                    such data, and you hereby\n"
+"                                    waive any right of action against us "
+"arising from any such loss or corruption of such\n"
+"                                    data."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:849
+msgid "ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES"
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:850
+msgid ""
+"Visiting the Site, sending us emails, and completing online forms "
+"constitute electronic\n"
+"                                    communications. You\n"
+"                                    consent to receive electronic "
+"communications, and you agree that all agreements,\n"
+"                                    notices, disclosures, and\n"
+"                                    other communications we provide to "
+"you electronically, via email and on the Site,\n"
+"                                    satisfy any legal requirement\n"
+"                                    that such communication be in "
+"writing. YOU HEREBY AGREE TO THE USE OF ELECTRONIC\n"
+"                                    SIGNATURES.\n"
+"                                    CONTRACTS, ORDERS, AND OTHER RECORDS,"
+" AND TO ELECTRONIC DELIVERY OF NOTICES,\n"
+"                                    POLICIES, AND RECORDS OF TRANSACTIONS"
+" INITIATED OR COMPLETED BY US OR VIA THE SITE.\n"
+"                                    You hereby waive any rights or "
+"requirements under any statutes, regulations, rules,\n"
+"                                    ordinances, or other laws\n"
+"                                    in any jurisdiction which require an "
+"original signature or delivery or retention of\n"
+"                                    non-electronic records, or to\n"
+"                                    payments or the granting of credits "
+"by any means other than electronic means."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:869
+msgid ""
+"These Terms of Use and any policies or operating rules posted by us on "
+"the Site or in\n"
+"                                    respect to the Site\n"
+"                                    constitute the entire agreement and "
+"understanding between you and us. Our failure to\n"
+"                                    exercise or enforce any\n"
+"                                    right or provision of these Terms of "
+"Use shall not operate as a waiver of such right or\n"
+"                                    provision. These Terms of\n"
+"                                    Use operate to the fullest extent "
+"permissible by law. We may assign any or all of our\n"
+"                                    rights and obligations to\n"
+"                                    others at any time. We shall not be "
+"responsible or liable for any loss, damage, delay,\n"
+"                                    or failure to act caused by\n"
+"                                    any cause beyond our reasonable "
+"control. If any provision or part of a provision of\n"
+"                                    these Terms of Use is\n"
+"                                    determined to be unlawful, void, or "
+"unenforceable, that provision or part of the\n"
+"                                    provision is deemed severable\n"
+"                                    from these Terms of Use and does not "
+"affect the validity and enforceability of any\n"
+"                                    remaining provisions. There\n"
+"                                    is no joint venture, partnership, "
+"employment or agency relationship created between you\n"
+"                                    and us as a result of\n"
+"                                    these Terms of Use or use of the "
+"Site. You agree that these Terms of Use will not be\n"
+"                                    construed against us by\n"
+"                                    virtue of having drafted them. You "
+"hereby waive any and all defenses you may have based\n"
+"                                    on the electronic\n"
+"                                    form of these Terms of Use and the "
+"lack of signing by the parties hereto to execute\n"
+"                                    these Terms of Use."
+msgstr ""
+
+#: templates/newFront/terms_conditions.html:897
+msgid ""
+"In order to resolve a complaint regarding the Site or to receive further "
+"information\n"
+"                                    regarding use of the Site,\n"
+"                                    please contact us at:"
+msgstr ""
+
+#: templates/newFront/upload_avatar_include.html:65
+msgid "Choose Picture"
+msgstr ""
+

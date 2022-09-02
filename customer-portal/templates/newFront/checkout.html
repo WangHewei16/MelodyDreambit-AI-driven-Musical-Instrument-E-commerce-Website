@@ -1,0 +1,550 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - Checkout") }} </title> {% endblock %}
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+<!-- back to top end -->
+
+{% include "newFront/header_area.html" %}
+<main>
+    <!-- page__title-start -->
+    <section class="page__title p-relative d-flex align-items-center"
+             data-background="{{ url_for('static',filename='assets/img/bg/page-title-11.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1>{{ _("Cheakout") }}</h1>
+                        <div class="page__title-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="\index">{{ _("Home") }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ _("Cheakout") }}</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- coupon-area start -->
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+
+    <!-- coupon-area end -->
+
+    <!-- checkout-area start -->
+    <section class="checkout-area pb-30">
+        <div class="container">
+            <form action="#">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="your-order mb-30 ">
+                            <h3>{{ _("Choose address")}}</h3>
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>{{ _("Name") }}</th>
+                                        <th>{{ _("Phone") }}</th>
+                                        <th>{{ _("Address") }}</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% for address in addresses %}
+                                    <tr>
+                                        <td>{{ address.first_name }} {{ address.last_name }}</td>
+                                        <td>{{ address.phone_number }}</td>
+                                        <td>{{ address.address2 }}, {{ address.address1 }}, {{ address.nation_name }}</td>
+                                        <td><p class="address_choose_id" style="display: none">{{ address.id }}</p><input type="radio" name="address_choose"></td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            </table>
+                                <div>&nbsp;</div>
+                                <div>
+                                    <a href="\setting" id="setting_submit_btn" class="btn btn-primary">{{ _("Go Setting to
+                                            add Address")}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                </div>
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            {#$("#checkout_submit").click(function () {#}
+                            {#    alert("aaaa")#}
+                            {#    if ($("#checkout_first_name").val().length >= 2 &&#}
+                            {#        $("#checkout_last_name").val().length >= 2 &&#}
+                            {#        $("#checkout_address1").val().length >= 2 &&#}
+                            {#        $("#checkout_address2").val().length >= 2 &&#}
+                            {#        $("input[name='check_out_deliver']:checked").val() != ""#}
+                            {#    ) {#}
+                            {#        method = $("input[name='check_out_deliver']:checked").val()#}
+                            {#        if (sum >#}
+                            {#            200 && method == 1#}
+                            {#        ) {#}
+                            {#            method = 2#}
+                            {#        }#}
+                            {#        $.post('/update_checkout', {#}
+                            {#            "first_name": $("#checkout_first_name").val(),#}
+                            {#            'last_name': $("#checkout_last_name").val(),#}
+                            {#            'address1': $("#checkout_address1").val(),#}
+                            {#            "address2": $("#checkout_address2").val(),#}
+                            {#            "method": method,#}
+                            {#            "nation_id": $("#checkout_nation option:selected").val()#}
+                            {#        }).done(function (response) {#}
+                            {#            alert(response['text'])#}
+                            {#        }).fail(function () {#}
+                            {#            alert("Fail")#}
+                            {#        })#}
+                            {#    } else {#}
+                            {#        alert("Please fill all required form")#}
+                            {#    }#}
+
+                            $("input[name=check_out_deliver]").click(function () {
+                                let div = document.getElementById("checkout_price_sum");
+                                sum = div.getAttribute("value")
+                                if ($("input[name='check_out_deliver']:checked").val() == 1 && sum >= 200) {
+                                    while (div.hasChildNodes()) //当div下还存在子节点时 循环继续
+                                    {
+                                        div.removeChild(div.firstChild);
+                                    }
+                                    let old_price_span = document.createElement('span')
+                                    old_price_span.setAttribute("class", "price old-price")
+                                    old_price_span.innerHTML = "$" + (parseInt(sum) + 20)
+                                    div.appendChild(old_price_span)
+                                    let new_price_span = document.createElement('span')
+                                    new_price_span.setAttribute("class", "price new-price")
+                                    new_price_span.innerHTML = "$" + sum
+                                    div.appendChild(new_price_span)
+                                    let checkout_sale_words = document.createElement('p')
+                                    checkout_sale_words.innerHTML = "Free shipping!!"
+                                    div.appendChild(checkout_sale_words)
+
+                                } else if ($("input[name='check_out_deliver']:checked").val() == 1 && sum < 200 && sum > 0) {
+                                    let price_sum_div = $("#checkout_price_sum")
+                                    let div = document.getElementById("checkout_price_sum");
+                                    while (div.hasChildNodes()) //当div下还存在子节点时 循环继续
+                                    {
+                                        div.removeChild(div.firstChild);
+                                    }
+                                    let new_price_span = document.createElement('span')
+                                    new_price_span.setAttribute("class", "price new-price")
+                                    new_price_span.innerHTML = "$" + sum +"+20(deliver fee)"
+                                    price_sum_div.append(new_price_span)
+                                } else if ($("input[name='check_out_deliver']:checked").val() == 0 && sum > 0) {
+                                    let price_sum_div = $("#checkout_price_sum")
+                                    let div = document.getElementById("checkout_price_sum");
+                                    while (div.hasChildNodes()) //当div下还存在子节点时 循环继续
+                                    {
+                                        div.removeChild(div.firstChild);
+                                    }
+                                    let new_price_span = document.createElement('span')
+                                    new_price_span.setAttribute("class", "price new-price")
+                                    new_price_span.innerHTML = "$" + sum
+                                    price_sum_div.append(new_price_span)
+                                } else {
+                                    warning();
+                                }
+                            });
+                        })
+                    </script>
+
+
+                    <div class="col-lg-6">
+                        <div class="your-order mb-30 ">
+                            <h3>{{ _("Your order")}}</h3>
+                            <div class="your-order-table table-responsive">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th class="product-name">{{ _("Product") }}</th>
+                                        <th class="product-total">{{ _("Total") }}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for i in carts %}
+                                        <tr class="cart_item">
+                                            <td class="product-name">
+                                                {{ i[4] }} <strong class="product-quantity"> × {{ i[2] }}</strong>
+                                            </td>
+                                            <td class="product-total">
+                                                <span class="amount">$ {{ i[2]*i[6] }}</span>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                    <tr class="cart-subtotal">
+                                        <th>{{ _("Cart Subtotal")}}</th>
+                                        <td><span class="amount">$ {{ sum }}</span></td>
+                                    </tr>
+                                    <tr class="shipping">
+                                        <th>{{ _("Way to Place Order")}}</th>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <input type="radio" name="check_out_deliver" value="0"
+                                                           id="check_out_deliver" checked>
+                                                    <label>
+                                                        {{ _("Pickup") }} <span class="amount"></span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" name="check_out_deliver" value="1"
+                                                           id="check_out_deliver">
+                                                    <label>{{ _("Delivery") }}</label>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>{{ _("Order Total")}}</th>
+                                        <td><strong>
+                                            <div class="product__sale-price" id="checkout_price_sum" value="{{ sum }}">
+                                                {#                                                <span class="price old-price">$ {{ sum+20 }}</span>#}
+                                                <span class="price new-price">${{ sum }}</span>
+                                            </div>
+                                        </strong>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="payment-method">
+                                <div class="accordion" id="checkoutAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="checkoutOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#bankOne" aria-expanded="true"
+                                                    aria-controls="bankOne">
+                                                {{ _("Direct Bank Transfer")}}
+                                            </button>
+                                        </h2>
+                                        <div id="bankOne" class="accordion-collapse collapse show"
+                                             aria-labelledby="checkoutOne" data-bs-parent="#checkoutAccordion">
+                                            <div class="accordion-body">
+                                                <p>{{ _("Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.")}}</p>
+                                            </div>
+                                            <img src="{{ url_for('static', filename='assets/img//payment/checkout_qrcode.png') }}"
+                                                 alt="" height="200">
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="paymentTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#payment"
+                                                    aria-expanded="false" aria-controls="payment">
+
+                                                {{ _("Wechat Payment")}}
+                                            </button>
+                                        </h2>
+                                        <div id="payment" class="accordion-collapse collapse"
+                                             aria-labelledby="paymentTwo" data-bs-parent="#checkoutAccordion">
+                                            <div class="accordion-body">
+                                                <img src="{{ url_for('static', filename='assets/img//payment/checkout_qrcode.png') }}"
+                                                     alt="" height="200">
+                                                <p>{{ _("Scan QR code for payment")}}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="paypalThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#paypal"
+                                                    aria-expanded="false" aria-controls="paypal">
+
+                                                {{ _("PayPal") }}
+                                            </button>
+                                        </h2>
+                                        <div id="paypal" class="accordion-collapse collapse"
+                                             aria-labelledby="paypalThree" data-bs-parent="#checkoutAccordion">
+                                            <div class="accordion-body">
+                                                <img src="{{ url_for('static', filename='assets/img//payment/checkout_qrcode.png') }}"
+                                                     alt="" height="200">
+                                                <p>{{ _("Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.")}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-button-payment mt-20">
+                                    {#                                    <button type="submit" class="btn-tp"#}
+                                    {#                                            id="checkout_submit"#}
+                                    {#                                            id="checkout_submit_1"#}
+                                    {#                                            href="javascript:void(0)"#}
+                                    {#                                            onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"#}
+                                    {#                                    >#}
+                                    {#                                        Place order#}
+                                    {#                                    </button>#}
+                                    <div class="order-button-payment mt-20" style="text-align: center"
+                                         id="checkout_payment">
+
+{#                                        <button type="submit" class="btn-tp"#}
+{#                                                id="checkout_submit"#}
+{#                                        >Pay#}
+{#                                        </button>#}
+                                        <span class="btn-tp" style="width:100%" id="checkout_submit">{{ _("Pay") }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- checkout-area end -->
+
+</main>
+
+{% include "newFront/footer.html" %}
+{% include "newFront/button_base.html" %}
+</body>
+<script>
+    $(document).ready(function () {
+        $("#checkout_submit_1").click(function () {
+            if ($("#checkout_first_name").val().length >= 2 &&
+                $("#checkout_last_name").val().length >= 2 &&
+                $("#checkout_address1").val().length >= 2 &&
+                $("#checkout_address2").val().length >= 2 &&
+                $("input[name='check_out_deliver']:checked").val() != ""
+            ) {
+                $("#checkout_payment").attr("hidden", false)
+            } else {
+                warningFill();
+                $("#checkout_payment").attr("hidden", true)
+            }
+        })
+
+        $(document).ready(function () {
+            $("#checkout_submit").click(function () {
+
+                {#alert(typeof($("input[name='check_out_deliver']:checked").val()))#}
+                if ($("input[name='address_choose']:checked").val() !== "" &&
+                    $("input[name='check_out_deliver']:checked").val() !== ""
+                ) {
+
+                    let div = document.getElementById("checkout_price_sum");
+                    let sum = div.getAttribute("value")
+                    let addressID = $("input[name='address_choose']:checked").parent().find(".address_choose_id").html();
+                    method = $("input[name='check_out_deliver']:checked").val()
+                    if (sum >
+                        200 && method == "1"
+                    ) {
+                        method = 2
+                    }
+                    if (sum > 0 && addressID) {
+                        $.post('/update_checkout', {
+                            "method": method,
+                            "address_id": addressID,
+                        }).done(function (response) {
+                            let server_code = response['returnvalue'];
+                            if (server_code === 1){
+                               success();
+                               window.location = "/order";
+                            }else{
+                               warningAmount();
+                            }
+
+                        }).fail(function () {
+                            error();
+                        })
+                    }else if (sum > 0 && method == "0"){
+                        $.post('/update_checkout', {
+                            "method": method,
+                            "address_id": "",
+                        }).done(function (response) {
+                            let server_code = response['returnvalue'];
+                            if (server_code === 1){
+                               success();
+                               window.location = "/order";
+                            }else{
+                                warningAmount();
+                            }
+                        }).fail(function () {
+                            error();
+                        })
+                    }else if (sum > 0 && !addressID){
+                        warningAddress();
+                    } else {
+                        warning();
+                        {#$("#checkout_payment").attr("hidden", true)#}
+                    }
+                } else {
+                    warningAddress();
+                }
+            })
+        })
+    })
+</script>
+
+
+<!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Success',
+                description: 'Pay Successful',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+
+        function warning() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'There is not any commodity in your cart',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningAmount() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Shortage of product stock',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningFill() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'please fill required form',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+
+        function warningAddress() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please choose an address',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Custom message',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</html>

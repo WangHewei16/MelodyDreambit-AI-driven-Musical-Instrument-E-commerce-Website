@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - Company Profile")}}</title> {% endblock %}
+    <style>
+        #detail_info li {
+            list-style: none;
+            font: inherit;
+            vertical-align: baseline;
+            font-size: 14px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        #detail_info label{
+            list-style: none;
+            font: inherit;
+            vertical-align: baseline;
+            color: #a87f09;
+            background-color: #f4c024;
+            float: left;
+            padding: 4px 7px;
+            -webkit-border-radius: 3px;
+        }
+        #detail_info span{
+            list-style: none;
+            font: inherit;
+            vertical-align: baseline;
+            text-decoration: none;
+            float: right;
+            width: 170px;
+            color: #a87f09;
+        }
+
+    </style>
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+</div>
+<!-- back to top end -->
+
+{% include "newFront/header_area.html" %}
+
+<main>
+    <!-- page__title-start -->
+    <section class="page__title p-relative d-flex align-items-center"
+             data-background="{{ url_for('static',filename='assets/img/bg/page-title-13.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1 style="color:white">{{ _("Company Profile")}}</h1>
+                        <div class="page__title-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="\index" style="color:white">{{ _("Home") }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page" style="color:white">{{ _("company
+                                            profile")}}
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- terms__conditions--start -->
+    <section class="about__history pt-95 pb-75">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-8 col-xl-10">
+                    <div id="content" style="margin: 0; padding: 0; border: 0; font: inherit;
+                        vertical-align: baseline; text-decoration: none; background-color: #FFF; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;">
+                        <div id="profile" style="margin: 0; padding: 0; border: 0; font: inherit; vertical-align: baseline; text-decoration: none;
+                        background-image: url(/static/assets/img/star/header-shadow.png), url(/static/assets/img/star/header-bg.png); background-position: center bottom, left top;
+                        background-repeat: repeat-x; overflow: hidden; background-color: #fdd42f;">
+                	        <div id="about" style="margin: 0; padding: 0; border: 0; font: inherit; vertical-align: baseline; text-decoration: none;
+                	        float: left; margin-top: 30px; width: 490px; margin-left: 20px;">
+                    	        <div class="photo-inner" style="margin: 0; border: 0; font: inherit; float: left;
+                    	        background: url(/static/assets/img/star/photo-inner.png) no-repeat; width: 192px; height: 212px; padding: 12px 0 0 20px;">
+                                    <img src ="{{url_for('static',filename="assets/img/favicon0.png")}}" alt="" height="186" width="153">
+                                </div>
+                                <h1 style="font: inherit; vertical-align: baseline; text-decoration: none; font-size: 37px;
+                                font-weight: 900; color: #FFF; line-height: 34px; margin-top: 8px;">{{ _("GoldMelody") }}</h1>
+                                <h3 style=" font: inherit; vertical-align: baseline;  margin-top: 5px; font-size: 18px; color: #FFF; line-height: 18px;">
+                                    {{ _("Online Musical Instrument Sales & Service Company")}}</h3>
+                                <p style="font: inherit; vertical-align: baseline; text-decoration: none; font-size: 14px;
+                                margin-top: 15px; color: rgb(188, 144, 16);line-height: 20px;">{{ _("This is our MELODY") }}.</p>
+                            </div>
+                	        <ul class="personal-info" id="detail_info" style=" font: inherit; vertical-align: baseline; text-decoration: none; list-style: none;
+                            float: left; margin-top: 30px; width: 310px; min-height: 230px; margin-left: 10px;
+                            background: url(/static/assets/img/star/personal-info-sep.png) no-repeat left top;">
+						        <li><label>{{ _("Name") }}</label><span>{{ _("GoldMelody") }}</span></li>
+                                <li><label>{{ _("Setup Time")}}</label><span>{{ _("March 1st, 2022")}}</span></li>
+                                <li><label>{{ _("Address") }}</label><span>{{ _("Beijing & Dublin")}}</span></li>
+                                <li><label>{{ _("Email") }}</label><span>737272215@qq.com</span></li>
+                                <li><label>{{ _("Phone") }}</label><span>+86 138 209 60171</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- terms__conditions--end -->
+
+
+</main>
+
+{% include "newFront/footer.html" %}
+{% include "newFront/button_base.html" %}
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</body>
+</html>

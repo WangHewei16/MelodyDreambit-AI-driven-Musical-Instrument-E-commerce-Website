@@ -1,0 +1,320 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - Blog details")}} </title> {% endblock %}    {#    <meta charset="utf-8">#}
+
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+</div>
+<!-- back to top end -->
+{% include "newFront/header_area.html" %}
+
+<main>
+    <!-- page__title-start -->
+    <section class="page__title p-relative d-flex align-items-center"
+             data-background="{{ url_for('static',filename='assets/img/bg/page-title-6.jpg') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1 style="color:white">{{ _("Blog Details")}}</h1>
+                        <div class="page__title-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="\index" style="color:white">{{ _("Home") }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page" style="color:white">{{ _("Blog
+                                            Details")}}
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- blog-area start -->
+    <section class="blog_details-area mt-100 mb-50">
+        <div class="container custom-container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8">
+                    <div class="blog-wrapper pr-50">
+                        <div class="blog-wrap blog-item mb-50">
+                            <div class="blog_details mt-35">
+                                <ul class="blog-meta">
+                                    <li><a href=""><i class="fal fa-clock"></i> {{ post.gmt_create }}</a></li>
+                                    <li><a href=""><i class="fal fa-user-circle"></i>{{ post.author.username }}
+                                    </a></li>
+                                    <li><a href=""><i class="fal fa-comments"></i> {{ comment_count }}</a></li>
+                                </ul>
+                                <h3 class="blog-title">
+                                    <a>{{ post.title }}</a>
+                                </h3>
+                                <p>{{ post.content | safe}}</p>
+
+                                {% for post_pic in post.post_picture %}
+                                    <img src="{{ post_pic.image_oss }}" style="max-width: 70%">
+                                {% endfor %}
+
+
+
+
+
+                                {#                                    {% include "newFront/include/blog_detail_banner.html" %}#}
+
+                            </div>
+
+                            {#                                    <script type="text/javascript">#}
+                            {#                                        var index = 0;#}
+                            {##}
+                            {#                                        //效果#}
+                            {#                                        function ChangeImg() {#}
+                            {#                                            index++;#}
+                            {#                                            var a = document.getElementsByClassName("img-slide");#}
+                            {#                                            if (index >= a.length) index = 0;#}
+                            {#                                            for (var i = 0; i < a.length; i++) {#}
+                            {#                                                a[i].style.display = 'none';#}
+                            {#                                            }#}
+                            {#                                            a[index].style.display = 'block';#}
+                            {#                                        }#}
+                            {##}
+                            {#                                        //设置定时器，每隔两秒切换一张图片#}
+                            {#                                        setInterval(ChangeImg, 3000);#}
+                            {#                                    </script>#}
+
+                            {#Link:https://blog.csdn.net/qq_45225221/article/details/122397056#}
+
+
+                            <li><a href=""><i class="falk"></i>
+
+                            </a></li>
+                            <a style="color: #0a53be"
+                               href="{{ url_for('front.product_details', commodity_id = post.commodity_id ) }}">{{ _("Link to
+                                    the commodity")}}</a>
+                        </div>
+                    </div>
+
+                    <div class="post-comments mb-95 wow fadeInUp" data-wow-delay=".6s"
+                         style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        <div class="post-comment-title mb-40">
+                            <h3>{{ _("Comments") }}</h3>
+                        </div>
+
+
+                        <div class="latest-comments">
+                            <ul>
+                                {% for comment in post.comments %}
+                                    <li>
+                                        <div class="comments-avatar">
+                                            <img src="{{ comment.author.avatar }}"
+                                                 alt="" width="50" height="50">
+                                        </div>
+                                        <div class="comments-text">
+                                            <div class="avatar-name">
+                                                <h5>{{ comment.author.username }}</h5>
+                                                <span class="post-meta">{{ comment.create_time }}</span>
+                                            </div>
+                                            {% if user %}
+                                                {% if like_or_dislike[comment.id] %}
+                                                    <button id="add_comment_like_span{{ comment.id }}"
+                                                            style="background-color: red;float: right"
+                                                            class="comment_like badge badge-info"
+                                                            data-user-id="{{ user.id if user else 'not_login' }}"
+                                                            data-comment-id="{{ comment.id }}">
+                                                        Cancel {{ comment.like_amount }} </button>
+                                                {% else %}
+                                                    <button style="background-color: blue;float: right"
+                                                            id="add_comment_like_span{{ comment.id }}"
+                                                            class="comment_like badge badge-info"
+                                                            data-user-id="{{ user.id if user else 'not_login' }}"
+                                                            data-comment-id="{{ comment.id }}">
+                                                        Like {{ comment.like_amount }} </button>
+                                                {% endif %}
+                                            {% else %}
+                                                <button style="background-color: blue;float: right"
+                                                        id="add_comment_like_span"
+                                                        class="comment_like badge badge-info"
+                                                        data-user-id="{{ user.id if user else 'not_login' }}"
+                                                        data-comment-id="{{ comment.id }}">
+                                                    Like {{ comment.like_amount }} </button>
+                                            {% endif %}
+                                            <p>{{ comment.content | safe }} </p>
+
+                                        </div>
+
+                                    </li>
+                                    <br>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="post-comments-form">
+                        <div class="post-comments-title mb-30">
+                            <div class="add-comment-group">
+                                <h3>{{ _("Leave a Comment")}}</h3>
+                                <div class="contact-icon p-relative contacts-name">
+                                            <textarea rows="5" name="comment" id="comment-textarea"
+                                                      style="width: 100%; resize:vertical;"></textarea>
+                                </div>
+                                <div class="comment-btn-group">
+                                    <button class="btn btn-primary" id="comment-btn"
+                                            data-post-id="{{ post.id }}"
+                                            data-user-id="{{ user.id if user else '' }}">
+                                        {{ _("Send comment")}}
+                                    </button>
+                                </div>
+                            </div>
+                            {#                                    <h3>Leave a Reply </h3>#}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4">
+            <div class="blog__sidebar">
+                <div class="sidebar__widget mb-50 wow fadeInUp" data-wow-delay=".2s"
+                     style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- blog-area end -->
+
+</main>
+
+<!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Success',
+                description: 'Add Address Successfully',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+
+        function warning() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Something is error',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningLogin() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please Login',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Tip',
+                description: 'Please enter more content',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+
+{% include "newFront/footer.html" %}
+
+{% include "newFront/button_base.html" %}
+
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</body>
+
+</html>

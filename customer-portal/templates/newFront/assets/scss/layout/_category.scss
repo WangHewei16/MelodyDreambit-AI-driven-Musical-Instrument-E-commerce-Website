@@ -1,0 +1,36 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  13. CATEGORY CSS START
+/*----------------------------------------*/    
+
+.category{
+    &__item{
+        &:hover{
+            & .category__thumb{
+                & img{
+                    @include transform(scale(1.1));
+                }
+            }
+        }
+    }
+    &__title{
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 0;
+        & a{
+            &:hover{
+                color: $theme-color-1;
+            }
+        }
+    }
+    &__content{
+        padding: 15px 0;
+    }
+    &__thumb{}
+    &__quantity{
+        font-size: 13px;
+        font-weight: 500;
+        color: $theme-color-1;
+    }
+}

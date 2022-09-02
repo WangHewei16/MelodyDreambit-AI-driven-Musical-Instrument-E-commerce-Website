@@ -1,0 +1,33 @@
+{% extends "front/base.html" %}
+
+{% block title %}
+买家秀
+{% endblock %}
+
+{% block head %}
+  <script src="{{ url_for('static', filename='lib/wangEditor/wangEditor.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='front/js/public_post.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+  <h1 style="text-align: center; padding: 20px;">买家秀</h1>
+    <form action="" method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">title</span>
+          <input type="text" class="form-control" name="title">
+        </div>
+
+          <div class="input-group">
+          <span class="input-group-addon">content</span>
+          <input type="text" class="form-control" name="content">
+        </div>
+      <div class="form-group">
+        <div id="editor"></div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-danger" id="submit-btn">发布买家秀</button>
+      </div>
+    </form>
+{% endblock %}

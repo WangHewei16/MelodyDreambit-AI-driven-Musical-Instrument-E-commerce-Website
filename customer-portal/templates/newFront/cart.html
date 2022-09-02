@@ -1,0 +1,430 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+        {% include "newFront/head_base.html" %}
+        {% block title %} <title>{{ _("GoldMelody - Cart ")}}</title> {% endblock %}
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+    <!-- prealoder area start -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="first_object"></div>
+                <div class="object" id="second_object"></div>
+                <div class="object" id="third_object"></div>
+            </div>
+        </div>
+    </div>
+    <!-- prealoder area end -->
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- back to top end -->
+
+        {% include "newFront/header_area.html" %}
+
+    <main>
+        <!-- page__title-start -->
+        <section class="page__title p-relative d-flex align-items-center"
+                 data-background="{{url_for('static',filename='assets/img/bg/page-title-11.jpg')}}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page__title-inner text-center">
+                            <h1>{{ _("Your Cart")}}</h1>
+                            <div class="page__title-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb justify-content-center">
+                                        <li class="breadcrumb-item"><a href="\index">{{ _("Home") }}</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">{{ _("Cart") }}</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- page__title-end -->
+
+        <!-- cart-area start -->
+        <section class="cart-area pt-120 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="#">
+                            <div class="table-content table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">{{ _("Images") }}</th>
+                                            <th class="cart-product-name">{{ _("Product") }}</th>
+                                            <th class="product-price">{{ _("Unit Price")}}</th>
+                                            <th class="product-quantity">{{ _("Quantity") }}</th>
+                                            <th class="product-subtotal">{{ _("Total") }}</th>
+                                            <th class="product-remove">{{ _("Remove") }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for i in carts %}
+                                    <tr>
+                                            <td class="product-thumbnail"><a href="\product-details\{{ i[3] }}"><img
+                                                        src={{ i[5] }} alt=""></a></td>
+                                            <td class="product-name"><a href="\product-details\{{ i[3] }}">{{ i[4] }}</a>
+                                            </td>
+                                            <td class="product-price"><span class="amount">${{ i[6] }}</span></td>
+                                            <td class="product-quantity">
+                                                <div class="cart-plus-minus"><input readonly="readonly" class="cart_num" type="text" value={{ i[2] }}>
+                                                    <p class="cart_id" style="display: none">{{ i[0] }}</p>
+                                                    <p class="commodity_amount" style="display: none">{{ i[8] }}</p>
+                                                    <div class="dec qtybutton">-</div>
+                                                    <div class="inc qtybutton">+</div>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal"><span class="amount subtotal-amount">${{ i[2]*i[6] }}</span></td>
+                                            <td class="product-remove"><a><i class="fa fa-times delete_cart"></i></a>
+                                            <p class="cart_id" style="display: none">{{ i[0] }}</p>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    <script>
+                                        $(document).ready(function () {
+                                            $(".cart-plus-minus").click(function () {
+                                                let chosen_num = $(this).find(".cart_num").val();
+                                                let chosen_id = $(this).find(".cart_id").html();
+                                                let chosen_amount = $(this).parent().parent().find(".subtotal-amount");
+                                                let chosen_amount_current = chosen_amount.html();
+                                                let sum_current = $(".total-sum").html();
+                                                $.post('/modify_cart', {
+                                                    'chosenNum': chosen_num,
+                                                    'chosenId': chosen_id,
+                                                    'sum_current': sum_current,
+                                                    'chosen_amount_current': chosen_amount_current
+                                                }).done(function (response) {
+                                                    let server_response = response['text'];
+                                                    let server_code = response['returnvalue'];
+                                                    let server_subtt = response['subtt'];
+                                                    let server_sum_modify = response['sum_modify'];
+                                                    let server_cart_query = response['cart_query'];
+                                                    if (server_code === 1) {
+                                                        warning();
+                                                    }else if (server_code === 2){
+                                                        warningAmount();
+                                                    } else {
+                                                        chosen_amount.text(server_subtt)
+                                                        $(".total-sum").text(server_sum_modify)
+                                                        $(".cart-price").text(server_sum_modify)
+
+                                                        $(".cartmini__list").empty()
+                                                        let div = $(".cartmini__list");
+                                                        let ul = $("<ul>");
+                                                        div.append(ul);
+
+                                                        for (let i = 0; i < server_cart_query["data"].length; i++) {
+                                                            let root = ul;
+                                                            let li = $("<li>");
+                                                            li.attr('class', 'cartmini__item p-relative d-flex align-items-start');
+                                                            root.append(li);
+                                                            let div1 = $("<div>");
+                                                            div1.attr('class', 'cartmini__thumb mr-15');
+                                                            li.append(div1);
+                                                            let img = $("<img>");
+                                                            img.attr('src', server_cart_query["data"][i]["commodity_image_oss"]);
+                                                            img.attr('alt', '');
+                                                            div1.append(img);
+                                                            let div2 = $("<div>");
+                                                            div2.attr('class', 'cartmini__content');
+                                                            li.append(div2);
+                                                            let h3 = $("<h3>");
+                                                            h3.attr('class', 'cartmini__title');
+                                                            h3.text(server_cart_query["data"][i]["commodity_name"]);
+                                                            div2.append(h3);
+                                                            let span1 = $("<span>");
+                                                            span1.attr('class', 'cartmini__price');
+                                                            div2.append(span1);
+                                                            let span2 = $("<span>");
+                                                            span2.attr('class', 'price');
+                                                            span2.text(server_cart_query["data"][i]["amount"] + " × $" + server_cart_query["data"][i]["commodity_price"]);
+                                                            span1.append(span2);
+                                                        }
+                                                    }
+                                                }).fail(function () {
+                                                    error();
+                                                });
+                                            })
+                                            $(".delete_cart").click(function () {
+                                                let chosen_id = $(this).parent().parent().find(".cart_id").html();
+                                                let chosen_good = $(this).parent().parent().parent();
+                                                let chosen_amount = $(this).parent().parent().parent().find(".subtotal-amount");
+                                                let chosen_amount_current = chosen_amount.html();
+                                                let sum_current = $(".total-sum").html();
+                                                $.post('/delete_cart', {
+                                                    'chosenId': chosen_id,
+                                                    'sum_current': sum_current,
+                                                    'chosen_amount_current': chosen_amount_current
+                                                }).done(function (response) {
+                                                    let server_response = response['text'];
+                                                    let server_code = response['returnvalue'];
+                                                    let server_cart_query = response['cart_query'];
+                                                    let server_sum_modify = response['sum_modify'];
+                                                    let server_cart_count = response['cart_count'];
+                                                    if (server_code === 1) {
+                                                        warning();
+                                                    } else {
+                                                        chosen_good.remove();
+                                                        $(".total-sum").text(server_sum_modify)
+                                                        $(".cart-price").text(server_sum_modify)
+                                                        $(".cart-count").text(server_cart_count)
+
+                                                        $(".cartmini__list").empty()
+                                                        let div = $(".cartmini__list");
+                                                        let ul = $("<ul>");
+                                                        div.append(ul);
+
+                                                        for (let i = 0; i < server_cart_query["data"].length; i++) {
+                                                            let root = ul;
+                                                            let li = $("<li>");
+                                                            li.attr('class', 'cartmini__item p-relative d-flex align-items-start');
+                                                            root.append(li);
+                                                            let a = $("<a>")
+                                                            a.attr("href","\\cart")
+                                                            li.append(a)
+                                                            let div1 = $("<div>");
+                                                            div1.attr('class', 'cartmini__thumb mr-15');
+                                                            a.append(div1);
+                                                            let img = $("<img>");
+                                                            img.attr('src', server_cart_query["data"][i]["commodity_image_oss"]);
+                                                            img.attr('alt', '');
+                                                            div1.append(img);
+                                                            let div2 = $("<div>");
+                                                            div2.attr('class', 'cartmini__content');
+                                                            li.append(div2);
+                                                            let h3 = $("<h3>");
+                                                            h3.attr('class', 'cartmini__title');
+                                                            h3.text(server_cart_query["data"][i]["commodity_name"]);
+                                                            div2.append(h3);
+                                                            let span1 = $("<span>");
+                                                            span1.attr('class', 'cartmini__price');
+                                                            div2.append(span1);
+                                                            let span2 = $("<span>");
+                                                            span2.attr('class', 'price');
+                                                            span2.text(server_cart_query["data"][i]["amount"] + " × $" + server_cart_query["data"][i]["commodity_price"]);
+                                                            span1.append(span2);
+                                                        }
+                                                    }
+                                                }).fail(function () {
+                                                    error();
+                                                });
+                                            })
+                                        });
+                                    </script>
+{#                                        <tr>#}
+{#                                            <td class="product-thumbnail"><a href="\product-details"><img#}
+{#                                                        src="{{url_for('static',filename="assets/img/cart/cart-1.jpg")}}" alt=""></a></td>#}
+{#                                            <td class="product-name"><a href="\product-details">Jacket light</a>#}
+{#                                            </td>#}
+{#                                            <td class="product-price"><span class="amount">$130.00</span></td>#}
+{#                                            <td class="product-quantity">#}
+{#                                                <div class="cart-plus-minus"><input type="text" value="1">#}
+{#                                                    <div class="dec qtybutton">-</div>#}
+{#                                                    <div class="inc qtybutton">+</div>#}
+{#                                                    <div class="dec qtybutton">-</div>#}
+{#                                                    <div class="inc qtybutton">+</div>#}
+{#                                                </div>#}
+{#                                            </td>#}
+{#                                            <td class="product-subtotal"><span class="amount">$130.00</span></td>#}
+{#                                            <td class="product-remove"><a href="\#"><i class="fa fa-times"></i></a></td>#}
+{#                                        </tr>#}
+{#                                        <tr>#}
+{#                                            <td class="product-thumbnail"><a href="\product-details"><img#}
+{#                                                        src="{{url_for('static',filename="assets/img/cart/cart-2.jpg")}}" alt=""></a></td>#}
+{#                                            <td class="product-name"><a href="\product-details">Jacket Pink</a></td>#}
+{#                                            <td class="product-price"><span class="amount">$120.50</span></td>#}
+{#                                            <td class="product-quantity">#}
+{#                                                <div class="cart-plus-minus"><input type="text" value="1">#}
+{#                                                    <div class="dec qtybutton">-</div>#}
+{#                                                    <div class="inc qtybutton">+</div>#}
+{#                                                    <div class="dec qtybutton">-</div>#}
+{#                                                    <div class="inc qtybutton">+</div>#}
+{#                                                </div>#}
+{#                                            </td>#}
+{#                                            <td class="product-subtotal"><span class="amount">$120.50</span></td>#}
+{#                                            <td class="product-remove"><a href="\#"><i class="fa fa-times"></i></a></td>#}
+{#                                        </tr>#}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="coupon-all">
+                                        <div class="coupon">
+{#                                            <input id="coupon_code" class="input-text" name="coupon_code" value=""#}
+{#                                                placeholder="Coupon code" type="text">#}
+{#                                            <button class="btn-tp-2" name="apply_coupon" type="submit">Apply#}
+{#                                                coupon</button>#}
+{#                                        </div>#}
+                                        <div class="coupon2">
+{#                                            <button class="btn-tp-2" name="update_cart" type="submit">Update#}
+{#                                                cart</button>#}
+{#                                             <span class="btn-tp-2" name="update_cart">Update cart</span>#}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end">
+                                <div class="col-md-5">
+                                    <div class="cart-page-total">
+                                        <h2>{{ _("Cart totals")}}</h2>
+                                        <ul class="mb-20">
+{#                                            <li>Subtotal <span class="total-sum">${{ sum }}</span></li>#}
+                                            <li>Total <span class="total-sum">${{ sum }}</span></li>
+                                        </ul>
+                                        <a class="btn-tp-2" href="checkout">{{ _("Proceed to checkout")}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- cart-area end -->
+
+    </main>
+
+{% include "newFront/footer.html" %}
+
+    <!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Success message',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error, Please try again later',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+        function warning() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Something is not well, please refresh this page',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningAmount() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Shortage of product stock',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Custom message',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+
+    <!-- footer area end -->
+    {% include "newFront/button_base.html" %}
+{#    <!-- JS here -->#}
+{#    <script src="assets/js/vendor/jquery.js"></script>#}
+{#    <script src="assets/js/vendor/waypoints.js"></script>#}
+{#    <script src="assets/js/bootstrap-bundle.js"></script>#}
+{#    <script src="assets/js/meanmenu.js"></script>#}
+{#    <script src="assets/js/swiper-bundle.js"></script>#}
+{#    <script src="assets/js/owl-carousel.js"></script>#}
+{#    <script src="assets/js/jquery-ui-slider-range.js"></script>#}
+{#    <script src="assets/js/magnific-popup.js"></script>#}
+{#    <script src="assets/js/parallax.js"></script>#}
+{#    <script src="assets/js/backtotop.js"></script>#}
+{#    <script src="assets/js/nice-select.js"></script>#}
+{#    <script src="assets/js/counterup.js"></script>#}
+{#    <script src="assets/js/countdown.js"></script>#}
+{#    <script src="assets/js/wow.js"></script>#}
+{#    <script src="assets/js/isotope-pkgd.js"></script>#}
+{#    <script src="assets/js/imagesloaded-pkgd.js"></script>#}
+{#    <script src="assets/js/ajax-form.js"></script>#}
+{#    <script src="assets/js/main.js"></script>#}
+</body>
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</html>

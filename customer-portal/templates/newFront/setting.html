@@ -1,0 +1,420 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - Setting") }}</title> {% endblock %}
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/setting.js') }}"></script>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='front/js/zlajax.js') }}"></script>
+    <script src="{{ url_for('static', filename='front/js/zlparam.js') }}"></script>
+
+    <style>
+        #avatar-img {
+            width: 140px;
+            height: 140px;
+        }
+
+        .fileinput-button {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .fileinput-button input {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+        }
+    </style>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+        href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+
+<!-- prealoder area start -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="first_object"></div>
+            <div class="object" id="second_object"></div>
+            <div class="object" id="third_object"></div>
+        </div>
+    </div>
+</div>
+<!-- prealoder area end -->
+
+<!-- back to top start -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+</div>
+<!-- back to top end -->
+
+{% include "newFront/header_area.html" %}
+
+<main>
+    <!-- page__title-start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page__title-inner text-center">
+                    <div class="page__title-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="\index" style="color:white">{{ _("Home") }}</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- page__title-end -->
+
+    <!-- about__history-start -->
+    <section class="checkout-area pb-85 ">
+        <form class="container" style="margin:0 auto">
+            <form action="#">
+                <div class="row" style="margin:0 auto">
+                    <div class="col-lg-6 your-order">
+                        <div class="checkbox-form">
+                            <h3>{{ user.username }} {{ _("Setting") }}</h3>
+                            <div class="row">
+                                <div class="col-md-13">
+
+                                </div>
+                                <div class="country-select col-md-6">
+                                    <label>Country <span class="required">*</span></label>
+                                    <select id="setting_country" style="display: none;">
+                                        {% for nation in nations %}
+                                            {% if addresses.nation_id == nation.id %}
+                                                <option id="setting_country_{{ nation.id }}"
+                                                        value={{ nation.id }} selected>{{ nation.name }}</option>
+                                            {% else %}
+                                                <option id="setting_country_{{ nation.id }}"
+                                                        value={{ nation.id }}>{{ nation.name }}</option>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>{{ _("Avatar") }} <span class="required"></span></label>
+                                        <div class="input-group">
+                                            <img src="{{ imagelink }}" alt=""
+                                                 id="avatar-img">
+                                            <span style="text-align: center" class="btn btn-success fileinput-button">
+                                            {{ _("Upload") }}
+                                            <input type="file" id="avatar-input"
+                                                   accept="image/jpeg, image/png, image/jpg"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>{{ _("First Name")}} <span class="required">*</span></label>
+                                        <input type="text" placeholder="" id="setting_first_name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list">
+                                        <label>{{ _("Last Name")}} <span class="required">*</span></label>
+                                        <input type="text" placeholder="" id="setting_last_name">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>{{ _("Phone Number")}} <span class="required">*</span></label>
+                                        <input type="text" placeholder="" id="setting_phone_number">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>{{ _("Address") }} 1 <span class="required">*</span></label>
+                                        <input type="text" id="setting_address1" placeholder="{{ address1 }}"
+                                               value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>{{ _("Address") }} 2 <span class="required">*</span></label>
+                                        <input type="text"
+                                               placeholder="{{ address2 }}"
+                                               value=""
+                                               id="setting_address2">
+                                    </div>
+                                </div>
+
+                                <br>
+                                <br>
+
+                                <div>
+                                    <a id="setting_submit_btn" class="btn btn-primary">{{ _("Add") }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{{ url_for('front.logout') }}" class="btn btn-danger">{{ _("Logout") }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {#                    右侧表单！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！#}
+                    <div class="col-lg-6">
+                        <div class="your-order mb-30 ">
+                            <h3>{{ _("History Address")}}</h3>
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>{{ _("Name") }}</th>
+                                        <th>{{ _("Phone") }}</th>
+                                        <th>{{ _("Address") }}</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody id="history-address-tbody">
+                                    {% for address in addresses %}
+                                    <tr>
+                                        <td>{{ address.first_name }} {{ address.last_name }}</td>
+                                        <td>{{ address.phone_number }}</td>
+                                        <td>{{ address.address2 }}, {{ address.address1 }}, {{ address.nation_name }}</td>
+                                        <td><p class="setting-address-id" style="display: none">{{ address.id }}</p><a class="btn btn-danger delete-address">Delete</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            <script>
+                                $(document).on("click", ".delete-address", function(){
+                                {#$(".delete-address").click(function (){#}
+                                    let address_id = $(this).parent().find(".setting-address-id").html();
+                                    let deleted_goal = $(this).parent().parent();
+                                    $.post('/delete_address', {
+                                        'address_id': address_id,
+                                    }).done(function (response){
+                                        let server_code = response['server_code'];
+                                        if (server_code === 0){
+                                            deleted_goal.remove();
+                                        }
+                                        else{
+                                            error();
+                                        }
+                                    })
+                                })
+                            </script>
+                            </div>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </form>
+        </form>
+        <!-- shop modal end -->
+    </section>
+</main>
+<script>
+    $(document).ready(function () {
+        $('#avatarInput').on('change', function (e) {
+            var filemaxsize = 1024 * 5;//5M
+            var target = $(e.target);
+            var Size = target[0].files[0].size / 1024;
+            if (Size > filemaxsize) {
+                warningHuge();
+                $(".avatar-wrapper").childre().remove;
+                return false;
+            }
+            if (!this.files[0].type.match(/image.*/)) {
+                warningCorrect();
+            } else {
+                var filename = document.querySelector("#avatar-name");
+                var texts = document.querySelector("#avatarInput").value;
+                var teststr = texts; //你这里的路径写错了
+                testend = teststr.match(/[^\\]+\.[^\(]+/i); //直接完整文件名的
+                filename.innerHTML = testend;
+            }
+
+        });
+
+        $(".avatar-save").on("click", function () {
+            var img_lg = document.getElementById('imageHead');
+            // 截图小的显示框内的内容
+            html2canvas(img_lg, {
+                allowTaint: true,
+                taintTest: false,
+                onrendered: function (canvas) {
+                    canvas.id = "mycanvas";
+                    //生成base64图片数据
+                    var dataUrl = canvas.toDataURL("image/jpeg");
+                    var newImg = document.createElement("img");
+                    newImg.src = dataUrl;
+                    imagesAjax(dataUrl)
+                }
+            });
+        })
+
+        function imagesAjax(src) {
+            var data = {};
+            data.img = src;
+            data.jid = $('#jid').val();
+            $.ajax({
+                url: "upload-logo.php",
+                data: data,
+                type: "POST",
+                dataType: 'json',
+                success: function (re) {
+                    if (re.status == '1') {
+                        $('.user_pic img').attr('src', src);
+                    }
+                }
+            });
+        }
+    })
+</script>
+
+<!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Success',
+                description: 'Add Address Successfully',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+
+        function warning() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please Login',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningFill() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please fill all the forms',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningHuge() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'The picture is too large, please select it again.',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+        function warningCorrect() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please select the correct picture.',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+        function custom() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Custom message',
+                type: 'custom',
+                close_color: '#3498db',
+                border_color: '#3498db',
+                timeout: 5000
+            })
+        }
+
+    </script>
+
+{% include "newFront/footer.html" %}
+{% include "newFront/button_base.html" %}
+</body>
+
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+
+</html>
+

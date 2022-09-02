@@ -1,0 +1,138 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  12. SLIDER CSS START
+/*----------------------------------------*/    
+
+.slider{
+    &__padding{
+        padding-left: 145px;
+        padding-right: 145px;
+        @media #{$xl,$lg} {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        @media #{$md,$sm} {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__height{
+        min-height: 700px;
+
+        @media #{$md, $sm, $xs}{
+            min-height: 500px;
+        }
+    }
+    &__title{
+        font-size: 72px;
+        font-weight: 400;
+        color: $white;
+        margin-bottom: 20px;
+        @media #{$xs}{
+            font-size: 45px;
+        }
+    }
+    &__content{
+        & span{
+            display: inline-block;
+            font-size: 12px;
+            background-color: $black;
+            color: $white;
+            font-weight: 500;
+            text-transform: uppercase;
+            height: 26px;
+            line-height: 26px;
+            padding: 0 17px;
+            @include border-radius(3px);
+            margin-bottom: 25px;
+        }
+        &-2{
+            padding-left: 10px;
+        }
+        &-3{
+            & span{
+                background-color: $theme-color-3;
+            }
+            & p{
+                font-size: 20px;
+                color: $white;
+            }
+        }
+    }
+}
+
+.main-slider-pagination{
+    position: absolute;
+    right: 300px;
+    bottom: 40px;
+    z-index: 1;
+
+    @media #{$xl}{
+        right: 120px;
+    }
+
+    @media #{$lg}{
+        right: 70px;
+    }
+    @media #{$md}{
+        right: 70px;
+    }
+    @media #{$sm}{
+        right: 50px;
+    }
+    @media #{$xs}{
+        right: 30px;
+    }
+    & button{
+        font-size: 26px;
+        color: $white;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        @include border-radius(50%);
+        background-color: rgba($color: #000, $alpha: .25 );
+        &.main-slider-button-prev{
+           margin-right: 5px;
+        }
+        &:hover{
+            background-color: #000;
+        }
+    }
+    &-2{
+        position: static;
+
+        & button{
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            @include transform(translateY(-50%));
+            z-index: 1;
+            @media #{$xl,$lg,} {
+                top: 70%;
+                @include transform(translateY(-70%));
+            }
+            @media #{$md} {
+                top: 80%;
+                @include transform(translateY(-80%));
+            }
+            @media #{$sm} {
+                top: 90%;
+                @include transform(translateY(-90%));
+            }
+            @media #{$xs} {
+                display: none;
+            }
+            &.main-slider-button-prev{
+                margin-right: 0;
+                left: 30px;
+                right: auto;
+             }
+        }
+    }
+}

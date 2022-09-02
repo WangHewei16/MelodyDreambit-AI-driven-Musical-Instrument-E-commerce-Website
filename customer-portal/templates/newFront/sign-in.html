@@ -1,0 +1,167 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - Sign in") }} </title>
+    {% endblock %}
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+
+    <!-- prealoder area start -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="first_object"></div>
+                <div class="object" id="second_object"></div>
+                <div class="object" id="third_object"></div>
+            </div>
+        </div>
+    </div>
+    <!-- prealoder area end -->
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- back to top end -->
+
+        {% include "newFront/header_area.html" %}
+
+    <main>
+        <!-- page__title-start -->
+        <section class="page__title p-relative d-flex align-items-center"
+                 data-background="{{url_for('static',filename='assets/img/bg/page-title-4.jpg')}}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page__title-inner text-center">
+                            <h1>{{ _("Sign in") }}</h1>
+                            <div class="page__title-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb justify-content-center">
+                                        <li class="breadcrumb-item"><a href="\index">{{ _("Home") }}</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">{{ _("Sign in") }}</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- page__title-end -->
+
+        <!-- signin__area start -->
+        <section class="signin__area po-rel-z1 pt-100 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                        <div class="sign__wrapper white-bg">
+{#                            <div class="sign__header mb-35">#}
+{#                                <div class="sign__in text-center">#}
+{#                                    <a href="\#" class="sign__social text-start mb-15"><i#}
+{#                                            class="fab fa-facebook-f"></i>Sign in with Facebook</a>#}
+{#                                    <p> <span>........</span> Or, <a href="\login">sign in</a> with your#}
+{#                                        email<span> ........</span> </p>#}
+{#                                </div>#}
+{#                            </div>#}
+
+                            <div class="sign__form sign-box">
+{#                                <form action="#">#}
+                                    <div class="sign__input-wrapper mb-25">
+                                        <h5>{{ _("Work email")}}</h5>
+                                        <div class="sign__input form-group">
+                                            <input type="text"class = "form-control" placeholder="{{ _("e-mail address")}}" name = "email">
+                                            <i class="fal fa-envelope"></i>
+                                        </div>
+                                    </div>
+                                    <div class="sign__input-wrapper mb-10">
+                                        <h5>{{ _("Password") }}</h5>
+                                        <div class="sign__input form-group">
+                                            <input type="password" class = "form-control" placeholder="{{ _("Password") }}" name = "password">
+                                            <i class="fal fa-lock"></i>
+                                        </div>
+                                    </div>
+                                    <div class="sign__action d-sm-flex justify-content-between mb-30">
+                                        <div class="sign__agree d-flex align-items-center">
+                                            <input class="m-check-input" type="checkbox" id="m-agree" name = "remember">
+                                            <label class="m-check-label" for="m-agree">{{ _("Keep me signed in")}}
+                                            </label>
+                                        </div>
+                                        <div class="sign__forgot">
+                                            <a href="\changepassword">{{ _("Forgot/change password")}}</a>
+                                        </div>
+                                    </div>
+                                    <button class="btn-tp w-100" id="submit-btn"> {{ _("Sign In")}}</button>
+                                    <div class="sign__new text-center mt-20">
+                                        <p>{{ _("New to Markit")}}? <a href="\register">{{ _("Sign Up")}}</a></p>
+                                    </div>
+{#                                </form>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- signin__area end -->
+
+    </main>
+
+    {% include "newFront/footer.html" %}
+    {% include "newFront/button_base.html" %}
+
+{#    <!-- JS from old template here -->#}
+{##}
+{#    <script src="{{ url_for('static', filename='front/js/login.js') }}"></script>#}
+{#    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>#}
+{#    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>#}
+{#    <script src="{{ url_for('static', filename='front/js/zlajax.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='front/js/zlparam.js') }}"></script>#}
+{##}
+{##}
+{#    <!-- JS here -->#}
+{#    <script src="{{ url_for('static', filename='front/js/bootstrap.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/vendor/jquery.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/vendor/waypoints.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/bootstrap-bundle.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/meanmenu.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/swiper-bundle.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/owl-carousel.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/jquery-ui-slider-range.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/magnific-popup.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/parallax.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/backtotop.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/nice-select.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/counterup.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/countdown.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/wow.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/isotope-pkgd.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/imagesloaded-pkgd.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/ajax-form.js') }}"></script>#}
+{#    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>#}
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  15. BANNER CSS START
+/*----------------------------------------*/    
+
+.banner{
+    &__area-2{
+        padding-left: 145px;
+        padding-right: 145px;
+        @media #{$xl,$lg} {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        @media #{$md,$sm} {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__title{
+        font-size: 22px;
+        font-weight: 600;
+        &-2{
+            font-size: 34px;
+            @media #{$xs} {
+                font-size: 20px;
+                & br{
+                    display: none;
+                }
+            }
+        }
+    }
+    &__top{
+        & p{
+            
+        }
+    }
+    &__content{
+        padding: 65px 70px 50px;
+        @media #{$xl}{
+            padding: 27px 65px 25px;
+        }
+        @media #{$lg}{
+            padding: 15px 66px 15px;
+        }
+        @media #{$xs}{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        &-2{
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            @media only screen and (min-width: 320px) and (max-width: 400px) {
+                top: 15px;
+                left: 40px;
+            }
+            & p{
+                font-size: 14px;
+                color: $theme-color-2;
+            }
+        }
+        &-3{
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            min-height: 450px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            &::before{
+                position: absolute;
+                content: '';
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0.6);
+                z-index: -1;
+            }
+        }
+        &-wrapper{
+            margin-right: 160px;
+            @media #{$sm} {
+                margin-right: 50px;
+            }
+            @media #{$xs} {
+                margin-right: 0;
+            }
+            & h5{
+                font-size: 26px;
+                line-height: 1.4;
+            }
+            & span{
+                font-size: 22px;
+                line-height: 1.4;
+                display: inline-block;
+                color: $heading-color;
+            }
+            & form{
+                & input{
+                    background: $white;
+                    border: 0;
+                    padding: 0 25px;
+                    border-radius: 3px;
+                    min-width: 310px;
+                    &::-moz-placeholder {
+                        color: $text-9;
+                        font-size: 14px;
+                        opacity: 1;
+                    }
+                    &::placeholder {
+                        color: $text-9;
+                        font-size: 14px;
+                        opacity: 1;
+                    }
+                    @media #{$xs} {
+                        min-width: 100px;
+                        margin-bottom: 15px;
+                        height: 40px;
+                    }
+                }
+                @media #{$xs} {
+                    display: inline-block !important;
+                }
+            }
+            & .save-info{
+                display: flex;
+                justify-content: center;
+                & p{
+                    color: $theme-color-2;
+                }
+            }
+        }
+    }
+    &__slider-active{
+        position: relative;
+        & button{
+            font-size: 26px;
+            color: $white;
+            width: 44px;
+            height: 44px;
+            line-height: 40px;
+            text-align: center;
+            border: 2px solid $border-3;
+            color: $border-3;
+            @include border-radius(50%);
+            &.main-slider-button-prev{
+               margin-right: 5px;
+            }
+            &:hover{
+                background-color: #000;
+                border-color: #000;
+            }
+            @media #{$md,$sm,$xs} {
+                display: none;
+            }
+        }
+        & .owl-prev {
+            position: absolute;
+            top: 50%;
+            left: -65px;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            @media #{$xxl} {
+                left:  -35px;
+            }
+            @media only screen and (min-width: 1200px) and (max-width: 1250px) {
+                left: -40px;
+            }
+            @media only screen and (min-width: 991px) and (max-width: 1080px) {
+                left: -25px;
+            }
+        }
+        .owl-next {
+            position: absolute;
+            right: -65px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            @media #{$xxl} {
+                right:  -35px;
+            }
+            @media only screen and (min-width: 1200px) and (max-width: 1250px) {
+                right: -40px;
+            }
+            @media only screen and (min-width: 991px) and (max-width: 1080px) {
+                right: -25px;
+            }
+        }
+    }
+    &__sd-area{
+        min-height: 700px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        & .bakix-marker{
+            position: absolute;
+        }
+        & .map-c1 {
+            top: 58%;
+            left: 9%;
+        }
+        & .map-c2 {
+            top: 22%;
+            left: 18%;
+        }
+        & .map-c3 {
+            bottom: 18%;
+            right: 35%;
+            @media #{$xs} {
+                display: none;
+            }
+        }
+        & .map-c4 {
+            bottom: 30%;
+            right: 10%;
+            @media #{$xxxl} {
+                bottom: 32%;
+                right: 22%;
+            }
+            @media #{$xl,$xxl} {
+                bottom: 32%;
+                right: 18%;
+            }
+            @media #{$lg} {
+                right: 20%;
+            }
+            @media #{$md} {
+                bottom: 39%;
+                right: 25%;
+            }
+            @media #{$sm} {
+                bottom: 40%;
+                right: 35%;
+            }
+            @media #{$xs} {
+                display: none;
+            }
+        }
+        & .map-c5 {
+            top: 37%;
+            right: 43%;
+            @media #{$xs} {
+                top: 41%;
+                right: 56%;
+            }
+        }
+        & .bakix-map-icon {
+            background: $theme-color-3;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 32px;
+            color: #fff;
+            position: relative;
+            & i{
+                font-size: 10px;
+            }
+            &::before{
+                position: absolute;
+                content: "";
+                width: 40px;
+                height: 40px;
+                background: #ffffff;
+                border-radius: 50%;
+                animation: video-ripple 1500ms ease-out infinite;
+                left: -2px;
+                top: -2px;
+            }
+        }
+        & .bakix-map-address {
+            background: #fff;
+            padding: 12px;
+            margin-top: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            position: absolute;
+            z-index: 9;
+            width: 200px;
+            top: 100%;
+           &  p {
+                color: #747691;
+                margin: 0;
+            }
+        }
+        & .bakix-marker:hover .bakix-map-address {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__thumb{
+        position: relative;
+       &::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.6);
+        }
+    }
+}

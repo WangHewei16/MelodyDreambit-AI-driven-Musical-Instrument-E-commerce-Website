@@ -1,0 +1,366 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  22. FOOTER CSS START
+/*----------------------------------------*/   
+
+.footer{
+    &__top{
+        &-space{
+            padding-top: 70px;
+            &-2{
+                padding-top: 60px;
+            }
+        }
+    }
+    &__widget{
+        &.footer-col-1{
+            padding-right: 20px;
+        }
+        &.footer-col-2{
+            padding-left: 60px;
+            @media #{$xs}{
+                padding-left: 0;
+            }
+        }
+        &.footer-col-3{
+            padding-left: 40px;
+            @media #{$sm, $xs,$lg,$md}{
+                padding-left: 0;
+            }
+        }
+        &.footer-col-4{
+            padding-left: 65px;
+            @media #{$xl, $lg, $md, $sm, $xs}{
+                padding-left: 0;
+            }
+        }
+        &.footer-col-5{
+            padding-left: 65px;
+            @media #{$xl,$lg, $md, $sm, $xs}{
+                padding-left: 0;
+            }
+        }
+        &-title{
+            font-size: 15px;
+            font-weight: 600;
+            color: $theme-color-1;
+            text-transform: capitalize;
+            margin-bottom: 27px;
+            &-2{
+                color: $white;
+            }
+            &-3{
+                color: $theme-color-3;
+            }
+        }
+        &-border{
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                right: -40px;
+                top: 0;
+                width: 1px;
+                height: 235px;
+                background-color: #3a3a3a;
+                @media #{$xs,$sm} {
+                    display: none;
+                }
+            }
+            &-2{
+                &::after{
+                    left: -80px;
+                    height: 180px;
+                }
+            }
+        }
+    }
+    &__subscribe{
+        & p{
+            font-size: 22px;
+            color: $white;
+            line-height: 32px;
+            margin-bottom: 15px;
+        }
+        &-2{
+            & p{
+                font-size: 13px;
+                color: $text-8;
+                & a{
+                    color: $white;
+                }
+            }
+        }
+        &-input{
+            position: relative;
+            & input{
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 25px;
+                padding-right: 35px;
+                background-color: $white;
+                outline: 0;
+                border: 0;
+                font-size: 13px;
+                @media #{$md} {
+                    padding: 0 15px;
+                    padding-right: 45px;
+                }
+                &::placeholder{
+                    color: $text-9;
+                }
+            }
+            & button{
+                position: absolute;
+                top: 50%;
+                right: 25px;
+                @include transform(translateY(-50%));
+                font-size: 18px;
+                color: $text-8;
+                @media #{$md} {
+                    right: 17px;
+                }
+            }
+        }
+        &-3{
+            display: flex;
+            align-items: center;
+            @media #{$xs} {
+                display: block;
+            }
+            & p{
+                margin-bottom: 0;
+                @media #{$xs} {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    &__contact{
+        &-phone{
+            color: $white;
+            font-size: 25px;
+            font-weight: 600;
+            
+        }
+        &-email{
+            & p{
+                font-size: 14px;
+                font-weight: 300;
+                color: $white;
+            }
+            &-2{
+                & p{
+                    color: $text-8;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    &__opening{
+        & p{
+            font-size: 12px;
+            color: $text-7;
+            margin-bottom: 0;
+        }
+    }
+    &__social{
+        & ul{
+            & li{
+                display: inline-block;
+                margin-right: 15px;
+                & a{
+                    font-size: 17px;
+                    display: inline-block;
+                    color: $theme-color-1;
+
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &-2{
+            & ul{
+                & li{
+                    & a{
+                        color: $theme-color-2;
+                    }
+                }
+            }
+        }
+        &-3{
+            & ul{
+                & li{
+                    & a{
+                        color: $theme-color-3;
+                    }
+                }
+            }
+        }
+    }
+    &__links{
+        & ul{
+            & li{
+                line-height: 1;
+                margin-bottom: 15px;
+                & a{
+                    font-size: 13px;
+                    color: $white;
+                    position: relative;
+
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        left: auto;
+                        right: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 1px;
+                        background-color: $white;
+                    }
+
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                            left: 0;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+        &-2{
+            & ul{
+                & li{
+                    & a{
+                        color: $text-8;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__offer{
+        &-inner{
+            border-top: 1px solid rgba($color: $white, $alpha: .14);
+            border-bottom: 1px solid rgba($color: $white, $alpha: .14);
+            &-2{
+                padding: 20px 0;
+                & p{
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-right: 50px;
+                }
+                & input{
+                    background: $white;
+                    border-radius: 3px;
+                }
+                & button{
+                    color: $black-3;
+                }
+            }
+        }
+        &-content{
+            & p{
+                font-size: 13px;
+                margin-bottom: 0;
+                color: $grey-2;
+
+                & a{
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        right: 0;
+                        bottom: 0;
+                        height: 1px;
+                        width: 100%;
+                        background-color: $grey-2;
+                    }
+                }
+                &:first-child{
+                    position: relative;
+                    padding-right: 20px;
+                    margin-right: 20px;
+                    padding-top: 5px;
+                    padding-bottom: 6px;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        right: 0;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                        height: 18px;
+                        width: 1px;
+                        background-color: rgba($color: $white, $alpha: .1);
+                    }
+                }
+            }
+        }
+    }
+    &__bottom{
+        &-wrapper{
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+        &-links{
+            & ul{
+                & li{
+                    display: inline-block;
+                    margin-right: 15px;
+                    a{
+                        font-size: 13px;
+                        color: $text-7;
+                        &:hover{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        &-2{
+            &-wrapper{
+                border-top: 1px solid $black-6;
+            }
+        }
+    }
+    &__copyright{
+        & p{
+            margin-bottom: 0;
+            & a{
+                &:hover{
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__info{
+        & .sm-contact-info{
+            display: flex;
+            @media #{$xs} {
+                display: block;
+            }
+            & .sm-item{
+                margin-right: 15px;
+                & span{
+                    display: inline-block;
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: $text-8;
+                    & a{
+                        font-weight: 400;
+                        color: $text-8;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

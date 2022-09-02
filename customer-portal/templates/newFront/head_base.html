@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{#    <meta name="csrf-token" content="{{ csrf_token() }}">#}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static',filename="assets/img/favicon.png")}}">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/preloader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/meanmenu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/owl-carousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/ui-range-slider.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/swiper-bundle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/backtotop.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/font-awesome-pro.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/css/toastStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='assets/font_Icon/iconfont.css') }}">
+
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/add_cart.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/post_comment_like.js') }}"></script>
+    <script src="{{ url_for('static', filename='front/js/zlajax.js') }}"></script>
+    <script src="{{ url_for('static', filename='front/js/zlparam.js') }}"></script>
+   <script src="{{ url_for('static', filename='assets/font/flaticon.css')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='front/css/front_base.css') }}">
+    <script src="https://cdn.tiny.cloud/1/ltcifdbzi3khmh4be2xvz6bzl0o0hpxfh46t4slwnnifd2as/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+tinymce.init({
+  selector: '#url-conversion-relative-2',
+  height: 300,
+  plugins: 'link image code',
+  relative_urls: true,
+  document_base_url: '//www.tiny.cloud/docs/demo',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+});
+    </script>
+<head>
+    {% block title %} {% endblock %}
+</head>

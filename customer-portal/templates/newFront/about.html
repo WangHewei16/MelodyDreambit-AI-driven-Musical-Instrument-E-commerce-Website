@@ -1,0 +1,1010 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+        {% include "newFront/head_base.html" %}
+    {% block title %} <title>{{ _("GoldMelody - About us") }}</title> {% endblock %}
+
+    <script src="{{ url_for('static', filename='assets/js/party.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="\https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+
+    <!-- prealoder area start -->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="first_object"></div>
+                <div class="object" id="second_object"></div>
+                <div class="object" id="third_object"></div>
+            </div>
+        </div>
+    </div>
+    <!-- prealoder area end -->
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!-- back to top end -->
+
+        {% include "newFront/header_area.html" %}
+
+    <main>
+        <!-- page__title-start -->
+        <section class="page__title p-relative d-flex align-items-center"
+                 data-background="{{url_for('static',filename='assets/img/bg/page-title-1.jpg')}}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page__title-inner text-center">
+                            <h1 style="color:white">{{ _("About Us")}}</h1>
+                            <div class="page__title-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb justify-content-center">
+                                        <li class="breadcrumb-item"><a href="\index" style="color:white">{{ _("Home") }}</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page" style="color:white">
+                                            {{ _("About Us")}}</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- page__title-end -->
+
+        <!-- about__history-start -->
+        <section class="about__history pt-95 pb-75">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 col-xl-10">
+                        <div class="about__history-wrapper">
+                            <div class="about__history-title-area">
+                                <span class="about__history-title-pre">{{ _("Our History")}}</span>
+                                <h3 class="about__history-title">
+                                    <span>{{ _("Hello, We are GoldMelody.")}}</span> <br>
+                                    {{ _("With 2 Months of Experience")}}
+                                </h3>
+                            </div>
+                            <p class="about__history-text">{{ _("We are a professional team. Our team has 2 months of
+                                    experience in the development and production of online stores, and our team members have
+                                    participated in several programs.
+                                    We are a young team. Our average age is only 21 years old and we are full of vigor and
+                                    innovation.")}}</p>
+
+                            <p> {{ _("We are a dedicated team. We firmly believe that an excellent brand comes from the trust
+                                    of customers, and that only by focusing can we achieve excellence.
+                                    We are a team with dreams. We come from China because of a common dream: to be a really
+                                    good online store manufacturing company,
+                                    and provide the most reliable products and technical support to our customers.")}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about__history-end -->
+
+        <!-- about__gallery-start -->
+        <section class="about__gallery">
+            <div class="container">
+                <div class="row gx-2">
+                    <div class="col-xxl-8 col-xl-8 col-lg-8">
+                        <div class="about__gallery-wrapper text-center ">
+                            <div class="about__gallery-review include-bg mb-8"
+                                 data-background="{{url_for('static',filename='assets/img/about/about-img-1.jpg')}}"
+                                style="background-image: url(assets/img/about/about-img-1.jpg);">
+                                <h3>{{ _("GoldMelody") }}</h3>
+                                <span>{{ _("PROJECT-TEAM") }}</span>
+                                <p>{{ _("As a young project team, we try to make users respond to the product through
+                                        GoldMelody as opposed to awakening their passion.
+                                        This desire will be objectively driven, like the stirring of the heart when you
+                                        first touch a musical instrument and play a syllable.
+                                        Instrument playing is a haven for individuality, eccentricity, heresy, perversity,
+                                        hobby and humor.")}}</p>
+
+                                <img src ="{{url_for('static',filename="assets/img/about/singature.png")}}" alt="">_
+                            </div>
+                            <div class="row gx-2">
+                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="about__gallery-thumb w-img mb-10">
+                                        <img src ="{{url_for('static',filename="assets/img/about/about-img-3.jpg")}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="about__gallery-thumb w-img mb-10">
+                                        <img src ="{{url_for('static',filename="assets/img/about/about-img-4.jpg")}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4">
+                        <div class="about__gallery-thumb mb-8 w-img">
+                            <img src ="{{url_for('static',filename="assets/img/about/about-img-2.jpg")}}" alt="">
+                        </div>
+                        <div class="about__gallery-thumb w-img">
+                            <img src ="{{url_for('static',filename="assets/img/about/about-img-5.jpg")}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about__gallery-end -->
+
+        <!-- features__area start -->
+        <section class="features-2__area mt-90 pb-85">
+            <div class="container">
+                <div class="row gx-0">
+                    <div class="col-xxl-4 offset-xxl-2 col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-6">
+                        <div
+                            class="features-2__item-2 features-2__item-pb-40 features-2__item-br features-2__item-bb text-center">
+                            <div class="features-2__icon-2">
+                                <img src ="{{url_for('static',filename="assets/img/icon/trophy.png")}}" alt="">
+                            </div>
+                            <div class="features-2__content-2">
+                                <h3 class="features-2__title-2">{{ _("2+ Months of Experience")}}</h3>
+                                <p>{{ _("Time brings experience and maturity.")}}<br>{{ _("We're trying to do better.")}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-6">
+                        <div class="features-2__item-2 features-2__item-pb-40 features-2__item-bb text-center">
+                            <div class="features-2__icon-2">
+                                <img src ="{{url_for('static',filename="assets/img/icon/user.png")}}" alt="">
+                            </div>
+                            <div class="features-2__content-2">
+                                <h3 class="features-2__title-2">{{ _("A wide range of products on sale")}}</h3>
+                                <p>{{ _("Offers instruments covering a wide range of musical styles.")}}<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 offset-xxl-2  col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-6">
+                        <div class="features-2__item-2 features-2__item-pt-65 features-2__item-br text-center">
+                            <div class="features-2__icon-2">
+                                <img src ="{{url_for('static',filename="assets/img/icon/like.png")}}" alt="">
+                            </div>
+                            <div class="features-2__content-2">
+                                <h3 class="features-2__title-2">{{ _("Elegant, premium service process")}}</h3>
+                                <p>{{ _("At GoldMelody, choosing the item you desire is the only thing you need to do. Leave
+                                        the rest to us.")}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-5  col-lg-5  col-md-6">
+                        <div class="features-2__item-2 features-2__item-pt-65 text-center">
+                            <div class="features-2__icon-2">
+                                <img src ="{{url_for('static',filename="assets/img/icon/pen.png")}}" alt="">
+                            </div>
+                            <div class="features-2__content-2">
+                                <h3 class="features-2__title-2">{{ _("Excellent post-sales service")}}</h3>
+                                <p>{{ _("Strong post-sales teams with dedicated service staff and technicians")}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- features__area end -->
+
+        <!-- about__offer start -->
+        <section class="about__offer pt-155 pb-130 include-bg" data-background="{{url_for('static',filename='assets/img/bg/about-bg-1.jpg')}}">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-8 col-xl-8 col-lg-10">
+                        <div class="about__offer-content text-center">
+                            <div class="about__offer-icon mb-20">
+                                <img src ="{{url_for('static',filename="assets/img/icon/ship.png")}}" alt="">
+                            </div>
+                            <h3>{{ _("All Orders Are Free Shipping")}}</h3>
+                            <p>{{ _("We cover everything you buy, and yes, that includes shipping and related insurance.")}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about__offer end -->
+
+        <!-- team-area start -->
+        <div class="team-area pt-95 pb-65">
+            <div class="container">
+                <div class="row mb-10">
+                    <div class="col-12">
+                        <div class="sec-wrapper text-center">
+                            <h5>Our Team</h5>
+                            <h2 class="absection-title">{{ _("Expert Members.")}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+                                <img src ="{{url_for('static',filename="assets/img/team/team-member-1.jpg")}}" alt="">
+                                <div class="tpteam__social">
+                                    <h3 class="tpteam-title"><a href="javascript:;">{{ _("In charge of customer-portal")}}</a></h3>
+                                </div>
+                            </div>
+                            <div class="tpteam__text">
+                                <h3 class="tpteam-title"><a href="javascript:;">{{ _("Hewei Wang")}}</a></h3>
+                                <h5>{{ _("Programmer") }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+                                <img src ="{{url_for('static',filename="assets/img/team/team-member-2.jpg")}}" alt="">
+                                <div class="tpteam__social">
+                                    <h3 class="tpteam-title"><a href="javascript:;">{{ _("In charge of customer-portal")}}</a></h3>
+                                </div>
+                            </div>
+                            <div class="tpteam__text">
+                                <h3 class="tpteam-title"><a href="javascript:;">{{ _("Ziyuan Wen")}}</a></h3>
+                                <h5>{{ _("Programmer") }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+                                <img src ="{{url_for('static',filename="assets/img/team/team-member-3.jpg")}}" alt="">
+                                <div class="tpteam__social">
+                                        <h3 class="tpteam-title"><a href="javascript:;">{{ _("In charge of staff-portal and
+                                                deployment")}}</a></h3>
+                                </div>
+                            </div>
+                            <div class="tpteam__text">
+                                <h3 class="tpteam-title"><a href="javascript:;">{{ _("Jinfeng Xu")}}</a></h3>
+                                <h5>{{ _("Programmer") }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+                                <img src ="{{url_for('static',filename="assets/img/team/team-member-4.jpg")}}" alt="">
+                                <div class="tpteam__social">
+                                        <h3 class="tpteam-title"><a href="javascript:;">{{ _("In charge of staff-portal")}}</a></h3>
+                                </div>
+                            </div>
+                            <div class="tpteam__text">
+                                <h3 class="tpteam-title"><a href="javascript:;">{{ _("Kaiwen Gong")}}</a></h3>
+                                <h5>{{ _("Programmer") }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+
+                            </div>
+                            <div class="tpteam__text">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+                                <img src ="{{url_for('static',filename="assets/img/team/team-member-5.jpg")}}" alt="">
+                                <div class="tpteam__social">
+                                        <h3 class="tpteam-title"><a href="javascript:;">{{ _("In charge of testing and leading")}}</a></h3>
+                                </div>
+                            </div>
+                            <div class="tpteam__text">
+                                <h3 class="tpteam-title"><a href="javascript:;">{{ _("Yunchang Liu")}}</a></h3>
+                                <h5>{{ _("Product & Project Manager")}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+                                <img src ="{{url_for('static',filename="assets/img/team/team-member-6.jpg")}}" alt="">
+                                <div class="tpteam__social">
+                                        <h3 class="tpteam-title"><a href="javascript:;">{{ _("In charge of operation and
+                                                maintenance")}}</a></h3>
+                                </div>
+                            </div>
+                            <div class="tpteam__text">
+                                <h3 class="tpteam-title"><a href="javascript:;">{{ _("Yongfei Yan")}}</a></h3>
+                                <h5>{{ _("Site Reliability Engineering")}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="tpteam text-center mb-30">
+                            <div class="tpteam__img">
+
+
+                            </div>
+                            <div class="tpteam__text">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- team-area end -->
+
+        <!-- shop modal start -->
+        <div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered product__modal" role="document">
+                <div class="modal-content">
+                    <div class="product__modal-wrapper p-relative">
+                        <div class="product__modal-close p-absolute">
+                            <button data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
+                        </div>
+                        <div class="product__modal-inner">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="product__modal-box">
+                                        <div class="tab-content" id="modalTabContent">
+                                            <div class="tab-pane fade show active" id="nav1" role="tabpanel"
+                                                aria-labelledby="nav1-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/quick-view-1.jpg")}}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav2" role="tabpanel"
+                                                aria-labelledby="nav2-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/quick-view-2.jpg")}}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav3" role="tabpanel"
+                                                aria-labelledby="nav3-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/quick-view-3.jpg")}}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="nav4" role="tabpanel"
+                                                aria-labelledby="nav4-tab">
+                                                <div class="product__modal-img w-img">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/quick-view-4.jpg")}}" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="nav nav-tabs" id="modalTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="nav1-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#nav1" type="button" role="tab" aria-controls="nav1"
+                                                    aria-selected="true">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-1.jpg")}}" alt="">
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="nav2-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#nav2" type="button" role="tab" aria-controls="nav2"
+                                                    aria-selected="false">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-2.jpg")}}" alt="">
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="nav3-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#nav3" type="button" role="tab" aria-controls="nav3"
+                                                    aria-selected="false">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-3.jpg")}}" alt="">
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="nav4-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#nav4" type="button" role="tab" aria-controls="nav4"
+                                                    aria-selected="false">
+                                                    <img src ="{{url_for('static',filename="assets/img/products/quick-view/nav/quick-nav-4.jpg")}}" alt="">
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="product__modal-content">
+                                        <h4 class="product__modal-title"><a href="javascript:;">Samsung C49J89:
+                                                £875, Debenhams Plus</a></h4>
+                                        <div class="product__modal-des mb-40">
+                                            <p>Typi non habent claritatem insitam, est usus legentis in iis qui facit
+                                                eorum claritatem. Investigationes demonstraverunt </p>
+                                        </div>
+                                        <div class="product__modal-stock">
+                                            <span>Availability :</span>
+                                            <span>In Stock</span>
+                                        </div>
+                                        <div class="product__modal-stock sku mb-30">
+                                            <span>SKU:</span>
+                                            <span>Samsung C49J89: £875, Debenhams Plus</span>
+                                        </div>
+                                        <div class="product__modal-review d-sm-flex">
+                                            <div class="rating mb-15 mr-35">
+                                                <ul>
+                                                    <li><a href="javascript:;"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="javascript:;"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="javascript:;"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="javascript:;"><i class="fal fa-star"></i></a></li>
+                                                    <li><a href="javascript:;"><i class="fal fa-star"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="product__modal-add-review mb-15">
+                                                <span><a href="javascript:;">1 Review</a></span>
+                                                <span><a href="javascript:;">Add Review</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="product__modal-price">
+                                            <span>$560.00</span>
+                                        </div>
+                                        <div class="product__modal-form mb-30">
+                                            <form action="#">
+                                                <div class="pro-quan-area d-lg-flex align-items-center">
+                                                    <div class="product-quantity mr-20 mb-25">
+                                                        <div class="cart-plus-minus p-relative"><input type="text"
+                                                                value="1" /></div>
+                                                    </div>
+                                                    <div class="pro-cart-btn mb-25">
+                                                        <button class="add-to-cart-btn" type="submit">Add to
+                                                            cart</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="product__modal-links">
+                                            <ul>
+                                                <li><a href="javascript:;" title="Add to Wishlist"><i class="fal fa-heart"></i></a>
+                                                </li>
+                                                <li><a href="javascript:;" title="Compare"><i class="far fa-sliders-h"></i></a>
+                                                </li>
+                                                <li><a href="javascript:;" title="Print"><i class="fal fa-print"></i></a></li>
+                                                <li><a href="javascript:;" title="Print"><i class="fal fa-share-alt"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- shop modal end -->
+    </main>
+    {% include "newFront/footer.html" %}
+    {% include "newFront/button_base.html" %}
+
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+<div class="chatContainer">
+    <div class="chatBtn">
+        <i class="iconfont icon-xiaoxi1"></i>
+    </div>
+{#    <div class="chat-message-num">0</div>#}
+    <div class="chatBox" ref="chatBox">
+        <div class="chatBox-head">
+{#            <div class="chatBox-head-one">#}
+{#                Conversations#}
+{#                <div class="chat-close" style="margin: 10px 10px 0 0;font-size: 14px">CLOSE</div>#}
+{#            </div>#}
+            <div class="chatBox-head-two">
+                {#                <div class="chat-return">BACK</div>#}
+                <div class="chat-people">
+                    <div class="ChatInfoHead">
+                        <img src="" alt="头像"/>
+                    </div>
+                    <div class="ChatInfoName">这是用户的名字，看看名字到底能有多长</div>
+                </div>
+                <div class="chat-close">CLOSE</div>
+            </div>
+        </div>
+        <div class="chatBox-info">
+            {#            <div class="chatBox-list" ref="chatBoxlist" style="display: none">#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"#}
+            {#                              alt="头像"></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 哈哈</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">5</div>#}
+            {#                </div>#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon02.png") }}" alt="头像"/></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 呵呵</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">8</div>#}
+            {#                </div>#}
+            {#                <div class="chat-list-people">#}
+            {#                    <div><img src="{{ url_for('static',filename="assets/img/chatfigure/icon03.png") }}" alt="头像"/></div>#}
+            {#                    <div class="chat-name">#}
+            {#                        <p>Staff - 凯文</p>#}
+            {#                    </div>#}
+            {#                    <div class="message-num">2</div>#}
+            {#                </div>#}
+            {#            </div>#}
+            <div class="chatBox-kuang" ref="chatBoxkuang">
+                <div class="chatBox-content">
+                    <div class="chatBox-content-demo" id="chatBox-content-demo">
+
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="left">
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"
+                                        alt="头像"/></div>
+                                <div class="chat-message">
+                                    给你看张图
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="left">
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon01.png") }}"
+                                        alt="头像"/></div>
+                                <div class="chat-message">
+                                    <img src="{{ url_for('static',filename="assets/img/chatfigure/1.png") }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">2017-12-02 14:26:58</small>
+                            </div>
+                            <div class="right">
+                                <div class="chat-message">嗯，适合做壁纸</div>
+                                <div class="chat-avatars"><img
+                                        src="{{ url_for('static',filename="assets/img/chatfigure/icon02.png") }}"
+                                        alt="头像"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatBox-send">
+                    <div class="div-textarea" contenteditable="true"></div>
+                    <div>
+                        <label id="chat-tuxiang" title="发送图片" for="inputImage" class="btn-default-styles">
+                            <input type="file" onchange="selectImg(this)" accept="image/jpg,image/jpeg,image/png"
+                                   name="file" id="inputImage" class="hidden">
+                            <i class="iconfont icon-tuxiang"></i>
+                        </label>
+                        <button id="chat-fasong" class="btn-default-styles"><i class="iconfont icon-fasong"></i>
+                        </button>
+                    </div>
+                    <div class="biaoqing-photo">
+                        <ul>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -18px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -52px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -86px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -120px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -120px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -9px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -40px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -71px -154px;"></span></li>
+                            <li><span class="emoji-picker-image" style="background-position: -102px -154px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -133px -154px;"></span>
+                            </li>
+                            <li><span class="emoji-picker-image" style="background-position: -164px -154px;"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script>
+    screenFuc();
+
+    function screenFuc() {
+        var topHeight = $(".chatBox-head").innerHeight();//聊天头部高度
+        //屏幕小于768px时候,布局change
+        var winWidth = $(window).innerWidth();
+        if (winWidth <= 768) {
+            var totalHeight = $(window).height(); //页面整体高度
+            $(".chatBox-info").css("height", totalHeight - topHeight);
+            var infoHeight = $(".chatBox-info").innerHeight();//聊天头部以下高度
+            //中间内容高度
+            $(".chatBox-content").css("height", infoHeight - 46);
+            $(".chatBox-content-demo").css("height", infoHeight - 46);
+
+            $(".chatBox-list").css("height", totalHeight - topHeight);
+            $(".chatBox-kuang").css("height", totalHeight - topHeight);
+            $(".div-textarea").css("width", winWidth - 106);
+        } else {
+            $(".chatBox-info").css("height", 495);
+            $(".chatBox-content").css("height", 448);
+            $(".chatBox-content-demo").css("height", 448);
+            $(".chatBox-list").css("height", 495);
+            $(".chatBox-kuang").css("height", 495);
+            $(".div-textarea").css("width", 300);
+        }
+    }
+
+    (window.onresize = function () {
+        screenFuc();
+        $(".chatBox").toggle(10);
+    })();
+    //未读信息数量为空时
+    var totalNum = $(".chat-message-num").html();
+    if (totalNum == "") {
+        $(".chat-message-num").css("padding", 0);
+    }
+    $(".message-num").each(function () {
+        var wdNum = $(this).html();
+        if (wdNum == "") {
+            $(this).css("padding", 0);
+        }
+    });
+
+
+    // 打开/关闭聊天框
+    $(".chatBtn").click(function () {
+        if ($(".chatBox").css('display') === "none"){
+            $(".chatBox").toggle(10);
+            $(".chatBox-head-two").css('display', 'block');
+            $(".chatBox-kuang").css('display', 'block');
+        }
+        else{
+            $(".chatBox").toggle(10);
+            $(".chatBox-head-two").css('display', 'none');
+            $(".chatBox-kuang").css('display', 'none');
+        }
+
+        $(".chat-message-num").html(0);
+        {#$(".chatBox-head-one").toggle();#}
+        {#$(".chatBox-head-two").toggle();#}
+        {#$(".chatBox-kuang").fadeToggle();#}
+
+        $(".ChatInfoName").text("Staff");
+
+        //聊天框默认最底部
+        $(document).ready(function () {
+            let chatBox = $("#chatBox-content-demo");
+            chatBox.empty()
+            $.post('/view_chat_history', {}).done(function (response) {
+                let server_chat_query = response['chat_query_dict'];
+                let server_code = response['server_code'];
+                if (server_code === 1) {
+                    window.location.href='\\login'
+                } else {
+                    for (let i = 0; i < server_chat_query["data"].length; i++) {
+                        $(".ChatInfoHead>img").attr("src", server_chat_query["data"][i]["staff-avatar"]);
+                        let root = $("<div>");
+                        root.attr('class', 'clearfloat');
+                        chatBox.append(root);
+                        let divAuthor = $("<div>")
+                        divAuthor.attr('class', 'author-name')
+                        root.append(divAuthor)
+                        let smallTime = $("<small>");
+                        smallTime.attr('class', 'chat-date');
+                        smallTime.text(server_chat_query["data"][i]["gmtcreate"]);
+                        divAuthor.append(smallTime);
+                        let divSide = $("<div>")
+
+                        if (server_chat_query["data"][i]["status"] === "1") {
+                            divSide.attr('class', 'left')
+                            root.append(divSide);
+                            let divAvatar = $("<div>");
+                            divAvatar.attr('class', 'chat-avatars');
+                            divSide.append(divAvatar);
+                            let img = $("<img>");
+                            img.attr('src', server_chat_query["data"][i]["staff-avatar"]);
+                            img.attr('alt', '头像');
+                            divAvatar.append(img);
+                            let divChat = $("<div>");
+                            divChat.attr('class', 'chat-message');
+                            divChat.html(server_chat_query["data"][i]["content"]);
+                            divSide.append(divChat);
+                        } else {
+                            divSide.attr('class', 'right')
+                            root.append(divSide);
+                            let divChat = $("<div>");
+                            divChat.attr('class', 'chat-message');
+                            divChat.html(server_chat_query["data"][i]["content"]);
+                            divSide.append(divChat);
+                            let divAvatar = $("<div>");
+                            divAvatar.attr('class', 'chat-avatars');
+                            divSide.append(divAvatar);
+                            let img = $("<img>");
+                            img.attr('src', server_chat_query["data"][i]["avatar"]);
+                            img.attr('alt', '头像');
+                            divAvatar.append(img);
+                        }
+                    }
+                }
+                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+            }).fail(function () {
+                error();
+            });
+            $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+        });
+    })
+
+    $(".chat-close").click(function () {
+        $(".chatBox").toggle(10);
+        {#$(".chatBox-head-one").toggle();#}
+        {#$(".chatBox-head-two").toggle();#}
+        {#$(".chatBox-kuang").fadeToggle();#}
+        $(".chatBox-head-two").css('display', 'none');
+        $(".chatBox-kuang").css('display', 'none');
+    })
+
+
+    window.setInterval(function () {
+        $.post('/update_count', {}).done(function (response) {
+            let server_chat_query = response['chat_query_dict'];
+            let server_count = response['chat_count'];
+            let server_code = response['server_code'];
+            if (server_code === 1) {
+
+            } else {
+                {#$(".chat-message-num").html(server_count);#}
+                let chatBox = $("#chatBox-content-demo");
+                for (let i = 0; i < server_chat_query["data"].length; i++) {
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    chatBox.append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+                    smallTime.text(server_chat_query["data"][i]["gmtcreate"]);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+
+                    divSide.attr('class', 'left')
+                    root.append(divSide);
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_chat_query["data"][i]["staff-avatar"]);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divChat.html(server_chat_query["data"][i]["content"]);
+                    divSide.append(divChat);
+                }
+            }
+        }).fail(function () {
+
+        });
+    }, 5000)
+
+
+    // 返回列表
+    /*
+    $(".chat-return").click(function () {
+        $(".chatBox-head-one").toggle(1);
+        $(".chatBox-head-two").toggle(1);
+        $(".chatBox-list").fadeToggle(1);
+        $(".chatBox-kuang").fadeToggle(1);
+    });
+
+     */
+
+    let shift = false;
+    let enter = false;
+    $(".div-textarea").bind("keydown",function(e){
+            　　var theEvent = e || window.event;
+            　　var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+            　　 if (code === 13) {
+            　       $("#chat-fasong").click();
+            　　}
+            });
+
+
+/*
+    			document.onkeydown = function(event){
+				alert("按下:"+event.key+"键:"+event);
+			}
+
+ */
+
+    // 发送信息
+    $("#chat-fasong").click(function () {
+        var textContent = $(".div-textarea").html().replace(/[\n\r]/g, '<br>')
+        if (textContent !== "") {
+            $.post('/add_chat', {
+                'text of content': textContent,
+            }).done(function (response) {
+                let server_code = response['server_code'];
+                if (server_code === 1) {
+                    warning()
+                } else {
+                    let server_avatar = response['avatar']
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    $("#chatBox-content-demo").append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+
+                    let nowTime = new Date();
+                    let year = nowTime.getFullYear();
+                    let month = (nowTime.getMonth() + 1).toString().padStart(2, '0');
+                    let date = (nowTime.getDate()).toString().padStart(2, '0');
+                    let hour = (nowTime.getHours()).toString().padStart(2, '0');
+                    let minute = (nowTime.getMinutes()).toString().padStart(2, '0');
+                    let second = (nowTime.getSeconds()).toString().padStart(2, '0');
+
+                    smallTime.text(year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+                    divSide.attr('class', 'right')
+                    root.append(divSide);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divChat.html(textContent);
+                    divSide.append(divChat);
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_avatar);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img);
+                    // 发送后清空输入框
+                    $(".div-textarea").html("");
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                }
+            })
+        }
+    });
+
+    //      发送表情
+    $("#chat-biaoqing").click(function () {
+        $(".biaoqing-photo").toggle();
+    });
+    $(document).click(function () {
+        $(".biaoqing-photo").css("display", "none");
+    });
+    $("#chat-biaoqing").click(function (event) {
+        event.stopPropagation();//阻止事件
+    });
+
+    $(".emoji-picker-image").each(function () {
+        $(this).click(function () {
+            var bq = $(this).parent().html();
+            console.log(bq)
+            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+                "<div class=\"author-name\"><small class=\"chat-date\">2017-12-02 14:26:58</small> </div> " +
+                "<div class=\"right\"> <div class=\"chat-message\"> " + bq + " </div> " +
+                "<div class=\"chat-avatars\"><img src=\"img/icon01.png\" alt=\"头像\" /></div> </div> </div>");
+            //发送后关闭表情框
+            $(".biaoqing-photo").toggle();
+            //聊天框默认最底部
+            $(document).ready(function () {
+                $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+            });
+        })
+    });
+
+    //      发送图片
+    function selectImg(pic) {
+        if (!pic.files || !pic.files[0]) {
+            return;
+        }
+        let formData = new FormData();
+        formData.append("img", pic.files[0]);
+
+        $.ajax({
+            url:"/add_img",
+            type:"post",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                let server_code = response["server_code"];
+                if (server_code === 1){
+                    warning();
+                }
+                else{
+                    let server_avatar = response["avatar"]
+                    var reader = new FileReader();
+                    reader.onload = function (evt) {
+                    var images = evt.target.result;
+                    let root = $("<div>");
+                    root.attr('class', 'clearfloat');
+                    $("#chatBox-content-demo").append(root);
+                    let divAuthor = $("<div>")
+                    divAuthor.attr('class', 'author-name')
+                    root.append(divAuthor)
+                    let smallTime = $("<small>");
+                    smallTime.attr('class', 'chat-date');
+
+                    let nowTime = new Date();
+                    let year = nowTime.getFullYear();
+                    let month = (nowTime.getMonth() + 1).toString().padStart(2, '0');
+                    let date = (nowTime.getDate()).toString().padStart(2, '0');
+                    let hour = (nowTime.getHours()).toString().padStart(2, '0');
+                    let minute = (nowTime.getMinutes()).toString().padStart(2, '0');
+                    let second = (nowTime.getSeconds()).toString().padStart(2, '0');
+
+                    smallTime.text(year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second);
+                    divAuthor.append(smallTime);
+                    let divSide = $("<div>")
+                    divSide.attr('class', 'right')
+                    root.append(divSide);
+                    let divChat = $("<div>");
+                    divChat.attr('class', 'chat-message');
+                    divSide.append(divChat);
+                    let imgChat = $("<img>");
+                    imgChat.attr('src', images);
+                    imgChat.attr('alt', 'img');
+                    divChat.html(imgChat)
+                    let divAvatar = $("<div>");
+                    divAvatar.attr('class', 'chat-avatars');
+                    divSide.append(divAvatar);
+                    let img = $("<img>");
+                    img.attr('src', server_avatar);
+                    img.attr('alt', '头像');
+                    divAvatar.append(img)
+                    $("#chatBox-content-demo").scrollTop($("#chatBox-content-demo")[0].scrollHeight);
+                };
+                    reader.readAsDataURL(pic.files[0]);
+                }
+            },
+            error:function(data) {
+                error();
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>

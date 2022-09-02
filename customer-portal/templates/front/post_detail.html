@@ -1,0 +1,61 @@
+{% extends "front/base.html" %}
+
+{% block title %}
+{{ post.title }} - Musical Instrument Shop
+{% endblock %}
+
+{% block head %}
+    <style>
+        .comment_like {
+        }
+    </style>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='lib/highlight/styles/github-dark.min.css') }}">
+  <script src="{{ url_for('static', filename='lib/highlight/highlight.min.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='front/css/post_detail.css') }}">
+  <script src="{{ url_for('static', filename='front/js/post_detail.js') }}"></script>
+    <script src="{{ url_for('static', filename='front/js/post_comment_like.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="post-container">
+      <h2>{{ post.title }}</h2>
+      <p class="post-info-group">
+        <span>发表时间：{{ post.gmt_create }}</span>
+        <span>作者：{{ post.author.username }}</span>
+        <span>评论数：{{ comment_count }}</span>
+      </p>
+      <div class="post-content">
+        {{ post.content }}
+      </div>
+    </div>
+<div class="comment-group">
+  <h3>评论列表</h3>
+  <ul class="comment-list-group">
+    {% for comment in post.comments %}
+    <li>
+      <div class="avatar-group">
+        <img src="{{ url_for('media.get_avatar', filename=comment.author.avatar) }}" alt="">
+      </div>
+      <div class="comment-content">
+        <p class="author-info">
+            <span id ={{comment.author.username}} >{{ comment.author.username }}</span>
+            <span id ={{comment.create_time}}>{{ comment.create_time }}</span>
+            <span style="background-color: #0079D7;float: right" class="comment_like badge badge-info"data-user-id="{{ user.id if user else 'not_login' }}" data-comment-id="{{comment.id}}"> Likes {{comment.like_amount}} </span>
+        </p>
+        <p class="comment-txt">
+          {{ comment.content }}
+        </p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="add-comment-group">
+  <h3>发表评论</h3>
+  <textarea name="comment" id="comment-textarea" style="width: 100%; resize:vertical;"></textarea>
+  <div class="comment-btn-group">
+    <button class="btn btn-primary" id="comment-btn" data-post-id="{{ post.id }}" data-user-id="{{ user.id if user else '' }}">发表评论</button>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  02. Background CSS START
+/*----------------------------------------*/    
+
+/*--
+    - Background color
+-----------------------------------------*/
+.grey-bg {
+	background: $grey;
+}
+
+.grey-bg-2{
+	background: $grey-2;
+}
+
+.grey-bg-3{
+	background: $grey-3;
+}
+
+.grey-bg-4{
+	background: $grey-4;
+}
+
+.white-bg {
+	background:$white;
+}
+
+.black-bg {
+	background: $black;
+}
+
+.black-bg-5 {
+	background: $black-5;
+}
+
+
+/* footer bg colors */
+
+.footer-bg {
+	background: $footer-bg;
+}

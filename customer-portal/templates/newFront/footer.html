@@ -1,0 +1,374 @@
+<!-- footer area start -->
+{#<footer>#}
+{#    <div class="footer__area footer-bg">#}
+{#        <div class="footer__top footer__top-space pb-50">#}
+{#            <div class="container">#}
+{#                <div class="row">#}
+{#                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-5">#}
+{#                        <div class="footer__widget pb-30">#}
+{#                            <h3 class="footer__widget-title">Need help</h3>#}
+{#                            <div class="footer__widget-content">#}
+{#                                <div class="footer__contact">#}
+{#                                    <h3 class="footer__contact-phone"><a href="javascript:;">(+86) 138 209 60171#}
+{#                                    </a></h3>#}
+{#                                    <div class="footer__opening mb-15">#}
+{#                                        <p>{{ _("Monday - Friday") }}: 9:00-20:00</p>#}
+{#                                        <p>{{ _("Saturady") }}: 11:00 - 15:00</p>#}
+{#                                    </div>#}
+{#                                    <div class="footer__contact-email footer__contact-email-2">#}
+{#                                        <p><a href="javascript:;">737272215@qq.com</a></p>#}
+{#                                    </div>#}
+{#                                    <div class="footer__social">#}
+{#                                        <ul>#}
+{#                                            <li>#}
+{#                                                <a href="javascript:;">#}
+{#                                                    <i class="fab fa-facebook-f"></i>#}
+{#                                                </a>#}
+{#                                            </li>#}
+{#                                            <li>#}
+{#                                                <a href="javascript:;">#}
+{#                                                    <i class="fab fa-twitter"></i>#}
+{#                                                </a>#}
+{#                                            </li>#}
+{#                                            <li>#}
+{#                                                <a href="javascript:;">#}
+{#                                                    <i class="fab fa-instagram"></i>#}
+{#                                                </a>#}
+{#                                            </li>#}
+{#                                            <li>#}
+{#                                                <a href="javascript:;">#}
+{#                                                    <i class="fab fa-youtube"></i>#}
+{#                                                </a>#}
+{#                                            </li>#}
+{#                                            <li>#}
+{#                                                <a href="javascript:;">#}
+{#                                                    <i class="fab fa-pinterest"></i>#}
+{#                                                </a>#}
+{#                                            </li>#}
+{#                                        </ul>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-5 col-5">#}
+{#                        <div class="footer__widget footer-col-3 pb-30">#}
+{#                            <h3 class="footer__widget-title">{{ _("Useful Links") }}</h3>#}
+{#                            <div class="footer__widget-content">#}
+{#                                <div class="footer__links footer__links-2">#}
+{#                                    <ul>#}
+{#                                        <li>#}
+{#                                            <a href="\terms&conditions">{{ _("Terms & Conditions") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\blog">{{ _("Blog") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href={{ url_for('front.shop', type_num=6) }}>{{ _("On Sale") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\cart">{{ _("Shopping Cart") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\setting">{{ _("Profile Setting") }}</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-5 col-5">#}
+{#                        <div class="footer__widget footer-col-4 pb-30">#}
+{#                            <h3 class="footer__widget-title">{{ _("Our Stores") }}</h3>#}
+{#                            <div class="footer__widget-content">#}
+{#                                <div class="footer__links footer__links-2">#}
+{#                                    <ul>#}
+{#                                        <li>#}
+{#                                            <a href="\about">{{ _("Beijing & Dublin") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">{{ _("London SF (Out Soon)") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">{{ _("New York (Out Soon)") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">{{ _("California (Out Soon)") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">{{ _("Chicago (Out Soon)") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">{{ _("Las Vegas (Out Soon)") }}</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">#}
+{#                        <div class="footer__widget footer-col-5 pb-30">#}
+{#                            <h3 class="footer__widget-title">My Account</h3>#}
+{#                            <div class="footer__widget-content">#}
+{#                                <div class="footer__links footer__links-2">#}
+{#                                    <ul>#}
+{#                                        <li>#}
+{#                                            <a href="\setting">{{ _("My Account") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\checkout">{{ _("Checkout") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="\order">{{ _("Order History") }}</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-xxl-3 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">#}
+{#                        <div class="footer__widget footer-col-5 pb-30">#}
+{#                            <h3 class="footer__widget-title">{{ _("Customer Service") }}</h3>#}
+{#                            <div class="footer__widget-content">#}
+{#                                <div class="footer__links footer__links-2">#}
+{#                                    <ul>#}
+{#                                        <li>#}
+{#                                            <a href="\about">{{ _("About Us") }}</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">Advanced Search</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">Help & FAQs</a>#}
+{#                                        </li>#}
+{##}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">Our Sitemap</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">Expert (Out Soon)</a>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <a href="javascript:;">Find A Store</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="footer__offer">#}
+{#            <div class="container">#}
+{#                <div class="footer__offer-inner footer__offer-inner-2">#}
+{#                    <div class="row align-items-center">#}
+{#                        <div class="col-xxl-6 col-lg-6 col-md-6">#}
+{#                            <div class="footer__subscribe footer__subscribe-3">#}
+{#                                <p>Welcome to Contact us during our Working Hours  &nbsp;&nbsp;<i class="fab fa-telegram-plane"></i></p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-xxl-6 col-lg-6 col-md-6">#}
+{#                            <div class="payment-image-2 text-md-end">#}
+{#                                <a href="javascript:;"><img#}
+{#                                        src="{{ url_for('static',filename="assets/img/payment/payment-2.png") }}"#}
+{#                                        alt=""></a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div>#}
+{#            &nbsp;&nbsp;#}
+{#        </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</footer>#}
+<!-- footer area end -->
+<!-- footer area start -->
+<footer>
+    <div class="footer__area footer-bg">
+        <div class="footer__top footer__top-space pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                        <div class="footer__widget footer__widget-border footer-col-1 pb-30">
+                            <div class="footer__info">
+                                <div class="logo footer__logo mb-55">
+                                    <a href="javascript:;"><img
+                                            src="{{ url_for('static',filename="assets/img/logo/logo-2.png") }}"
+                                            alt=""></a>
+                                </div>
+                                <div class="footer__subscribe">
+                                    <p>{{ _("Welcome to contact us during our working hours")}} &nbsp;&nbsp;<i
+                                            class="fab fa-telegram-plane"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                        <div class="footer__widget footer-col-2 pb-30">
+                            <h3 class="footer__widget-title">{{ _("Need help")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__contact">
+                                    <h3 class="footer__contact-phone"><a href="javascript:;">(+86) 138 209 60171
+                                    </a></h3>
+                                    <div class="footer__opening mb-15">
+                                        <p>{{ _("Monday - Friday") }}: 9:00-20:00</p>
+                                        <p>{{ _("Saturady") }}: 11:00 - 15:00</p>
+                                    </div>
+                                    <div class="footer__contact-email footer__contact-email-2">
+                                        <p><a href="javascript:;">737272215@qq.com</a></p>
+                                    </div>
+                                    <div class="footer__social">
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fab fa-instagram"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fab fa-youtube"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <i class="fab fa-pinterest"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                        <div class="footer__widget footer-col-3 pb-30">
+                            <h3 class="footer__widget-title">{{ _("Useful Links")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__links">
+                                    <ul>
+                                        <li>
+                                            <a href="\terms&conditions">{{ _("Terms & Conditions") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\blog">{{ _("Blog") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href={{ url_for('front.shop', type_num=6) }}>{{ _("On Sale") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\cart">{{ _("Shopping Cart") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\setting">{{ _("Profile Setting") }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                        <div class="footer__widget footer-col-4 pb-30">
+                            <h3 class="footer__widget-title">{{ _("Our Stores")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__links">
+                                    <ul>
+                                        <li>
+                                            <a href="\about">{{ _("Beijing & Dublin") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">{{ _("London SF (Out Soon)") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">{{ _("New York (Out Soon)") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">{{ _("California (Out Soon)") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">{{ _("Chicago (Out Soon)") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">{{ _("Las Vegas (Out Soon)") }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6">
+                        <div class="footer__widget footer-col-5 pb-30">
+                            <h3 class="footer__widget-title">{{ _("My Account")}}</h3>
+                            <div class="footer__widget-content">
+                                <div class="footer__links">
+                                    <ul>
+                                        <li>
+                                            <a href="\setting">{{ _("My Account") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\checkout">{{ _("Checkout") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\order">{{ _("Order History") }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="\company">{{ _("Company Profile") }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__offer">
+            <div class="container">
+                <div class="footer__offer-inner footer__offer-inner-2">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-6 col-lg-6 col-md-6">
+                            <div class="row">
+                                <div class="col-xxl-12">
+                                    <div class="header__top-info">
+                                        <ul>
+                                            <li>
+                                                <p>20% {{ _("off some products in this month ") }}<a
+                                                        href="{{ url_for('front.shop', type_num=6) }}">{{ _("Shop Now")}}</a></p>
+                                            </li>
+                                            <li>
+                                                <p><a>{{ _("Free delivery for all orders over") }} <span>$200</span></a>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-lg-6 col-md-6">
+                            <div class="payment-image-2 text-md-end">
+                                <a href="javascript:;"><img
+                                        src="{{ url_for('static',filename="assets/img/payment/payment-2.png") }}"
+                                        alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <dic>&nbsp;</dic>
+    </div>
+</footer>
+<!-- footer area end -->

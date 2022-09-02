@@ -1,0 +1,167 @@
+{#code from https://download.csdn.net/download/xianxian5201314/9947160?ops_request_misc=&request_id=&biz_id=103&utm_term=纯html弹窗&utm_medium=distribute.pc_search_result.none-task-download-2~download~sobaiduweb~default-0-9947160.pc_v2_rank_dl_default&spm=1018.2226.3001.4451.2#}
+<html>
+<head>
+    <script src="{{ url_for('static', filename='tinymce4.7.5/tinymce.min.js') }}"></script>
+     <script>
+     tinymce.init({
+            selector: '#product_comment_textarea',
+            plugins: 'advlist autolink link image lists preview emoticons'
+        });
+    </script>
+    <style>
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            {#height: 400%;#}
+            background-color: black;
+            z-index: 2;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+
+        .white_content {
+            margin-top: 300px;
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 70%;
+            padding: 16px;
+            border: 1px solid orange;
+            background-color: white;
+            z-index: 3;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="light" class="white_content">
+
+    <a href="javascript:void(0)"
+       onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+        <span style="float: right;font-size: 20px;">Close</span>
+    </a>
+    <div class="add-comment-group">
+        <h4>{{ _("Write comment")}} </h4>
+        <div class="contact-icon p-relative contacts-name"><br>
+        <br>
+            <textarea name="product_comment_textarea" id="product_comment_textarea"
+                      style="width: 100%; resize:vertical; z-index: 4;position: absolute; " rows="6"></textarea>
+        </div>
+
+        <div class="comment-btn-group">
+            <button class="btn btn-primary" id="product_comment_btn"
+                    data_commodity_id="{{ product_detail.id }}"
+                    data-user-id="{{ user.id if user else '' }}">
+                {{ _("Send comment")}}
+            </button>
+        </div>
+    </div>
+</div>
+<div id="fade" class="black_overlay">
+</div>
+<script>
+$(function (){
+
+  $("#product_comment_btn").on("click", function (event){
+    event.preventDefault();
+
+
+    var $this = $(this);
+    var user_id = $this.attr("data-user-id");
+    var content = tinymce.get('product_comment_textarea').getContent()
+    var commodity_id = $this.attr("data_commodity_id");
+
+    zlajax.post({
+      url: "/product_comment",
+      data: {content, commodity_id},
+      success: function (result){
+        if(result['code'] == 200){
+          window.location.reload();
+        }else{
+            if(result['message'] == "Not login"){
+                warningLogin();
+                window.location = "/login";
+            }else{
+                warningLogin()
+                window.location = "/login";
+            }
+        }
+      }
+    })
+  });
+});
+</script>
+
+ <!--   Alert   -->
+<script src="/static/assets/js/toast.js"></script>
+    <script>
+        function success() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Hi',
+                description: 'Success message',
+                type: 'success',
+                timeout: 5000
+            })
+        }
+        function error() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Error',
+                description: 'Internet Connect Error, Please try again later',
+                type: 'error',
+                timeout: 5000
+            })
+        }
+        function warningLogin() {
+            init({
+                fade_in: 800,
+                fade_out: 800,
+                position: 'top-center'
+            });
+
+
+            toast({
+                title: 'Warning',
+                description: 'Please Login First',
+                type: 'warning',
+                timeout: 5000
+            })
+        }
+
+    </script>
+
+<script>
+    $("#language_switch").change(function(){
+        $.ajax({
+            url: '/set_locale',
+            type: 'GET',
+            data:{"language": $(this).val()},
+            success: function (ret) {
+                console.log(ret);
+                location.reload();
+            }
+        })
+    });
+</script>
+</body>
+</html> 

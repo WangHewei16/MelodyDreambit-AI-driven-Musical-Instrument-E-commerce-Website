@@ -1,0 +1,62 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  19. TEAM CSS START
+/*----------------------------------------*/
+
+.tpteam__img  {
+	position: relative;
+}
+.tpteam__img img {
+	max-width: 100%;
+    -webkit-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    border-radius: 8px;
+}
+.tpteam:hover .tpteam__img img{
+    -webkit-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+}
+.tpteam__social {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s;
+	background: $theme-color-3;
+	display: inline-block;
+	padding: 16px 12px;
+	margin-left: 30px;
+	margin-right: 30px;
+    transform: scale(.9);
+    transition: .3s;
+}
+.tpteam__social a {
+	color: #222;
+	font-size: 14px;
+	margin: 0 6px;
+}
+.tpteam__text {
+	padding-top: 25px;
+}
+.tpteam-title {
+	font-size: 20px;
+	font-weight: 600;	
+}
+.tpteam-title a:hover{
+    color: $theme-color-3;
+}
+.tpteam__text h5 {
+	font-weight: 500;
+	font-size: 18px;
+	color: #666;
+}
+.tpteam:hover .tpteam__social{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}

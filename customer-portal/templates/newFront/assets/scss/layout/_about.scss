@@ -1,0 +1,321 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/* 17. About css start
+/*----------------------------------------*/ 
+
+// about css start
+.about{
+    &__title{
+        font-size: 80px;
+        color: #222;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 20px;
+        @media #{$xs}{
+            font-size: 50px;
+        }
+        &-pre{
+            font-size: 16px;
+            color: #666666;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        &-area{
+            & p{
+                font-size: 16px;
+                color: #666666;
+                padding: 0 80px;
+
+                @media #{$xxl}{
+                    padding: 0 70px;
+                }
+                @media #{$md, $sm, $xs}{
+                    padding: 0;
+                }
+            }
+        }
+    }
+    &__history{
+        &-title{
+            font-size: 36px;
+            padding-left: 125px;
+            margin-bottom: 40px;
+
+            @media #{$sm}{
+                font-size: 28px;
+            }
+
+            @media #{$xs}{
+                font-size: 20px;
+                padding-left: 0;
+            }
+            & span{
+                font-weight: 400;
+            }
+            &-pre{
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: $theme-color-3;
+                position: relative;
+                padding-left: 125px;
+                margin-bottom: 13px;
+                display: inline-block;
+                @media #{$xs}{
+                    padding-left: 0;
+                }
+                &::after{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 50%;
+                    width: 100px;
+                    height: 2px;
+                    transform: translateY(-50%);
+                    background: $theme-color-3;
+                    @media #{$xs}{
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-wrapper{
+            & p{
+                font-size: 14px;
+                color: #555555;
+                &.about__history-text{
+                    font-size: 16px;
+                    color: #222;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+    &__gallery{
+        &-review{
+            padding: 124px 200px;
+
+            @media #{$xxl}{
+                padding-top: 98px;
+                padding-bottom: 150px;
+            }
+
+            @media #{$xl}{
+                padding: 80px 115px;
+            }
+
+            @media #{$lg}{
+                padding: 55px 45px;
+            }
+
+            @media #{$md}{
+                padding: 70px 55px;
+            }
+
+            @media #{$sm}{
+                padding: 70px 75px;
+            }
+
+            @media #{$xs}{
+                padding: 50px 20px;
+            }
+            & h3{
+                font-size: 18px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+            & span{
+                font-size: 12px;
+                font-weight: 500;
+                color: #555555;
+                letter-spacing: 12px;
+                display: inline-block;
+                margin-bottom: 25px;
+            }
+            & p{
+                color: #b0b0b0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__offer{
+        @media #{$xs}{
+            padding-top: 100px;
+            padding-bottom: 70px;
+        }
+        &-content{
+            & h3{
+                font-size: 40px;
+                font-weight: 400;
+                color: #fff;
+                margin-bottom: 40px;
+                @media #{$xs}{
+                    font-size: 20px;
+                }
+            }
+            & p{
+                font-size: 14px;
+                color: #fff;
+                padding: 0 100px;
+
+                @media #{$xl, $md}{
+                    padding-left: 40px;
+                    padding-right: 40px;
+                }
+
+                @media #{$sm}{
+                    padding-right: 50px;
+                    padding-left: 50px;
+                }
+
+                @media #{$xs}{
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+                & br{
+                    @media #{$lg,$sm,$xs} {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.sec-wrapper h5 {
+    color: $theme-color-3;
+    letter-spacing: 1px;
+    font-size: 19px;
+    font-weight: 400;
+}
+.absection-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.mb-8{
+    margin-bottom: 8px;
+}
+//contact
+.single-contact-info{
+    padding-top: 30px;
+    &:hover{
+        & .contact-info-icon{
+            & a{
+                background-color: $theme-color-3;
+                color: $white;
+            }
+        }
+    }
+    &:last-child{
+        border: none;
+    }
+}
+.contact-info-icon {
+    margin-right: 20px;
+    & a{
+        height: 65px;
+        width: 65px;
+        background: $grey-2;
+        display: inline-block;
+        line-height: 65px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 20px;
+        color: $theme-color-3;
+        @include transition(.3s);
+        &:hover{
+            background-color: #222;
+            color: $white;
+        }
+    }
+}
+.contact-info-text{
+    & span{
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $text-6;
+        font-weight: 400;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+    & h5{
+        font-weight: 400;
+        font-size: 20px;
+        @media #{$xs} {
+            font-size: 16px;
+        }
+    }
+}
+//map css
+.map-area{
+    line-height: 0;
+}
+#contact-map {
+    & iframe {
+        height: 555px;
+        width: 100%;
+        margin-bottom: -6px;
+    }
+}
+
+/* . Cta  css*/
+.quality-area{
+    border-top: 1px solid $border;
+}
+.kquality-icon {
+    height: 120px;
+    width: 120px;
+    line-height: 148px;
+    text-align: center;
+    background: $theme-color-3;
+    border-radius: 50%;
+    float: left;
+    margin-right: 40px;
+    @media #{$xs} {
+        float: inherit; 
+        margin-bottom: 30px;
+    }
+    @media #{$sm} {
+        margin-bottom: 0px;
+        float: left;
+    }
+    & i{
+        font-size: 55px;
+        color: $white;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+.kquality-text-title {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.kquality-text {
+    & p {
+        font-size: 16px;
+        line-height: 2;
+        margin-bottom: 0px;
+    }
+
+}
+.kquality-img {
+    position: relative;
+    display: inline-block;
+    &:before,
+    &:after {
+        height: 100%;
+        width: 10px;
+        top: 0px;
+        left: 0px;
+        background: $theme-color-3;
+        position: absolute;
+        content: '';
+        z-index: 1;
+    }
+    &:after {
+        left: 10px;
+        background: $white;
+    }
+}
