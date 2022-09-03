@@ -37,3 +37,14 @@ This project aims to build a web-based online shopping platform for musical inst
 * Staff can view and manage orders.
 * Staff can view and manage blogs.
 * Staff can communicate with customers.
+
+#### 4. Service Architecture
+#### 5. CI/CD Pipeline
+#### Security 
+#### Swagger+Druid
+#### Deployment Process
+#### Project Testing
+##### Interface Testing
+##### Code Quality Testing
+#### Novel Functions
+##### Data Visualization
