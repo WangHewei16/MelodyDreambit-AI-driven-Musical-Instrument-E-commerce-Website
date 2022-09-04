@@ -42,8 +42,8 @@ This project aims to build a web-based online shopping platform for musical inst
 
 #### 4. Service Architecture
 * Staff Portal uses front and back-end separation technology. The back-end interacts with the database and provides the interface to the front-end. The front-end renders the pages.
-* MySQL is used for data storage, `AliyunOSS` for file storage, and Redis-Cluster for temporary data storage. `MyCAT` is also used for database migration and synchronization.
-* Since University College Dublin (UCD) only provides a separate external port. So we additionally provide the reverse proxy service, Use `NodeJS` service as a gateway to provide the service. And run the front end through NodeJS as a service.
+* MySQL is used for data storage, `AliyunOSS` for file storage, and `Redis-Cluster` for temporary data storage. `MyCAT` is also used for database migration and synchronization.
+* Since University College Dublin (UCD) only provides a separate external port. So we additionally provide the reverse proxy service, adopt `NodeJS` service as a gateway to provide the service. And run the front end through NodeJS as a service.
 * We also use AliyunOSS to provide file object storage and `WeChat + OAuth2` for third party authorization.
 
 Figure below shows the diagram of our project's service architecture.
@@ -70,11 +70,11 @@ Figure below shows the flowchart of the pipeline.
     
 In the left navigation bar of the staff-portal website page, click "Sta" to choose "Data Analysis", then user will enter the data analysis page shown as below.
 
-* `Line Chart - Total number of registrants, Total number of product views, Total number of product purchases, Total number of blog`: Staff can select the data to be analyzed, and the time period to generate a line graph of the total change in that data over the specified time period. The date allows the window to slide. 
+* `Line Chart` - `total number of registrants & product views & product purchases & blog`: Staff can select the data to be analyzed, and the time period to generate a line graph of the total change in that data over the specified time period. The date allows the window to slide. 
 
-* `Pie Chart - Total numbers of different types of products added into shopping cart`: Staff can select a date and analyze the total number of items added to the shopping cart for each type of product on that date, and generate the corresponding pie chart. shows the pie chart.
+* `Pie Chart` - `total numbers of different types of products in shopping cart`: Staff can select a date and analyze the total number of items added to the shopping cart for each type of product on that date, and generate the corresponding pie chart. shows the pie chart.
 
-* `Histogram - daily views of different types of products`: Staff can select a time period and generate a bar chart of the total number of daily views for different categories of products during that time period. 
+* `Histogram` - `daily views of different types of products`: Staff can select a time period and generate a bar chart of the total number of daily views for different categories of products during that time period. 
 
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/line%20chart.png" width="350"/> &emsp;&emsp;<img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/pie%20chart.png" width="330"/></div>
 <div> &emsp;&emsp;&emsp;&emsp; </div>
