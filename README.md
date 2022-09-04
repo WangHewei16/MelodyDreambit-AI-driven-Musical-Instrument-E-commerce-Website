@@ -47,7 +47,7 @@ This project aims to build a web-based online shopping platform for musical inst
 * We also use AliyunOSS to provide file object storage and `WeChat + OAuth2` for third party authorization.
 
 Figure below shows the diagram of our project's service architecture.
-<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/system%20service%20architecture.png" width="800"/></div>
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/system%20service%20architecture.png" width="700"/></div>
 
 #### 5. CI/CD Pipeline
 A mature project should have a test environment for integrated development and deployment, and we use `Jenkins` to build a `CI/CD pipeline`. Code quality review with SonarCube. Package the front-end and back-end code separately and build it into a Docker image for release and deployment on the test server. 
