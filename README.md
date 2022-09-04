@@ -55,6 +55,9 @@ This project aims to build a web-based online shopping platform for musical inst
 
 #### Project Testing
 ##### Interface Testing
+
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/API%20Interface%20Test.png" width="800"/></div>
+
 ##### Code Quality Testing
 
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/SonarQube.png" width="800"/></div>
@@ -65,3 +68,7 @@ This project aims to build a web-based online shopping platform for musical inst
 
 #### Novel Functions
 ##### Data Visualization
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/line%20chart.png" width="400"/> <img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/pie%20chart.png" width="400"/></div>
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram1.png" width="400"/> <img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram2.png" width="400"/></div>
+
+
