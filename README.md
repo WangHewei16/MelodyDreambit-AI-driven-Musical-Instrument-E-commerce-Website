@@ -51,7 +51,7 @@ This project aims to build a web-based online shopping platform for musical inst
 #### Swagger+Druid
 #### Deployment Process
 
-<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/deployment%20diagram.png" width="400"/></div>
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/deployment%20diagram.png" width="300"/></div>
 
 #### Project Testing
 ##### Interface Testing
