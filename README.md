@@ -82,6 +82,14 @@ In the left navigation bar of the staff-portal website page, click "Sta" to choo
 
 
 #### 7. Swagger+Druid
+A complete backend system also monitors data persistence information and interface availability. We use Druid to monitor the database, Swagger to test the interface. In the staff portal.	
+
+* Build tests for all API and embed Swagger in `SpringBoot`.
+* Add SQL monitoring and logging, block and filter built-in common.js advertisements, integrate Druid into SpringBoot.
+* Identifying and processing information, then add the processed information to the database.
+
+        
+        
 #### 8. Deployment Process
 Our Staff Portal and Customer Portal use different technologies. Staff Portal uses front and back-end separation technology. Customer Portal uses Flask And Staff Portal uses `SpringBoot + Vue`. Hence, the single port deployment relies on the following components with restricted permissions.
 
