@@ -72,6 +72,16 @@ Figure below shows the flowchart of the pipeline.
 
 #### 7. Swagger+Druid
 #### 8. Deployment Process
+Our Staff Portal and Customer Portal use different technologies. Staff Portal uses front and back-end separation technology. Customer Portal uses Flask And Staff Portal uses `SpringBoot + Vue`. Hence, the single port deployment relies on the following components with restricted permissions.
+
+* `Gateway`: Because we can only use one externally exposed interface. So in the deployment, we use to provide a reverse proxy similar to the gateway. The gateway is implemented through `Express + Http-Proxy`, which implements load balancing through simple random number logic.
+* `Customer Portal`: Flask project is used for the simplest runtime environment deployment. Keeping session through Screen.
+* `Staff Portal Back End`: Jenkins automatically pulls projects from GitLab and performs quality checks. Maven is used for packaging, and the corresponding Jar package is transferred to the UCD server via ssh to run automatically in the background via sh script.
+* `Staff Portal Front End`: Jenkins automatically pulls projects from GitLab and performs quality checks. Packaged via `Webpack`, the corresponding dist file is run as a service in the background via `Express`.
+* `MySQL`: Since UCD's server, MySQL only allows localhost access. So we use another cloud database for the development/testing environment. The test environment database is synchronized to the UCD server via `MyCAT`.
+* `Redis-Cluster`: Since part of the project uses Redis as cache, the server cannot deploy Redis, so we build a Redis high availability sentinel cluster on another server with `CDN service`. This ensures the availability of the Redis service.
+
+Figure below shows the operation logic of the `reverse proxy`.
 
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/deployment%20diagram.png" width="300"/></div>
 
