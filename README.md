@@ -53,15 +53,15 @@ Figure below shows the diagram of our project's service architecture.
 A mature project should have a test environment for integrated development and deployment, and we use `Jenkins` to build a `CI/CD pipeline`. Code quality review with SonarCube. Package the front-end and back-end code separately and build it into a Docker image for release and deployment on the test server. 
 This can greatly improve the efficiency of code deployment and save time.
 
-Figure below shows the flowchart of the pipeline.
-
 * Notify Jenkins through hook for code submitted to GitLab repository.
 * Jenkins pulls the front-end and back-end code of the GitLab repository separately, then sends the code to the sonarqube server for quality checking.
 * Jenkins uses `Maven` to package the back-end code into a jar package, and uses `Webpack` to package front-end code.
 * Jenkins builds the dist folder and jar package into a docker image, and Jenkins pushes the built docker image to the `Docker` registry.
 * The test server pulls the image from the docker registry and runs in the background.
 
-<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="500"/></div>
+Figure below shows the flowchart of the pipeline.
+
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="600"/></div>
 
 #### 6. Novel Functions
 ##### Data Visualization
