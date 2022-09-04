@@ -41,10 +41,25 @@ This project aims to build a web-based online shopping platform for musical inst
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/user%20case%20diagram.png" width="750"/></div>
 
 #### 4. Service Architecture
+* Staff Portal uses front and back-end separation technology. The back-end interacts with the database and provides the interface to the front-end. The front-end renders the pages.
+* MySQL is used for data storage, `AliyunOSS` for file storage, and Redis-Cluster for temporary data storage. `MyCAT` is also used for database migration and synchronization.
+* Since UCD only provides a separate external port. So we additionally provide the reverse proxy service, Use `NodeJS` service as a gateway to provide the service. And run the front end through NodeJS as a service.
+* We also use AliyunOSS to provide file object storage and `WeChat + OAuth2` for third party authorization.
 
+Figure below shows the diagram of our project's service architecture.
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/system%20service%20architecture.png" width="600"/></div>
 
 #### 5. CI/CD Pipeline
+A mature project should have a test environment for integrated development and deployment, and we use `Jenkins` to build a `CI/CD pipeline`. Code quality review with SonarCube. Package the front-end and back-end code separately and build it into a Docker image for release and deployment on the test server. 
+This can greatly improve the efficiency of code deployment and save time.
+
+Figure below shows the flowchart of the pipeline.
+
+* Notify Jenkins through hook for code submitted to GitLab repository.
+* Jenkins pulls the front-end and back-end code of the GitLab repository separately, then sends the code to the sonarqube server for quality checking.
+* Jenkins uses \emph{\textbf{Maven}} to package the back-end code into a jar package, and uses \emph{\textbf{Webpack}} to package front-end code.
+* Jenkins builds the dist folder and jar package into a docker image, and Jenkins pushes the built docker image to the \emph{\textbf{Docker}} registry.
+* The test server pulls the image from the docker registry and runs in the background.
 
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="500"/></div>
 
