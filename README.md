@@ -61,7 +61,7 @@ This can greatly improve the efficiency of code deployment and save time.
 
 Figure below shows the flowchart of the pipeline.
 
-<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="660"/></div>
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="700"/></div>
 
 #### 6. Novel Functions
 ##### Data Visualization
