@@ -46,7 +46,7 @@ This project aims to build a web-based online shopping platform for musical inst
 
 #### 5. CI/CD Pipeline
 
-<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="500"/></div>
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="550"/></div>
 
 #### Swagger+Druid
 #### Deployment Process
