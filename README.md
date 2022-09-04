@@ -38,13 +38,30 @@ This project aims to build a web-based online shopping platform for musical inst
 * Staff can view and manage blogs.
 * Staff can communicate with customers.
 
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/user%20case%20diagram.png" width="800"/></div>
+
 #### 4. Service Architecture
+
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/system%20service%20architecture.png" width="800"/></div>
+
 #### 5. CI/CD Pipeline
-#### Security 
+
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="800"/></div>
+
 #### Swagger+Druid
 #### Deployment Process
+
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/deployment%20diagram.png" width="800"/></div>
+
 #### Project Testing
 ##### Interface Testing
 ##### Code Quality Testing
+
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/SonarQube.png" width="800"/></div>
+
+#### Database Design
+
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/system%20database.jpg" width="800"/></div>
+
 #### Novel Functions
 ##### Data Visualization
