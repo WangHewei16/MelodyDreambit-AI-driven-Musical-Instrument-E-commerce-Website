@@ -57,8 +57,8 @@ Figure below shows the flowchart of the pipeline.
 
 * Notify Jenkins through hook for code submitted to GitLab repository.
 * Jenkins pulls the front-end and back-end code of the GitLab repository separately, then sends the code to the sonarqube server for quality checking.
-* Jenkins uses \emph{\textbf{Maven}} to package the back-end code into a jar package, and uses \emph{\textbf{Webpack}} to package front-end code.
-* Jenkins builds the dist folder and jar package into a docker image, and Jenkins pushes the built docker image to the \emph{\textbf{Docker}} registry.
+* Jenkins uses `Maven` to package the back-end code into a jar package, and uses `Webpack` to package front-end code.
+* Jenkins builds the dist folder and jar package into a docker image, and Jenkins pushes the built docker image to the `Docker` registry.
 * The test server pulls the image from the docker registry and runs in the background.
 
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/CI:CD%20pipeline.png" width="500"/></div>
@@ -82,9 +82,12 @@ Figure below shows the flowchart of the pipeline.
 #### 10. Project Testing
 ##### 10.1 Interface Testing
 
+Interface testing is a type of testing that tests the interfaces between system components. Interface testing is used to detect the interaction points between external systems and systems and between internal subsystems. The focus of testing is to check the exchange of data, the transfer and control management processes, and the inter-logical dependencies between systems. We embedded `Swagger2` with the code. The entire interface is tested by swagger. Simulation tests at large data levels are also performed using `Apifox`. Ensure the availability and reliability of the interfaces. In the left navigation bar of the staff-portal website page, user can click the `Swagger` to jump to `API Interface Test Page` to simulate tests for all functional interfaces. Figure below shows this page.
+
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/API%20Interface%20Test.png" width="500"/></div>
 
 ##### 10.2 Code Quality Testing
+We built a test environment on the team's personal server from the beginning of the project. We also built the corresponding CI/CD pipeline. The pipeline uses `SonarQube` to perform quality testing for each version of the code. SonarQube is mainly used for quality assessment in terms of reliability, security, maintainability, coverage, and repetition rate. We can optimize and improve the code quality in the next release based on the results of SonarQube's code evaluation. Figure below shows the process of SonarQube.
 
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/SonarQube.png" width="600"/></div>
 
