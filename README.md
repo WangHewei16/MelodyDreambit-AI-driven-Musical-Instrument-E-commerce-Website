@@ -65,6 +65,17 @@ Figure below shows the flowchart of the pipeline.
 
 #### 6. Novel Functions
 ##### Data Visualization
+* We use `ECharts`, a JavaScript-based data visualization charting library that provides intuitive, vivid, interactive and customize data visualization charts, to process data stored in databases and turn it into charts. It allows staff to see changes in data more visually.
+* To retrieve the data at regular intervals, we used `Quartz`, an open source project that allows program developers to schedule jobs based on time intervals, in order to extract and store the data in the database.
+    
+In the left navigation bar of the staff-portal website page, click "Sta" to choose "Data Analysis", then user will enter the data analysis page shown as below.
+
+* `Line Chart - Total number of registrants, Total number of product views, Total number of product purchases, Total number of blog`: Staff can select the data to be analyzed, and the time period to generate a line graph of the total change in that data over the specified time period. The date allows the window to slide. 
+
+* `Pie Chart - Total numbers of different types of products added into shopping cart`: Staff can select a date and analyze the total number of items added to the shopping cart for each type of product on that date, and generate the corresponding pie chart. shows the pie chart.
+
+* `Histogram - daily views of different types of products`: Staff can select a time period and generate a bar chart of the total number of daily views for different categories of products during that time period. 
+
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/line%20chart.png" width="350"/> &emsp;&emsp;<img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/pie%20chart.png" width="330"/></div>
 <div> &emsp;&emsp;&emsp;&emsp; </div>
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram1.png" width="350"/>&emsp;&emsp; <img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram2.png" width="350"/></div>
@@ -86,6 +97,13 @@ Figure below shows the operation logic of the `reverse proxy`.
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/deployment%20diagram.png" width="300"/></div>
 
 #### 9. Database Design
+`Logical Foreign Keys`: One of our database design decision is to use logical foreign keys instead of physical foreign keys.
+
+* Physical foreign key means the fields of a table using a foreign key to associate with another table or field. They use a restricted engine called `InnoDB` to create connections between forms. They have performance problems. They need the database to maintain the internal management zof foreign keys. That causes some unintended sequences. For example, when we do some add, delete or update operations involving foreign key fields, the relevant operations need to be triggered which consumes a lot of resources.
+* In addition, in that case, all tables must be InnoDB type and can not be temporary tables. Index prefixing of foreign key columns is not supported. One consequence of this is that BLOB and TEXT columns are not included in a foreign key, because indexes on these columns must always contain a prefix length. InnoDB does not check foreign key constraints for those foreign keys or referenced keys that contain NULL columns. If the volume of data goes up, using physical foreign keys can significantly degrade performance, especially in the case of deadlocks.
+* Due to the problems mentioned above, therefore, we use logical foreign keys for database association to ensure the final consistency of data through transactions
+* The logical foreign key is a technique in which thing foreign key but do not use foreign keys, the use of syntax (code) to produce a logical association resulting in a foreign key.
+* We avoid large transactions and try to split large transactions into multiple smaller transactions to deal with them, which also have less chance of lock conflicts. When using physical foreign keys, at least 2 tables need to be updated at the same time. In this case, it is necessary to lock at least two tables at the same time. If split, the two locks are not synchronized at the same time. The probability of deadlock is smaller. Figure below shows the structure of the database. In practice, we implement it through logical foreign keys.
 
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/system%20database.jpg" width="600"/></div>
 
