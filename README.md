@@ -68,8 +68,8 @@ This project aims to build a web-based online shopping platform for musical inst
 
 #### Novel Functions
 ##### Data Visualization
-<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/line%20chart.png" width="200"/> &emsp;&emsp;&emsp;&emsp;<img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/pie%20chart.png" width="180"/></div>
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/line%20chart.png" width="300"/> &emsp;&emsp;&emsp;<img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/pie%20chart.png" width="280"/></div>
 <div> &emsp;&emsp;&emsp;&emsp; </div>
-<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram1.png" width="200"/>&emsp;&emsp;&emsp;&emsp; <img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram2.png" width="200"/></div>
+<div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram1.png" width="300"/>&emsp;&emsp;&emsp; <img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/histogram2.png" width="300"/></div>
 
 
