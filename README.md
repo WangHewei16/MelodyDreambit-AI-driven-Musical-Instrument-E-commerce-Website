@@ -43,7 +43,7 @@ This project aims to build a web-based online shopping platform for musical inst
 #### 4. Service Architecture
 * Staff Portal uses front and back-end separation technology. The back-end interacts with the database and provides the interface to the front-end. The front-end renders the pages.
 * MySQL is used for data storage, `AliyunOSS` for file storage, and Redis-Cluster for temporary data storage. `MyCAT` is also used for database migration and synchronization.
-* Since UCD only provides a separate external port. So we additionally provide the reverse proxy service, Use `NodeJS` service as a gateway to provide the service. And run the front end through NodeJS as a service.
+* Since University College Dublin (UCD) only provides a separate external port. So we additionally provide the reverse proxy service, Use `NodeJS` service as a gateway to provide the service. And run the front end through NodeJS as a service.
 * We also use AliyunOSS to provide file object storage and `WeChat + OAuth2` for third party authorization.
 
 Figure below shows the diagram of our project's service architecture.
