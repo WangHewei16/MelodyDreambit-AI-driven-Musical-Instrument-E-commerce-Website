@@ -1,4 +1,5 @@
 ## Gold-Melody-Musical-Instrument-Website-Platform
+/badge/<license>-<MIT>-<blue>
 #### 1. Background of developing this website
 Due to the pandemic, many off-line stores of a local musical instrument had been closed. Before the outbreak of the COVID-19, all of their business is from the walk-in retail customers. However, People need to keep their distance and reduce contact outdoors, which undoubtedly affects the business of offline stores now. Hence, the shop wants to transfer the products sold in their stores to an online store to keep their business. 
 
