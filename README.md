@@ -3,6 +3,7 @@
 Due to the pandemic, many off-line stores of a local musical instrument had been closed. Before the outbreak of the COVID-19, all of their business is from the walk-in retail customers. However, People need to keep their distance and reduce contact outdoors, which undoubtedly affects the business of offline stores now. Hence, the shop wants to transfer the products sold in their stores to an online store to keep their business. 
 
 
+
 At the same time, this may also be a good opportunity to use the mall website to increase economic income. People have to spend more time at home because of the epidemic. They may choose to play or learn to play a musical instrument to enrich their daily lives. Therefore, the demand for musical instruments may increase.
 
 
