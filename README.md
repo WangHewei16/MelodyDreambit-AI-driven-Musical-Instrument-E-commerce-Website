@@ -1,36 +1,32 @@
-## Gold-Melody-Musical-Instrument-Website-Platform
+## MelodyDreambit-Musical-Instrument-Trade-Website
 #### 1. Background of developing this website
-Due to the pandemic, many off-line stores of a local musical instrument had been closed. Before the outbreak of the COVID-19, all of their business is from the walk-in retail customers. However, People need to keep their distance and reduce contact outdoors, which undoubtedly affects the business of offline stores now. Hence, the shop wants to transfer the products sold in their stores to an online store to keep their business. 
-
-
-
-At the same time, this may also be a good opportunity to use the mall website to increase economic income. People have to spend more time at home because of the epidemic. They may choose to play or learn to play a musical instrument to enrich their daily lives. Therefore, the demand for musical instruments may increase.
+Due to the pandemic, many offline stores of local musical instruments had been closed. Before the outbreak of COVID-19, all of their business is from walk-in retail customers. However, People need to keep their distance and reduce contact outdoors, which undoubtedly affects the business of offline stores now. Hence, the shop wants to transfer the products sold in their stores to an online store to keep their business. At the same time, this may also be a good opportunity to use the mall website to increase economic income. People have to spend more time at home because of the epidemic. They may choose to play or learn to play a musical instrument to enrich their daily lives. Therefore, the demand for musical instruments may increase.
 
 
 #### 2. Overall Objective
-This project aims to build a web-based online shopping platform for musical instrument store. Through this platform, musical instrument stores can achieve management and sales information. In the context of COVID-19, online stores can help businesses maintain normal sales and facilitate the normal needs of customers. Customers can browse, select and purchase products and communicate with employees in the same way they would in an offline store. In addition, our team designed a blog feature for customers to share Musical Instruments they received when they purchased the product. Other customers can view these blogs and interact with buyers.
+This project aims to build a web-based online shopping platform for musical instrument stores. Through this platform, musical instrument stores can achieve management and sales information. In the context of COVID-19, online stores can help businesses maintain normal sales and facilitate the normal needs of customers. Customers can browse, select and purchase products and communicate with employees in the same way they would in an offline store. In addition, our team designed a blog feature for customers to share Musical Instruments they received when they purchased the product. Other customers can view these blogs and interact with buyers.
 
 
 #### 3. Functions
 ##### 3.1 System
-* The website allows users to search instrument.
-* The website allows users to use filter condition to find products.
-* The website provides separative customer portal and staff portal, which allows users to go shopping and manage data respectively.
-* The website allows customers and staffs to switch language between English and Chinese.
-* The website provides interface that can be adapted to pages on different devices such as PC and mobile phone.
-* The website provides quality communication between customers and staffs.
+* The website allows users to search for instruments.
+* The website allows users to use filter conditions to find products.
+* The website provides a separate customer portal and staff portal, which allows users to go shopping and manage data respectively.
+* The website allows customers and staff to switch languages between English and Chinese.
+* The website provides an interface that can be adapted to pages on different devices such as PC and mobile phones.
+* The website provides quality communication between customers and staff.
 
 ##### 3.2 Customer
-* Customer can browse the company and members information.
-* Customer can add personal address or upload avatar in setting page.
-* Customer can communicate with staffs.
-* Customer can choose certain order and price range to browse product.
+* Customer can browse the company and members' information.
+* Customer can add the personal address or upload an avatar on setting page.
+* Customer can communicate with staff.
+* Customer can choose certain orders and price ranges to browse products.
 * Customer can grade the product.
-* Customer can add product to shopping carts.
+* Customer can add products to shopping carts.
 * Customer can choose address and receiving method to place order.
-* Customer can cancel order or modify address by submitting request and chatting with staff.
+* Customer can cancel order or modify address by submitting the request and chatting with staff.
 * Customer can post a blog for a product and make comments for a blog.
-* Customer can click like for comments of blog and product.
+* Customer can click like for comments of the blog and product.
 
 ##### 3.3 Staff
 * Staff can view and manage user information.
@@ -45,7 +41,7 @@ This project aims to build a web-based online shopping platform for musical inst
 * Staff Portal uses front and back-end separation technology. The back-end interacts with the database and provides the interface to the front-end. The front-end renders the pages.
 * MySQL is used for data storage, `AliyunOSS` for file storage, and `Redis-Cluster` for temporary data storage. `MyCAT` is also used for database migration and synchronization.
 * Since University College Dublin (UCD) only provides a separate external port. So we additionally provide the reverse proxy service, adopt `NodeJS` service as a gateway to provide the service. And run the front end through NodeJS as a service.
-* We also use AliyunOSS to provide file object storage and `WeChat + OAuth2` for third party authorization.
+* We also use AliyunOSS to provide file object storage and `WeChat + OAuth2` for third-party authorization.
 
 Figure below shows the diagram of our project's service architecture.
 <div align=center><img src="https://github.com/WangHewei16/GoldMelody-Musical-Instrument-Website-Platform/blob/main/images/system%20service%20architecture.png" width="700"/></div>
