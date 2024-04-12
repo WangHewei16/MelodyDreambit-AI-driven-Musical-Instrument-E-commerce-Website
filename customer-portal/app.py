@@ -16,23 +16,6 @@ import commands
 from wtf_tinymce import wtf_tinymce
 
 
-
-# 将ORM模型映射到数据库中三部曲
-# 0. migrate = Migrate(app,db)
-# 1. 初始化迁移仓库：flask db init
-# 2. 将orm模型生成迁移脚本：flask db migrate
-# 3. 运行迁移脚本，生成表：flask db upgrade
-
-# Python中操作redis安装两个包：
-# 1. pip install redis
-# 2. pip install hiredis
-
-# 在windows上使用celery，需要借助gevnet
-# pip install gevent
-# celery -A app.mycelery --loglevel=info -P gevent
-
-# pip install flask-wtf
-
 app = Flask(__name__)
 app.config.from_object(config)
 wtf_tinymce.init_app(app)
@@ -48,15 +31,10 @@ wtf_tinymce.init_app(app)
 jwt.init_app(app)
 cors.init_app(app, resources={r"/cmsapi/*": {"origins": "*"}})
 
-# 排除cmsapi的csrf验证
-# csrf.exempt(cmsapi_bp)
-
 migrate = Migrate(app, db)
 
 mycelery = make_celery(app)
 
-
-# 注册蓝图
 app.register_blueprint(front_bp)
 app.register_blueprint(media_bp)
 app.register_blueprint(cmsapi_bp)
@@ -70,7 +48,6 @@ app.register_blueprint(cmsapi_bp)
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 babel = Babel(app)
 
-# 注册命令
 # app.cli.command("init_boards")(commands.init_boards)
 # app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
 
@@ -94,7 +71,6 @@ def get_locale():
     if cookie in ['zh_CN', 'en']:
         return cookie
     return request.accept_languages.best_match(app.config.get('BABEL_DEFAULT_LOCALE'))
-    # 没有cookie时，默认为 en
 
 
 @app.route("/set_locale")
